@@ -256,12 +256,29 @@ article{
 
 
 article > div{
+    display: flex;
+    position: relative;
     width: 541px;
     height: 270px;
     background-color: #fff;
     border-radius: 20px;
     padding: 25px;
     animation: fadeIn ease .27s;
+    overflow: hidden;
+}
+
+.close-x{
+    position: absolute;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    background: var(--scale-12-red);
+}
+
+.close-x img{
+    width: 22px;
+    color: #FFF;
 }
 
 article > div > :nth-child(2) > div{
@@ -270,13 +287,6 @@ article > div > :nth-child(2) > div{
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-}
-
-article > div > div{
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-    position: relative;
 }
 
 article > div > :nth-child(2){
@@ -301,8 +311,9 @@ article > div h3{
 }
 
 article > div p{
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 16px;
+    font-weight: 400;
 }
 
 
