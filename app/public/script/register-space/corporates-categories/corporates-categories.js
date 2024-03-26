@@ -39,18 +39,22 @@ function hint(x){
 //  })
 
 var button = document.getElementById("advance");
-
+console.log(advance)
 
 const selectTypeOF = () => {
    const optionsOffice = document.querySelectorAll('.space-box')
    optionsOffice.forEach((option, index, arr) => option.addEventListener('click',()=>{
 
+    
+
        if(index == 0){
            button.setAttribute('href','/categorias-de-espacos-adaptaveis')
+           button.style.color = "var(--scale-2-purple)";
        }
 
        if(index == 1){
            button.setAttribute('href','/categorias-corporativo')
+           button.style.color = "#000";
        }
 
 

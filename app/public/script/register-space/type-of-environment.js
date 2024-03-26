@@ -1,22 +1,22 @@
- function hint(x){
-     if (x === 1){
-         document.getElementById("hint-adaptable").style.display="flex";
-     }
-     else if (x === 2){
-         document.getElementById("hint-corporate").style.display="flex";
-     }
-     else if (x === 3){
-         document.getElementById("hint-adaptable").style.display="none";
-     }
-     else{
-         document.getElementById("hint-corporate").style.display="none";
-     }
- }
+function hint(x) {
+    if (x === 1) {
+        document.getElementById("hint-adaptable").style.display = "flex";
+    }
+    else if (x === 2) {
+        document.getElementById("hint-corporate").style.display = "flex";
+    }
+    else if (x === 3) {
+        document.getElementById("hint-adaptable").style.display = "none";
+    }
+    else {
+        document.getElementById("hint-corporate").style.display = "none";
+    }
+}
 
 
 // function openHint(){
 //     const button = document.query.SelectorAll(".hint")
-    
+
 // }
 
 // function closeHint(){
@@ -27,14 +27,14 @@
 
 
 // spacebox.forEach(element, index => {
-    
+
 // });
 
 
 //  place.forEach((element, index, arr)=>{
 //      element.addEventListener('click',()=>{
 //         arr[index].classList.add("borda");
-       
+
 //      })
 //  })
 
@@ -68,7 +68,7 @@
 //         arr[index].classList.add('border-select')
 //         button[2].style.background = 'var(--scale-2-purple)'
 //         // button.style.background = "var(--scale-2-purple)";
-     
+
 //     }))
 
 //     // function checked(){  
@@ -79,5 +79,45 @@
 
 // selectTypeOF();
 
-      // arr[index].innerHTML = informationsFieldsetForm[0].teste
-      // console.log(e.target.getAttribute('name'))
+// arr[index].innerHTML = informationsFieldsetForm[0].teste
+// console.log(e.target.getAttribute('name'))
+
+var button = document.getElementById("advance");
+var link = button.parentNode;
+
+button.style.cursor = "default";
+button.disabled = true;
+
+const selectTypeOF = () => {
+    const optionsOffice = document.querySelectorAll('.space-box')
+    optionsOffice.forEach((option, index, arr) => option.addEventListener('click', () => {
+
+        button.disabled = false;
+        button.style.cursor = "pointer";
+        button.style.backgroundColor = "var(--scale-2-purple)";
+
+        if (index == 0) {
+            link.setAttribute('href', '/categorias-espacos-adaptaveis')
+        }
+
+        if (index == 1) {
+            link.setAttribute('href', '/categorias-espacos-corporativos')
+        }
+
+
+        for (let i = 0; i < arr.length; i++) {
+            arr[i].classList.remove('border-select')
+        }
+
+        arr[index].classList.add('border-select')
+        button.firstElementChild.style.background = "var(--scale-2-purple)";
+
+    }))
+
+    // function checked(){  
+    //     optionsOffice.forEach(option => option.classList.remove('border-select'));
+    //     this.classList.add('border-select');
+    // }
+}
+
+selectTypeOF();
