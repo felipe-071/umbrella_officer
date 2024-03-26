@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <!-- <meta charset="UTF-8"> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js" integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtJGza4SniYHefeNwCdE4gU3sg1AU4fiU&&libraries=places"></script>
+  <link rel="stylesheet" href="style/default/default.css">
+  <link rel="stylesheet" href="style/my-account/my-account.css">
+  <link rel="stylesheet" href="style/my-account/calendar.css">
+</head>
+
+<body>
+  <header id="header" class="container_margin_default">
+    <div class="default_margin">
+      <a href="/"> <img src="images/default/logo.svg" alt="logo"> </a>
+      <div id="container_menu">
+        <a href="/tipo-de-ambiente"><button id="advertiser">Quero anunciar</button></a>  
+
+        <div id="menu">
+          <div id='menu_sign-in-up'>
+            <img src="images/default/user.svg" alt="usuário">
+            <img src="images/default/menu_hamburguer.svg" alt="menu">
+          </div>
+          <%
+                        if(autenticado){
+                    %>
+          <%- include('../../partial/header/menu_autenticado.ejs'); %>
+          <%       
+                    }else{
+                    %>
+          <%- include('../../partial/header/menu.ejs'); %>
+          <%
+                    } 
+                  %>
+        </div>
+      </div>
+
+      <div id="container_popUp_login-signUp">
+        <div class="popUp">
+          <img class="close_popup" src="images/default/close_icon.svg" alt="close">
+          <h2>Umbrella Officing</h2>
+          <h3>Seja bem-vindo</h3>
+          <div>
+            <span>Faça seu login para continuar</span>
+            <form method="post" action="/login">
+              <label for="cpf-email">
+                CPF ou E-mail :
+                <input type="text" id="cpf-email" name="cpfEmail">
+              </label>
+
+              <label for="password-login">
+                Senha:
+                <input type="password" id="password-login" name="password">
+              </label>
+
+              <div>
+                <a href="#">Esqueceu a senha?</a>
+              </div>
+
+              <button class="form_button" type="submit">LOGIN</button>
+            </form>
+            <div id="alternatives">
+              <div><span>OR</span></div>
+              <div>
+                <span>Faça login com suas Redes Sociais</span>
+                <img src="images/default/icon-google.png" alt="ícone do google">
+                <img src="images/default/icon-facebok.svg" alt="ícone do facebbok">
+                <img src="images/default/icon-apple.png" alt="ícone do facebbok">
+                <span>Ainda não possui conta? <a href="#">Cadastre-se</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popUp">
+          <img class="close_popup" src="images/default/close_icon.svg" alt="close">
+          <h2>Umbrella Officing</h2>
+          <h3>Seja bem-vindo</h3>
+          <div>
+            <span>Cadastre-se e faça parte da nossa comunidade</span>
+            <form id="myform" method="post" action="/cadastro">
+              <fieldset id="test1" class="test">
+                <label for="name">
+                  Nome:
+                  <input type="text" id="name" name="name">
+                </label>
+                <label for="email">
+                  E-mail:
+                  <input type="email" id="email" name="email">
+                </label>
+
+                <label for="cpf">
+                  CPF:
+                  <input type="text" id="cpf" name="cpf">
+                </label>
+
+                <label for="password">
+                  Senha:
+                  <input type="password" id="password" name="password">
+                </label>
+
+                <label for="conf_password">
+                  Confirmar senha:
+                  <input type="password" class="form-control" id="conf_password" name="conf_password">
+                </label>
+                <input type="button" class="form_button next" value="Próximo">
+              </fieldset>
+              <fieldset id="test2" class="test campos">
+                <label for="birth_date">
+                  Data de nascimento
+                  <input type="date" id="birth_date" name="birth_date" required>
+                </label>
+                <label for="phone">
+                  Telefone:
+                  <input type="text" id="phone" name="phone" required>
+                </label>
+                <label for="profession">
+                  Profissão:
+                  <input type="text" id="profession" name="profession" required>
+                </label>
+                <button class="form_button" type="submit">CADASTRAR</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="container_popUp_profilePicture">
+        <div class="popUp_profilePicture">
+          <h2>Adicionar imagem de perfil</h2>
+          <div>
+            <form action="/perfil2" method="post" enctype="multipart/form-data">
+              <div class="actionPicture">
+                <div>
+                  <%
+                                      if(autenticado){
+                                  %>
+                  <%if(autenticado.profile_picture != null){%>
+                  <img class="image_profile" src="data:image/gif;base64,<%=autenticado.profile_picture%>" alt="Foto de perfil">
+                  <%}%>
+          
+                                      <%if(autenticado.profile_picture == null){%>
+                  <img class="image_profile" src="images/default/perfil.png" alt="Foto de perfil">
+                  <%}%>
+                                      
+                                  <%       
+                                  }else{
+                                  %>
+                  <img class="image_profile" src="images/default/perfil.png" alt="Foto de perfil">
+                  <%
+                                  } 
+                                  %>
+                </div>
+              </div>
+
+              <div>
+                <div class="uploadPicture">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                  <label for="ImagemPerfil">
+                    Carregar imagem
+                  </label>
+                  <input accept="image/" class="form-control" id="ImagemPerfil" name="ImagemPerfil" onchange="loadImg()" type="file" value="" />
+                </div>
+                <div class="deletePicture">
+                  <i class="fa-solid fa-trash"></i>
+                  <span>Remover imagem</span>
+                </div>
+                <div>
+                  <input id="close" type="button" value="Fechar">
+                  <button id="salve" type="submit">Guardar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </header>
+
+  <div id="bottom_bar-mobile">
+    <%
+                  if(autenticado){
+                %>
+    <%- include('../../partial/header/bottom_bar-mobile_autenticado.ejs'); %>
+    <%       
+                }else{
+                %>
+    <%- include('../../partial/header/bottom_bar-mobile.ejs'); %>
+    <%
+                } 
+              %>
+
+    <div id="container_search-mobile">
+
+      <img class="close_search" src="images/default/close_icon.svg" alt="close">
+
+      <ul id="type_office_mobile">
+        <li class="option_office checked">Espaço adaptado</li>
+        <li class="option_office">Espaço corporativo</li>
+      </ul>
+
+      <form action="search-informations" method="post">
+        <div id='container_adaptable'>
+          <div class="box">
+            <label name="search_input">Localização</label>
+            <input type="text">
+          </div>
+          <div class="box">
+            <label name="search_input">Selecione datas</label>
+
+            <div class="box_check">
+              <div>
+                <label name="box_check-in">Check in</label>
+                <input type="date" name="box_check-in">
+              </div>
+              <div>
+                <label name="box_check-out">Check-out</label>
+                <input type="date" name="box_check-out">
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <label name="search_input">Número de pessoas</label>
+            <div id="guests">
+              <div class="specification">
+                <button>
+                  <img class="subtract" src="images/search-spaces/search/subtract.png" alt="subtrair">
+                </button>
+                <input type="number" min="0" value="4" name="people" class="input_checked" disabled>
+                <button>
+                  <img class="addition" src="images//search-spaces/search/button-add.png" name="addition" alt="adicionar">
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button class="search_mobile">Pesquisar</button>
+        </div>
+      </form>
+    </div>
+  </div> 
+
+  <div id='box_black'></div>
+
+  <main>
+    <div id="calendar" class="container_margin_default">
+      <div class="default_margin">
+        <nav id="my-account-menu">
+          <ul>
+            <li class="option">
+              <a href="/meu-perfil">
+                <div>
+                  <i class='bx bxs-user icon'></i>
+                </div>
+                <span>Meu perfil</span>
+              </a>
+            </li>
+            <li class="option">
+              <a href="/dados-pessoais">
+                <div>
+                  <i class='bx bx-wallet icon'></i>
+                </div>
+                <span>Dados pessoais</span>
+              </a>
+            </li>
+            <li class="option">
+              <a href="/minhas-reservas">
+                <div>
+                  <i class='bx bx-calendar-check icon'></i>
+                </div>
+                <span>Minhas reservas</span>
+              </a>
+            </li>
+            <li class="option">
+              <a href="/meus-anuncios">
+                <div>
+                  <i class="fa-solid fa-bullhorn announcer"></i>
+                </div>
+                <span>Meus anúncios</span>
+              </a>
+            </li>
+            <li class="option on">
+              <a href="o">
+                <div>
+                  <i class='bx bx-calendar icon'></i>
+                </div>
+                <span>Calendário</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <section id="calendar_section1">
+          <div class="calendar_section1-header">
+            <h1>Escritório Lape</h1>
+
+            <div class="select-box">
+              <div class="options-container">
+                <div class="option">
+                  <input type="radio" class="radio" id="space" name="category" />
+                  <option for="space">Espaço</option>
+                </div>
+
+                <div class="option">
+                  <input type="radio" class="radio" id="space" name="category" />
+                  <option for="space">Espaço</option>
+                </div>
+
+                <div class="option">
+                  <input type="radio" class="radio" id="space" name="category" />
+                  <option for="space">Espaço</option>
+                </div>
+              </div>
+
+              <div class="selected">
+                Mudar de espaço
+              </div>
+            </div>
+          </div>
+
+          <div id="calendar_section1_container">
+            <div id="calendar_section1_container-header">
+              <div id="monthDisplay"></div>
+              <div>
+                <button id="backButton"><i class="fa-solid fa-chevron-left"></i></button>
+                <button id="nextButton"><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+            </div>
+
+            <div id="weekdays">
+              <div>Dom</div>
+              <div>Seg</div>
+              <div>Ter</div>
+              <div>Qua</div>
+              <div>Qui</div>
+              <div>Sex</div>
+              <div>Sab</div>
+            </div>
+
+            <div id="calendar-data"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div id="containerPopUp_data">
+    <div>
+      <div id="popUp_addSchedule">
+        <img id="cancelButton-close" src="images/default/close_icon.svg" alt="close">
+
+        <h2>Adicionar horário</h2>
+
+        <p>Abertura</p>
+        <input class="timeComplete outline-focus" placeholder="00:00" />
+        <p>Fechamento</p>
+        <input class="timeComplete outline-focus" placeholder="00:00" />
+
+        <!-- <div class="frequency-box">
+            <div class="frequency-container">
+                <div class="frequency">
+                    <input type="radio" class="radio1" id="year" name="category" />
+                    <option for="year">Durante um ano</option>
+                </div>
+
+                <div class="frequency">
+                    <input type="radio" class="radio1" id="month" name="category" />
+                    <option for="month">Durante um mês</option>
+                </div>
+
+                <div class="frequency">
+                    <input type="radio" class="radio1" id="week" name="category" />
+                    <option for="week">Essa semana</option>
+                </div>
+
+                <div class="frequency">
+                    <input type="radio" class="radio1" id="year" name="category" />
+                    <option for="year">Apenas esse dia</option>
+                </div>
+            </div>
+
+            <div class="selected-frequency">
+                Apenas esse dia
+            </div>
+        </div>
+   -->
+        <div>
+          <button id="saveButton">Salvar inf.</button>
+          <button id="cancelButton">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div id="popUp_schedule">
+        <img id="closeButton" src="images/default/close_icon.svg" alt="close">
+
+        <h2>Horário de abertura e fechamento</h2>
+        <p class="schedules"></p>
+
+        <button id="deleteButton">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="container_margin_default">
+    <%- include('../../partial/footer.ejs')%>
+  </footer>
+ 
+  <script src="script/default/header/header.js"></script>
+  <script src="script/default/register/register.js"></script>  
+  <script src="script/my-account/calendar.js"></script>
+</body>
+
+</html>

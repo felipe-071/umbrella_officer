@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js" integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.js"></script>
+  <link rel="stylesheet" href="style/default/default.css">
+  <link rel="stylesheet" href="style/my-account/my-account.css">
+  <link rel="stylesheet" href="style/my-account/booking-requests.css">
+</head>
+
+<body>
+  <header id="header" class="container_margin_default">
+    <div class="default_margin">
+      <a href="/"> <img src="images/default/logo.svg" alt="logo"> </a>
+      <div id="container_search">
+        <ul id="type_office">
+          <li class="option_office checked">Espaço adaptado</li>
+          <li class="option_office">Espaço corporativo</li>
+        </ul>
+        <div class="container_search_input">
+          <span id="search_txt">Pesquise locais para trabalhar</span>
+          <div id='container_informations_find_coworking'>
+            <div class="gap_input_checked">
+              <input id="search_input" class="booking_informations input_checked" type="text" placeholder="Localização:">
+              <div class="popUp_input"></div>
+            </div>
+            <div class="gap_input_checked">
+              <span class="booking_informations booking_informations_user">Horários</span>
+
+              <div class="popUp_input"></div>
+            </div>
+            <div class="gap_input_checked">
+              <span class="booking_informations booking_informations_user">Pessoas</span>
+            </div>
+          </div>
+          <a href="#">
+            <div>
+              <img src="images/default/search.svg" alt="pesquisa">
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div id="menu">
+        <div id='menu_sign-in-up'>
+          <img src="images/default/user.svg" alt="usuário">
+          <img src="images/default/menu_hamburguer.svg" alt="menu">
+        </div>
+        <div class="menu_open">
+          <div>
+            <div class="picture_edit">
+              <div id="mask_image_profile">
+                <%
+                                if(autenticado){
+                            %>
+                <%if(autenticado.profile_picture != null){%>
+                <img class="image_profile" src="data:image/gif;base64,<%=autenticado.profile_picture%>" alt="Foto de perfil">
+                <%}%>
+    
+                                <%if(autenticado.profile_picture == null){%>
+                <img class="image_profile" src="images/default/perfil.png" alt="Foto de perfil">
+                <%}%>
+                                
+                            <%       
+                            }else{
+                            %>
+                <img class="image_profile" src="images/default/perfil.png" alt="Foto de perfil">
+                <%
+                            } 
+                            %>
+              </div>
+              <i class="fa-solid fa-pen pictureProfile list"></i>
+            </div>
+            <div id="user_informations">
+              <%
+                                if(autenticado){
+                            %>
+              <h3><%=autenticado.name%></h3>
+              <span><%=autenticado.profession%></span>
+              <%       
+                            }else{
+                            %>
+              <h3>Usuários</h3>
+              <span>Cliente</span>
+              <%
+                            } 
+                            %>
+            </div>
+          </div>
+          <div>
+            <nav>
+              <ul>
+                <li class="popUp-login-signUp list">
+                  <i class="fa-solid fa-user"></i>
+                  Login
+                </li>
+                <li class="list popUp-login-signUp">
+                  <i class="fa-solid fa-user-plus"></i>
+                  Cadastre-se
+                </li>
+
+              </ul>
+            </nav>
+          </div>
+          <div>
+            <a href="/central-de-ajuda"><i class="fa-solid fa-circle-info"></i>
+              Central de ajuda</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container_popUp_login-signUp">
+      <div class="popUp">
+        <img class="close_popup" src="images/default/close_icon.svg" alt="close">
+        <h2>Umbrella Officing</h2>
+        <h3>Seja bem-vindo</h3>
+        <div>
+          <span>Faça seu login para continuar</span>
+          <form method="post" action="/login">
+            <label for="cpf-email">
+              CPF ou E-mail :
+              <input type="text" id="cpf-email" name="cpfEmail">
+            </label>
+
+            <label for="password-login">
+              Senha:
+              <input type="password" id="password-login" name="password">
+            </label>
+
+            <div>
+              <a href="#">Esqueceu a senha?</a>
+            </div>
+
+            <button class="form_button" type="submit">LOGIN</button>
+          </form>
+          <div id="alternatives">
+            <div><span>OR</span></div>
+            <div>
+              <span>Faça login com suas Redes Sociais</span>
+              <img src="images/default/icon-google.png" alt="ícone do google">
+              <img src="images/default/icon-facebok.svg" alt="ícone do facebbok">
+              <img src="images/default/icon-apple.png" alt="ícone do facebbok">
+              <span>Ainda não possui conta? <a href="#">Cadastre-se</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popUp">
+        <img class="close_popup" src="images/default/close_icon.svg" alt="close">
+        <h2>Umbrella Officing</h2>
+        <h3>Seja bem-vindo</h3>
+        <div>
+          <span>Cadastre-se e faça parte da nossa comunidade</span>
+          <form id="myform" method="post" action="/cadastro">
+            <fieldset id="test1" class="test">
+              <label for="name">
+                Nome:
+                <input type="text" id="name" name="name">
+              </label>
+              <label for="email">
+                E-mail:
+                <input type="email" id="email" name="email">
+              </label>
+
+              <label for="cpf">
+                CPF:
+                <input type="number" id="cpf" name="cpf">
+              </label>
+
+              <label for="password">
+                Senha:
+                <input type="password" id="password" name="password">
+              </label>
+
+              <label for="conf_password">
+                Confirmar senha:
+                <input type="password" class="form-control" id="conf_password" name="conf_password">
+              </label>
+              <input type="button" class="form_button next" value="Próximo">
+            </fieldset>
+            <fieldset id="test2" class="test campos">
+              <label for="birth_date">
+                Data de nascimento
+                <input type="text" id="birth_date" name="birth_date">
+              </label>
+              <label for="phone">
+                Telefone:
+                <input type="number" id="phone" name="phone">
+              </label>
+              <label for="profession">
+                Profissão:
+                <input type="text" id="profession" name="profession">
+              </label>
+              <button class="form_button" type="submit">CADASTRAR</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="container_popUp_profilePicture">
+      <div class="popUp_profilePicture">
+        <h2>Adicionar imagem de perfil</h2>
+        <div>
+          <form action="/perfil2" method="post" enctype="multipart/form-data">
+            <div class="actionPicture">
+              <div>
+                <%
+                                if(autenticado){
+                            %>
+                <%if(autenticado.profile_picture != null){%>
+                <img class="image_profile" src="data:image/gif;base64,<%=autenticado.profile_picture%>" alt="Foto de perfil">
+                <%}%>
+    
+                                <%if(autenticado.profile_picture == null){%>
+                <img class="image_profile" src="images/default/perfil.png" alt="Foto de perfil">
+                <%}%>
+                                
+                            <%       
+                            }else{
+                            %>
+                <img class="image_profile" src="images/default/perfil.png" alt="Foto de perfil">
+                <%
+                            } 
+                            %>
+              </div>
+              <div>
+                <input id="close" type="button" value="Fechar">
+                <button id="salve" type="submit">Guardar</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="uploadPicture">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                <label for="ImagemPerfil">
+                  Carregar imagem
+                </label>
+                <input accept="image/" class="form-control" id="ImagemPerfil" name="ImagemPerfil" onchange="loadImg()" type="file" value="" />
+              </div>
+              <div class="deletePicture">
+                <i class="fa-solid fa-trash"></i>
+                <span>Remover imagem</span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="bottom_bar-mobile">
+    <%
+              if(autenticado){
+            %>
+    <%- include('../../partial/header/bottom_bar-mobile_autenticado.ejs'); %>
+    <%       
+            }else{
+            %>
+    <%- include('../../partial/header/bottom_bar-mobile.ejs'); %>
+    <%
+            } 
+          %>
+
+    <div id="container_search-mobile">
+
+      <img class="close_search" src="images/default/close_icon.svg" alt="close">
+
+      <ul id="type_office_mobile">
+        <li class="option_office checked">Espaço adaptado</li>
+        <li class="option_office">Espaço corporativo</li>
+      </ul>
+
+      <form action="search-informations" method="post">
+        <div id='container_adaptable'>
+          <div class="box">
+            <label name="search_input">Localização</label>
+            <input type="text">
+          </div>
+          <div class="box">
+            <label name="search_input">Selecione datas</label>
+
+            <div class="box_check">
+              <div>
+                <label name="box_check-in">Check in</label>
+                <input type="date" name="box_check-in">
+              </div>
+              <div>
+                <label name="box_check-out">Check-out</label>
+                <input type="date" name="box_check-out">
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <label name="search_input">Número de pessoas</label>
+            <div id="guests">
+              <div class="specification">
+                <button>
+                  <img class="subtract" src="images/search-spaces/search/subtract.png" alt="subtrair">
+                </button>
+                <input type="number" min="0" value="4" name="people" class="input_checked" disabled>
+                <button>
+                  <img class="addition" src="images//search-spaces/search/button-add.png" name="addition" alt="adicionar">
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button class="search_mobile">Pesquisar</button>
+        </div> 
+      </form>
+    </div> 
+  </div>
+
+  <div id='box_black'></div>
+
+  <main>
+    <div id="booking-requests" class="container_margin_default">
+      <div class="default_margin">
+        <nav id="bottom-bar_booking-requests">
+          <a href="/meus-anuncios">
+            <button id="come_back">
+              <i class="fa-solid fa-chevron-left"></i>
+              Voltar
+            </button>
+          </a>
+          <ul>
+            <li class="options_menu option-checked" onclick="bookingRequests(1)">
+              Confirmação pendente
+            </li>
+
+            <li class="options_menu" onclick="bookingRequests(2)">
+              Confirmadas
+            </li>
+
+            <li class="options_menu" onclick="bookingRequests(3)">
+              Canceladas
+            </li>
+            <li class="options_menu" onclick="bookingRequests(4)">
+              Avaliação do cliente
+            </li>
+          </ul>
+        </nav>
+
+        <div id="booking-requests_articles">
+          <h1>Solicitações de reservas</h1>
+
+          <article id="pending-confirmation">
+            <ul>
+              <li>
+                <div class="profile">
+                  <div>
+                    <img src="images/my-account/booking-solicitations/persona_larissa.png" alt="Usuário">
+                  </div>
+                  <h3>
+                    Perfil <br>
+                    <span>Larissa Ferreira</span>
+                  </h3>
+                </div>
+
+                <div>
+                  <h3>
+                    Espaço | Salas <br>
+                    <span>Escritório Lape
+                      <br>Sala 02
+                    </span>
+                  </h3>
+                </div>
+                <div>
+                  <h3>Solicitação <br>
+                    <span>
+                      30/02/2022 <br>
+                    </span>
+                  </h3>
+                </div>
+                <div class="actions">
+                  <button type="submit" class="viewDates">
+                    <i class="fa-solid fa-calendar calendar"></i>
+                    <span>Ver datas</span>
+                  </button>
+                  <button type="submit" class="confirm">
+                    <i class="fa-solid fa-check"></i>
+                  </button>
+                  <button type="submit" class="cancel">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+              </li>
+              <li class="background">
+                <div class="profile">
+                  <div>
+                    <img src="images/my-account/booking-solicitations/persona_larissa.png" alt="Usuário">
+                  </div>
+                  <h3>
+                    Perfil <br>
+                    <span>Larissa Ferreira</span>
+                  </h3>
+                </div>
+
+                <div>
+                  <h3>
+                    Espaço | Salas <br>
+                    <span>Escritório Lape
+                      <br>Sala 02
+                    </span>
+                  </h3>
+                </div>
+                <div>
+                  <h3>Solicitação <br>
+                    <span>
+                      30/02/2022 <br>
+                    </span>
+                  </h3>
+                </div>
+                <div class="actions">
+                  <button type="submit" class="viewDates">
+                    <i class="fa-solid fa-calendar calendar"></i>
+                    <span>Ver datas</span>
+                  </button>
+                  <button type="submit" class="confirm">
+                    <i class="fa-solid fa-check"></i>
+                  </button>
+                  <button type="submit" class="cancel">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div class="profile">
+                  <div>
+                    <img src="images/my-account/booking-solicitations/persona_larissa.png" alt="Usuário">
+                  </div>
+                  <h3>
+                    Perfil <br>
+                    <span>Larissa Ferreira</span>
+                  </h3>
+                </div>
+
+                <div>
+                  <h3>
+                    Espaço | Salas <br>
+                    <span>Escritório Lape
+                      <br>Sala 02
+                    </span>
+                  </h3>
+                </div>
+                <div>
+                  <h3>Solicitação <br>
+                    <span>
+                      30/02/2022 <br>
+                    </span>
+                  </h3>
+                </div>
+                <div class="actions">
+                  <button type="submit" class="viewDates">
+                    <i class="fa-solid fa-calendar calendar"></i>
+                    <span>Ver datas</span>
+                  </button>
+                  <button type="submit" class="confirm">
+                    <i class="fa-solid fa-check"></i>
+                  </button>
+                  <button type="submit" class="cancel">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <article id="confirmed">
+            <ul>
+              <li>
+                <div class="profile">
+                  <div>
+                    <img src="images/my-account/booking-solicitations/persona_larissa.png" alt="Usuário">
+                  </div>
+                  <h3>
+                    Perfil <br>
+                    <span>Rodrigo Queiroz</span>
+                  </h3>
+                </div>
+
+                <div>
+                  <h3>
+                    Espaço | Salas <br>
+                    <span>Escritório Lape
+                      <br>Sala 02
+                    </span>
+                  </h3>
+                </div>
+                <div>
+                  <h3>Hoje <br>
+                    <span>
+                      30/02/2022 <br>
+                    </span>
+                  </h3>
+                </div>
+                <div class="actions">
+                  <button type="submit" class="viewDates">
+                    <i class="fa-solid fa-calendar calendar"></i>
+                    <span>Ver datas</span>
+                  </button>
+                  <button type="submit" class="cancel">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <article id="canceled">
+            <ul>
+              <li>
+                <div class="profile">
+                  <div>
+                    <img src="images/my-account/booking-solicitations/persona_rodrigo.png" alt="Usuário">
+                  </div>
+                  <h3>
+                    Perfil <br>
+                    <span>Rodrigo Queiroz</span>
+                  </h3>
+                </div>
+
+                <div>
+                  <h3>
+                    Espaço | Salas <br>
+                    <span>Escritório Lape
+                      <br>Sala 02
+                    </span>
+                  </h3>
+                </div>
+                <div>
+                  <h3>Hoje <br>
+                    <span>
+                      30/02/2022 <br>
+                    </span>
+                  </h3>
+                </div>
+                <div class="actions">
+                  <button type="submit" class="viewDates">
+                    <i class="fa-solid fa-calendar calendar"></i>
+                    <span>Ver datas</span>
+                  </button>
+                  <button type="submit" class="renew">
+                    <a href=""><i class="fa-solid fa-rotate"></i></i></a></i>
+                  </button>
+                  <button type="submit" class="definitely_cancel">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+              </li>
+              <li class="background">
+                <div class="profile">
+                  <div>
+                    <img src="images/my-account/booking-solicitations/persona_rodrigo.png" alt="Usuário">
+                  </div>
+                  <h3>
+                    Perfil <br>
+                    <span>Rodrigo Queiroz</span>
+                  </h3>
+                </div>
+
+                <div>
+                  <h3>
+                    Espaço | Salas <br>
+                    <span>Escritório Lape
+                      <br>Sala 02
+                    </span>
+                  </h3>
+                </div>
+                <div>
+                  <h3>Hoje <br>
+                    <span>
+                      30/02/2022 <br>
+                    </span>
+                  </h3>
+                </div>
+                <div class="actions">
+                  <button type="submit" class="viewDates">
+                    <i class="fa-solid fa-calendar calendar"></i>
+                    <span>Ver datas</span>
+                  </button>
+                  <button type="submit" class="renew">
+                    <a href=""><i class="fa-solid fa-rotate"></i></i></a></i>
+                  </button>
+                  <button type="submit" class="definitely_cancel">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div class="profile">
+                  <div>
+                    <img src="images/my-account/booking-solicitations/persona_rodrigo.png" alt="Usuário">
+                  </div>
+                  <h3>
+                    Perfil <br>
+                    <span>Rodrigo Queiroz</span>
+                  </h3>
+                </div>
+
+                <div>
+                  <h3>
+                    Espaço | Salas <br>
+                    <span>Escritório Lape
+                      <br>Sala 02
+                    </span>
+                  </h3>
+                </div>
+                <div>
+                  <h3>Hoje <br>
+                    <span>
+                      30/02/2022 <br>
+                    </span>
+                  </h3>
+                </div>
+                <div class="actions">
+                  <button type="submit" class="viewDates">
+                    <i class="fa-solid fa-calendar calendar"></i>
+                    <span>Ver datas</span>
+                  </button>
+                  <button type="submit" class="renew">
+                    <a href=""><i class="fa-solid fa-rotate"></i></i></a></i>
+                  </button>
+                  <button type="submit" class="definitely_cancel">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <article id="client-avaliation">
+            <ul>
+              <li>
+                <div class="profile">
+                  <div>
+                    <img src="images/my-account/booking-solicitations/persona_rodrigo.png" alt="Usuário">
+                  </div>
+                  <h3>
+                    Perfil <br>
+                    <span>Rodrigo Queiroz</span>
+                  </h3>
+                </div>
+
+                <div>
+                  <h3>
+                    Espaço | Salas <br>
+                    <span>Escritório Lape
+                      <br>Sala 02
+                    </span>
+                  </h3>
+                </div>
+                <div>
+                  <h3>Hoje <br>
+                    <span>
+                      30/02/2022 <br>
+                    </span>
+                  </h3>
+                </div>
+                <div class="actions">
+                  <button type="submit" class="avaliation">Avaliar cliente</button>
+                </div>
+              </li>
+              <li class="background">
+                <div class="profile">
+                  <img src="images/my-account/booking-solicitations/persona_rodrigo.png" alt="Usuário">
+                  <h3>
+                    Perfil <br>
+                    <span>Rodrigo Queiroz</span>
+                  </h3>
+                </div>
+
+                <div>
+                  <h3>
+                    Espaço | Salas <br>
+                    <span>Escritório Lape
+                      <br>Sala 02
+                    </span>
+                  </h3>
+                </div>
+                <div>
+                  <h3>Hoje <br>
+                    <span>
+                      30/02/2022 <br>
+                    </span>
+                  </h3>
+                </div>
+                <div class="actions">
+                  <button type="submit" class="avaliation">Avaliar cliente</button>
+                </div>
+              </li>
+              <li>
+                <div class="profile">
+                  <div>
+                    <img src="images/my-account/booking-solicitations/persona_rodrigo.png" alt="Usuário">
+                  </div>
+                  <h3>
+                    Perfil <br>
+                    <span>Rodrigo Queiroz</span>
+                  </h3>
+                </div>
+
+                <div>
+                  <h3>
+                    Espaço | Salas <br>
+                    <span>Escritório Lape
+                      <br>Sala 02
+                    </span>
+                  </h3>
+                </div>
+                <div>
+                  <h3>Hoje <br>
+                    <span>
+                      30/02/2022 <br>
+                    </span>
+                  </h3>
+                </div>
+                <div class="actions">
+                  <button type="submit" class="avaliation">Avaliar cliente</button>
+                </div>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="container_popUp-viewDate">
+    <div>
+      <button id="viewDates-close">Fechar</button>
+
+      <div id="popUp-viewDate">
+        <div id="popUp-viewDate_calendar">
+          <div class="calendar-header">
+            <span class="month-picker" id="month-picker">February</span>
+            <div class="year-picker">
+              <span class="year-change" id="prev-year">
+                <i class="fa-solid fa-chevron-left chevron-left"></i>
+              </span>
+              <span id="year">2022</span>
+              <span class="year-change" id="next-year">
+                <i class="fa-solid fa-chevron-right chevron-right"></i>
+              </span>
+            </div>
+          </div>
+          <div class="calendar-body">
+            <div class="calendar-week-day">
+              <div>Dom</div>
+              <div>Seg</div>
+              <div>Ter</div>
+              <div>Qua</div>
+              <div>Qui</div>
+              <div>Sex</div>
+              <div>Sab</div>
+            </div>
+            <div class="calendar-days"></div>
+          </div>
+          <div class="month-list"></div>
+        </div>
+
+        <div id="popUp-viewDate_room">
+          <div class="rooms-informations-container">
+            <div>
+              <h4>Sala 01</h4>
+              <span>1 a 2 pessoas | 12m²</span>
+            </div>
+            <div class="container_img">
+              <img src="images/search-spaces/officing-description/room-illustration.png" alt="ilustração do local">
+            </div>
+            <div class="room-description">
+              <ul>
+                <li>
+                  <img src="images/search-spaces/officing-description/wi-fi.svg" alt="" srcset="">
+                  Excelente
+                </li>
+                <li>
+                  <img src="images/search-spaces/officing-description/air-conditioning.png" alt="" srcset="">
+                  1
+                </li>
+                <li>
+                  <img src="images/search-spaces/officing-description/table.png" alt="" srcset="">
+                  1
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                  <img src="images/search-spaces/officing-description/chair.png" alt="" srcset="">
+                  3
+                </li>
+                <li>
+                  <img src="images/search-spaces/officing-description/computer.svg" alt="" srcset="">
+                  2
+                </li>
+                <li>
+                  <img src="images/search-spaces/officing-description/sockets.svg" alt="" srcset="">
+                  3
+                </li>
+              </ul>
+              <form action="" method="">
+                <div class="flex">
+                  <div>
+                    <label for="arrival_time">Chegada às:</label>
+                    <input type="text" class="outline-focus" name="arrival_time" id="arrival_time">
+                  </div>
+                  <div>
+                    <label for="time_of_stay">Permância:</label>
+                    <input type="text" class="outline-focus" name="time_of_stay" id="time_of_stay">
+                  </div>
+                </div>
+                <div>
+                  <label for="work_model">Modelo de trabalho:</label>
+                  <input type="text" class="outline-focus" name="time_of_stay" id="work_model">
+                </div>
+                <div>
+                  <label for="reserve">Reserva para:</label>
+                  <input type="text" class="outline-focus" name="reserve" id="reserve">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="container_popUp_avaliation-owner">
+    <div class="popUp_avaliation-owner">
+      <form action="" method="">
+        <img id="close_popUp_avaliation" src="images/default/close_icon.svg" alt="close">
+        <div class="popUp_flex">
+          <img id="ilustration" src="images/my-account/reservations/cancel_reservations2.png">
+          <div>
+
+            <label for="comment1">Avalie o espaço</label>
+
+            <ul class="rating">
+              <li><img class="star" src="images/search-spaces/search/star.png" alt="estrela"></li>
+              <li><img class="star" src="images/search-spaces/search/star.png" alt="estrela"></li>
+              <li><img class="star" src="images/search-spaces/search/star.png" alt="estrela"></li>
+              <li><img class="star" src="images/search-spaces/search/star.png" alt="estrela"></li>
+              <li><img class="star" src="images/search-spaces/search/star.png" alt="estrela"></li>
+            </ul>
+
+            <textarea name="comment1" id="comment1" rows="2" placeholder="Comente aqui (opcional)" class="form-control"></textarea>
+          </div>
+        </div>
+        <div>
+          <button id="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="container_popUp-cancelRequest">
+    <div class="popUp-cancelRequest">
+      <img id="close_popUp_cancelRequest" src="images/default/close_icon.svg" alt="close">
+      <p>Tem certeza que deseja <span>cancelar</span> de vez essa solicitação de reserva?
+        <br>Esta ação não poderá ser desfeita
+      </p>
+
+      <div>
+        <button type="submit" id="yes">Sim</button>
+        <button id="no">Não</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<footer class="container_margin_default">
+    <%- include('../../partial/footer.ejs')%>
+</footer>
+
+
+<script src="https://kit.fontawesome.com/e4e1096c30.js" crossorigin="anonymous"></script>
+<script src="script/default/header/header.js"></script>
+<script src="script/default/register/register.js"></script>
+<script src="script/default/header/autocomplete_api.js"></script>
+<script src="script/my-account/booking-requests.js"></script>
+
+
+</body>
+
+</html>

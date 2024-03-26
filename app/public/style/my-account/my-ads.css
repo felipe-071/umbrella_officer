@@ -1,0 +1,505 @@
+ul {
+    list-style: none;
+}
+
+#my-ads {
+    position: relative;
+}
+
+#my-ads>div {
+    padding: 220px 0 80px 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: var(--text-1-black);
+}
+
+#my-ads::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: calc(50% - 280px);
+    background-color: var(--scale-9-blue);
+}
+
+/*Meus anúncios: conteúdo*/
+#actives_space,
+#inactives_space {
+    width: 744px;
+}
+
+#my-ads>div>div h1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#my-ads_navigation {
+    margin-bottom: 30px;
+}
+
+#my-ads_navigation ul {
+    display: flex;
+    margin: 30px 0 7px;
+    border-bottom: 1px solid var(--gray-border);
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-1-black);
+}
+
+.option-checked {
+    font-weight: 900;
+    color: var(--scale-3-purple);
+    outline: none;
+    border-bottom: 3px solid var(--scale-3-purple);
+    padding-bottom: 10px;
+}
+
+#my-ads_navigation ul li {
+    font-size: 16px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+#actives_space ul li .ads-space,
+#inactives_space ul li .ads-space { 
+    display: flex;
+    width: 744px;
+    margin-bottom: 35px; 
+}
+
+#actives_space ul li .ads-space .space-img,
+#inactives_space ul li .ads-space .space-img { 
+    width: 200px;
+    height: 209px;
+    position: relative;
+}
+
+#actives_space ul li .ads-space .space-img img,
+#inactives_space ul li .ads-space .space-img img { 
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    object-position: center;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+
+#actives_space ul li .ads-space .space-description,
+#inactives_space ul li .ads-space .space-description {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    width: 542px;
+    height: 209px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+#actives_space ul li div .space-description .description-text h2,
+#inactives_space ul li div .space-description .description-text h2{
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px;
+    margin: 25px 0 20px 0;
+}
+
+#actives_space ul li div .space-description .description-text p,
+#inactives_space ul li div .space-description .description-text p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+#actives_space ul li div .space-description .description-text h3,
+#inactives_space ul li div .space-description .description-text h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.space-actions {
+    display: flex;
+    justify-content: space-between; 
+    align-items: self-end;
+}
+
+.space-actions h3 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 24px;
+}
+
+.space-actions>div button {
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 38px;
+}
+
+#view_officing {
+    background-color: var(--scale-1-blue);
+    margin-right: 10px;
+}
+
+.delete {
+    background-color: var(--scale-12-red);
+}
+
+#eyes {
+    background-color: var(--scale-1-blue);
+    margin-right: 5px;
+}
+
+#edit {
+    background-color: var(--scale-2-purple);
+    margin-right: 5px;
+}
+
+.eyes,
+.edit,
+.check,
+.trash {
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    padding: 2px;
+} 
+
+#solicitation_res {
+    font-size: 14px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+}
+
+#solicitation_res {
+    background-color: var(--scale-2-purple);
+    border: none;
+    padding: 10px;
+    color: var(--white);
+    border-radius: 12px;
+}
+
+#inactives_space {
+    display: none;
+}
+
+#container_popUp_delete {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+}
+
+.popUpChecked {
+    display: flex;
+}
+
+.popUp_delete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0px 0px 6px 5px rgb(1 1 1 / 9%);
+    padding: 20px;
+    width: 800px;
+    animation: fadeIn ease .27s;
+}
+
+#close_pop {
+    width: 18px;
+    cursor: pointer;
+    align-self: end;
+}
+
+.popUp_delete p {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.popUp_delete p>span {
+    color: var(--scale-12-red);
+}
+
+.popUp_delete div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popUp_delete>div button {
+    width: 188px;
+    height: 38px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 30px 0;
+}
+
+#yes {
+    background-color: white;
+    background-color: var(--scale-12-red);
+    color: #fff;
+    margin-right: 30px;
+    border: none;
+}
+
+#no {
+    border: none;
+    color: #333;
+}
+
+#no:hover {
+    background-color: var(--scale-11-blue);
+    color: #fff;
+}
+
+
+@media(min-width: 320px) and (max-width: 550px){
+    #container_menu > a > button { 
+        width: 136px;
+        height: 36px;
+        margin: 0;
+        font-size: 13.5px;
+    }
+
+    #my-ads::before { 
+        display: none; 
+    }
+
+    #my-account-menu {
+        display: none;
+    }
+
+    #my-ads>div {
+        padding-top: 140px;  
+        width: 96%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #my-ads_spaces {
+        width: 86%;
+    }
+
+    .option-checked { 
+        margin-bottom: -1px;
+    }
+
+    #my-ads_navigation ul li {
+        font-size: 16px;
+        margin-right: 20px; 
+    }
+
+    #actives_space,
+    #inactives_space {
+        width: 100%;
+    }
+
+    #actives_space ul li .ads-space, 
+    #inactives_space ul li .ads-space { 
+        width: 100%; 
+        flex-direction: column;
+    }
+
+    #actives_space ul li .ads-space .space-img, 
+    #inactives_space ul li .ads-space .space-img {
+        width: 100%; 
+    }
+
+    #actives_space ul li .ads-space .space-description, 
+    #inactives_space ul li .ads-space .space-description {
+        width: 100%;
+        height: 220px;
+        padding: 20px 0 0 0;
+    }
+
+    #actives_space ul li div .space-description .description-text h2, 
+    #inactives_space ul li div .space-description .description-text h2 {
+        font-size: 18px; 
+        margin: 0;
+    }
+
+    #actives_space ul li div .space-description .description-text p, 
+    #inactives_space ul li div .space-description .description-text p {
+        font-size: 13px; 
+        margin-top: 15px;
+    }
+
+    #actives_space ul li div .space-description .description-text h3, 
+    #inctives_space ul li div .space-description .description-text h3 {
+        font-size: 14px; 
+    }
+
+    .space-actions { 
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #solicitation_res {
+        font-size: 13px;
+       margin-bottom: 10px;
+    }
+
+    .space-actions>div button {
+        border: none;
+        width: 34px;
+        height: 34px;
+        border-radius: 38px;
+    }
+
+    .space-actions>div button i {
+        font-size: 13px;
+    }
+
+    /*Pop up - Deletar espaço*/  
+    .popUp_delete {
+        width: 70%;
+        margin: 0 16px;
+    }
+
+    .popUp_delete p { 
+        font-size: 15px; 
+    }
+
+    .popUp_delete>div button {
+        width: 110px;
+        height: 29px; 
+        font-size: 15px; 
+    }
+
+    #yes {
+        margin-right: 15px;
+    } 
+}
+
+@media(min-width: 550px) and (max-width: 841px)  { 
+    #container_menu > a > button { 
+        width: 136px;
+        height: 36px;
+        margin: 0;
+        font-size: 13.5px;
+    }
+
+    #my-ads::before { 
+        display: none; 
+    }
+
+    #my-account-menu {
+        display: none;
+    }
+
+    #my-ads>div {
+        padding-top: 150px;  
+        width: 96%;
+    }
+
+    #my-ads_spaces {
+        width: 100%;
+    }
+
+    .option-checked { 
+        margin-bottom: -1px;
+    }
+
+    #actives_space, #inactives_space {
+        width: 100%;
+    }
+
+    #actives_space ul li .ads-space, 
+    #inactives_space ul li .ads-space {
+        width: 100%;
+    }
+
+    #actives_space ul li .ads-space .space-img, 
+    #inactives_space ul li .ads-space .space-img {
+        width: 45%;
+    }
+
+    #actives_space ul li .ads-space .space-description, 
+    #inactives_space ul li .ads-space .space-description {
+        width: 70%; 
+    }
+
+    #actives_space ul li div .space-description .description-text h2, 
+    #inactives_space ul li div .space-description .description-text h2 {
+        font-size: 18px;
+        margin: 18px 0 20px 0;
+    }
+
+    #actives_space ul li div .space-description .description-text p, 
+    #inactives_space ul li div .space-description .description-text p {
+        font-size: 14px; 
+    }
+
+    #solicitation_res {
+        font-size: 13px; 
+    }
+
+    .space-actions>div button {
+        border: none;
+        width: 34px;
+        height: 34px;
+        border-radius: 38px;
+    }
+
+    .space-actions>div button i {
+        font-size: 13px;
+    }
+
+    /*Pop-up - Excluir de anúncio*/
+    .popUp_delete {
+        margin: 0 16px;
+    }   
+} 
+
+@media(min-width: 841px) and (max-width: 1159px) { 
+    main #my-ads::before {  
+        width: 28%;
+    }
+
+    #my-ads>div {
+        width: 100%;
+    }
+
+    #my-ads #my-ads_spaces {
+        width: 68%;
+    }
+
+    #actives_space, 
+    #inactives_space {
+        width: 100%;
+    }
+
+    #actives_space ul li .ads-space, 
+    #inactives_space ul li .ads-space { 
+        width: 100%; 
+    }
+
+    #actives_space ul li .ads-space .space-img, 
+    #inactives_space ul li .ads-space .space-img {
+        width: 45%; 
+    }
+
+    #actives_space ul li .ads-space .space-description, 
+    #inactives_space ul li .ads-space .space-description { 
+        width: 80%; 
+    }
+
+    /*Pop up - Deletar espaço*/
+    .popUp_delete { 
+        width: 766px; 
+    }
+}

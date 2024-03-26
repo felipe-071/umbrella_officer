@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style/default/default.css">
+    <link rel="stylesheet" href="style/admin/admin.css">
+    <link rel="stylesheet" href="style/admin/users-control.css">
+</head>
+
+<body>
+    <header id="header-admin" class="container_margin_default">
+        <div class="default_margin">
+            <span>
+            <div>
+                <h3>
+                    Olá, <b>Julia</b><br>
+                    Administrador(a)
+                </h3>
+                <img src="/images/admin/admin-julia.png" alt="Administradora">
+            </div>
+        </div>
+    </header>
+
+    <div id='box_black'></div>
+
+    <main>
+        <div id="admin" class="container_margin_default">
+            <div class="default_margin">
+                <nav>
+                    <ul>
+                        <li class="option">
+                            <a href="/controle-geral"><i class="fa-solid fa-chart-column icon"></i>
+                                Controle geral</a>
+                        </li>
+                        <li class="option">
+                            <a href="#">
+                                <i class="fa-regular fa-user icon-ativo"></i>
+                                Usuários</a>
+                        </li>
+                        <li class="option">
+                            <a href="/controle-de-anuncios"><i class="fa-solid fa-bullhorn icon"></i>
+                                Anúncios</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <section id="users-control_section1" class="container_margin_default">
+                    <h1>Usuários</h1>
+
+                    <div>
+
+                        <div class="container_search-admin_input">
+                            <input id="search-admin_txt" placeholder="Procure um usuário específico"></input>
+                            <div>
+                                <img src="images/default/search.svg" alt="Pesquisa">
+                            </div>
+                        </div>
+
+                        <div class="select-box">
+                            <div class="options-container">
+                                <div class="option">
+                                    <input type="radio" class="radio" id="most-recents" name="category" />
+                                    <label for="most-recents">Mais recentes</label>
+                                </div>
+
+                                <div class="option">
+                                    <input type="radio" class="radio" id="oldest" name="category" />
+                                    <label for="oldest">Mais antigas</label>
+                                </div>
+
+                                <div class="option">
+                                    <input type="radio" class="radio" id="alphabetical-order" name="category" />
+                                    <label for="alphabetical-order">De A-Z</label>
+                                </div>
+                            </div>
+
+                            <div class="selected">
+                                Ordernar por
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul>
+                        <li>
+                            <div>
+                            <img src="images/admin/aline-user.png" alt="Usuária">
+                            
+                            <span>
+                                <h2>Aline dos Santos<br>
+                                    Ribeiro Luna</h2>
+                                <h4>Cadastro: 20/06/2022</h4>
+                            </span>
+                            </div>
+
+                            <div>
+                                <p>alineluna01@gmail.com</p>
+                                <p>(11) 9 1234-5678</p>
+                            </div>
+
+                            <div>
+                                <button type="" class="more-informations">
+                                    Mais inf.
+                                </button>
+                                <button type="submit" id="delete-user">
+                                    Deletar
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <div id="container_popUp-user">
+            <div class="popUp-user">
+                <img id="close_pop-user" src="images/default/close_icon.svg" alt="close">
+                <h2>Aline dos Santos<br>Ribeiro Luna</h2>
+
+                <ul>
+                    <li><h3>RG</h3>
+                        12.345.678-9 (SSP)
+                    </li>
+                    <li><h3>CPF</h3>
+                        123.456.789-0
+                    </li>
+                    <li><h3>Sexo</h3>
+                        Feminino
+                    </li>
+                    <li><h3>Endereço</h3>
+                        Rua do Paço, nº 157 <br>Engenho Novo - Barueri/SP | <br> 06212-121
+                    </li>
+                    <li>
+                        <img src="images/my-account/my-profile/insta.svg" alt="Ícone do Instagram">
+                        <i class="fa-brands fa-whatsapp whats"></i>
+                        <i class="fa-brands fa-facebook face"></i>
+                        <i class="fa-brands fa-linkedin linkedin"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://kit.fontawesome.com/e4e1096c30.js" crossorigin="anonymous"></script>
+    <script src="script/default/header/header.js"></script>
+    <script src="script/admin/admin.js"></script>
+    <script src="script/admin/users-control.js"></script>
+
+</body>
+
+</html>

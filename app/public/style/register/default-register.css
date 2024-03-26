@@ -1,0 +1,65 @@
+#register .fields{
+  display: none;
+}
+
+#register fieldset{
+  flex-direction: row;
+}
+
+#flex-direction > a{
+  border-radius: 33px;
+  background: var(--gray-border);
+}
+
+#flex-direction > a > input[type='button']{
+    width: 186px;
+    height: 36px;
+    border: none;
+    border-radius: 20px;
+    background-color: inherit;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 17.5px;
+    padding: 0;
+}
+
+#type-of-environment_section .advanceButton{
+  margin-top: 25px;
+  align-self: flex-end;
+}
+
+.next_default{
+  background-color: var(--scale-2-purple) !important;
+}
+
+.header-buttons{
+  display: flex;
+  justify-content: space-between;
+  width: 210px;
+}
+
+.header-buttons > a  button:hover{
+  background-color: #bdbdbd;
+}
+
+
+.header-buttons button{
+  transition: .3s ease;
+  width: 95px;
+  height: 40px;
+  background-color: var(--scale-2-gray);
+  border: none;
+  border-radius: 20px;
+  color: var(--text-1-black);
+  font-weight: 600;
+}
+
+#register{
+  width: 100%;
+}
+
+
+
+.space-box{
+  border: 2px solid transparent;
+}

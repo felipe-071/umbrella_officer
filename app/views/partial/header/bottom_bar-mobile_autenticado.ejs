@@ -1,0 +1,100 @@
+<div id="bottom_bar-mobile">
+    <nav>
+      <ul>
+        <li class="bars"> 
+            <i class='bx bx-menu icon bar'></i> 
+            <i class='bx bx-x icon close'></i>
+        </li> 
+
+        <li>
+            <a href="/">
+              <i class='bx bx-home icon icon-color'></i>
+            </a>
+        </li>
+      
+        <li>
+          <i class='bx bx-search search'></i>
+        </li>
+
+        <li> 
+            <a href="/favoritos">
+                <i class='bx bx-heart icon'></i>
+            </a>
+        </li>
+
+        <div>
+            <a href="/central-de-ajuda"><i class='bx bx-info-circle icon'></i></a>
+        </div>
+
+      </ul>
+    </nav>
+
+    <div id="menu_mobile">
+        <div class="user">
+            <div class="picture_edit">
+                <div id="mask_image_profile">
+                <%if(autenticado.profile_picture != null){%>
+                    <img class="image_profile" src="data:image/gif;base64,<%=autenticado.profile_picture%>" alt="Foto de perfil">                                   
+                <%}%>
+    
+                <%if(autenticado.profile_picture == null){%>
+                    <img class="image_profile" src="images/default/perfil.png" alt="Foto de perfil">                               
+                <%}%>
+                </div>   
+                <i class="fa-solid fa-pen pictureProfile list"></i>
+            </div>
+            <div id="user_informations">
+                <h3><%=autenticado.name%></h3>
+                <span><%=autenticado.profession%></span>
+            </div>
+        </div>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="/meu-perfil">
+                        Meu perfil 
+                        <i class="fa-solid fa-chevron-right menuArrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/dados-pessoais"> 
+                        Dados pessoais
+                        <i class="fa-solid fa-chevron-right menuArrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/minhas-reservas"> 
+                        Minhas reservas 
+                        <i class="fa-solid fa-chevron-right menuArrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/meus-anuncios"> 
+                        Meus anúncios
+                        <i class="fa-solid fa-chevron-right menuArrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/calendario"> 
+                        Calendário
+                        <i class="fa-solid fa-chevron-right menuArrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/calendario"> 
+                        Notificações
+                        <i class="fa-solid fa-chevron-right menuArrow"></i>
+                    </a>
+                </li> 
+            </ul>
+
+            <button id="log_out">
+                <a href="/sair">
+                Sair
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
+            </button>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="22" height="22">
+	<title>Novo Projeto</title>
+	<defs>
+		<image  width="19" height="19" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAMAAABFjsb+AAAAAXNSR0IB2cksfwAAAJNQTFRF////pgAUpgAUqw8ipwIWpgAUqw4hpgAU9+fppgAUpgAUrBAj3Z+npgAUqxAisiIzpgAUqAUYqgodpgAUpgAUpgAU2I+YzXB7w1Rh14uUpgAUpgAU/vv7pgAUpwQY3Z+n46+1pgAUpgAUpgAUyGJvpgAUpgAUpwIVpgAUpgAUpgAUpgAUpgAUpgAUpgAUpgAUpgAU1CY6uwAAADF0Uk5TACBv/////zUAEH//ABb//xL//7/ZOx7//096rgDv////5vVcKYPa/yw54fFg4/7qexCStLkAAACUSURBVHicXZBXEsMwCEQ3iTe9NznFsdJ7uf/pMmiQbGs/YHhiQCwgqtUbCZNmqw2vTpeqXl/RYMhCo7FjE5Y1FTRjVXNgIXlpXJmuJK6xkWQgMN26pww7eqiIhE4xyD0KjBaWjPssoj6ZZzzEvtir8IBj6X/mJPEMXKI7MjnuWmXOg1sF3tWtRyDPYCpe74+Q789Vf8ttC60VlqS3AAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="1" y="1"/>
+</svg>

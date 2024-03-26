@@ -1,0 +1,1039 @@
+#booking-requests>div {
+    position: relative;
+    padding-top: 181px;
+    padding-bottom: 80px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+/*Menu lateral*/
+#come_back {
+    display: flex;
+    width: 64px;
+    padding: 0;
+    align-items: center;
+    background-color: white;
+    border: none;
+    margin-bottom: 35px;
+    justify-content: space-around;
+}
+
+#come_back {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--scale-13-blue);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-1-black);
+}
+
+#bottom-bar_booking-requests ul {
+    list-style: none;
+}
+
+#bottom-bar_booking-requests ul li {
+    display: flex;
+    max-width: 160px;
+    padding: 10px;
+    height: 40px;
+    align-items: center;
+}
+
+.option-checked {
+    border-left: 3px solid var(--scale-13-blue);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--scale-13-blue);
+}
+
+.options_menu {
+    font-size: 16px;
+}
+
+#booking-requests>div article {
+    width: 784px;
+}
+
+.chooseOption {
+    content: "";
+    border-left: solid 0.2rem var(--scale-3-purple);
+    height: 4.8rem;
+    position: absolute;
+    top: 0.4rem;
+}
+
+#confirmed,
+#canceled,
+#client-avaliation {
+    display: none;
+}
+
+/*Solicitações de reservas*/
+#booking-requests>div h1{
+    margin-bottom: 30px;
+}
+
+#booking-requests>div article {
+    width: 880px;
+}
+
+#booking-requests>div article ul li {
+    display: flex;
+    padding: 15px 10px;
+    justify-content: space-between;
+}
+
+.background {
+    background: rgb(241 241 241 / 45%);
+}
+
+ul li .profile {
+    display: flex;
+}
+
+.profile div {
+    width: 44px;
+    height: 44px;
+    margin-right: 10px;
+}
+
+.profile div img {
+    width: 100%;
+}
+
+#booking-requests>div article ul li div h3 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#booking-requests>div article ul li div h3 span {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 256px;
+}
+
+.actions button {
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.actions button i {
+    font-size: 16px;
+    color: #fff;
+}
+
+.actions .viewDates a i {
+    margin-right: 5px;
+}
+
+.actions .viewDates {
+    width: 161px;
+    background-color: var(--scale-13-blue);
+}
+
+.calendar {
+    margin-right: 5px;
+}
+
+.confirm,
+.cancel,
+.definitely_cancel,
+.renew {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #DADAF5;
+}
+
+.confirm:hover,
+.cancel:hover,
+.definitely_cancel:hover,
+.renew:hover {
+    background-color: var(--scale-13-blue);
+}
+
+#confirmed ul li .actions {
+    width: 216px;
+}
+
+#client-avaliation .actions {
+    width: 161px;
+}
+
+#client-avaliation .avaliation {
+    font-size: 13.5px;
+    font-weight: 600;
+    width: 161px;
+    background-color: var(--scale-13-blue);
+}
+
+/*Pop-up - Consultar datas*/
+#container_popUp-viewDate {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    padding: 0;
+}
+
+#container_popUp-viewDate>div {
+    display: flex;
+    flex-direction: column;
+}
+
+#viewDates-close {
+    align-self: flex-end;
+    width: 88px;
+    padding: 5px;
+    background: var(--scale-2-purple);
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+#popUp-viewDate {
+    display: flex;
+    width: 780px;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Pop-up - Consultar datas: Calendário*/
+#popUp-viewDate_calendar {
+    background: #fff;
+    padding: 50px 30px;
+    border-radius: 10px;
+    height: 589px;
+    box-sizing: border-box;
+    color: var(--text-1-black);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.calendar-week-day {
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.calendar-week-day div {
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.calendar-days div {
+    width: 45px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    animation: to-top 1s forwards;
+}
+
+.calendar-days div span {
+    position: absolute;
+}
+
+.calendar-days div:hover span {
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+
+.calendar-days div:hover span:nth-child(1),
+.calendar-days div:hover span:nth-child(3) {
+    height: 100%;
+}
+
+.calendar-days div span:nth-child(1) {
+    bottom: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(3) {
+    top: 0;
+    right: 0;
+}
+
+.calendar-days div span:nth-child(2),
+.calendar-days div span:nth-child(4) {
+    width: 0;
+    height: 2px;
+}
+
+.calendar-days div:hover span:nth-child(2),
+.calendar-days div:hover span:nth-child(4) {
+    width: 100%;
+}
+
+.calendar-days div span:nth-child(2) {
+    top: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(4) {
+    bottom: 0;
+    right: 0;
+}
+
+.calendar-days div:hover span:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.calendar-days div:hover span:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.calendar-days div:hover span:nth-child(4) {
+    transition-delay: 0.6s;
+}
+
+.calendar-days div.curr-date,
+.calendar-days div.curr-date:hover {
+    background-color: var(--blue);
+    border-radius: 50%;
+}
+
+.calendar-days div.curr-date span {
+    display: none;
+}
+
+.month-picker {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.year-picker {
+    display: flex;
+    align-items: center;
+}
+
+.year-change {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#year {
+    margin: 0 10px;
+}
+
+.toggle {
+    display: flex;
+}
+
+.toggle span {
+    margin-right: 10px;
+}
+
+.month-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    display: grid;
+    transform: scale(1.5);
+    visibility: hidden;
+    pointer-events: none;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.month-list.show {
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: visible;
+    transition: all 0.2s ease-in-out;
+}
+
+.month-list>div {
+    display: grid;
+    place-items: center;
+}
+
+.month-list>div>div {
+    padding: 5px 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.month-list>div>div:hover {
+    font-weight: 600;
+}
+
+@keyframes to-top {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/*Pop-up - Consultar datas: Salas*/
+#popUp-viewDate_room {
+    width: 280px;
+    height: 589px;
+    position: relative;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#popUp-viewDate_room>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rooms-informations-container>div h4 {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.rooms-informations-container>div span {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    color: #666;
+}
+
+.rooms-informations-container .container_img {
+    width: 150px;
+    height: 150px;
+    margin: 15px 0;
+}
+
+.rooms-informations-container .container_img img {
+    width: 100%;
+}
+
+.room-description {
+    width: 100%;
+}
+
+.room-description ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.room-description ul li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.room-description ul li:nth-child(1) {
+    width: 72px;
+}
+
+.room-description ul li img {
+    width: 15px;
+    margin-right: 5px;
+}
+
+.room-description form label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.room-description form input {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    border: 1px solid var(--gray-border);
+    border-radius: 5px;
+    padding: 6px;
+    resize: none;
+    width: -webkit-fill-available;
+    outline: none;
+    margin: 10px 0 20px 0;
+}
+
+.room-description form .flex {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-column-gap: 22px;
+    position: relative;
+}
+
+/*Pop-up - Avaliar o cliente*/
+#container_popUp_avaliation-owner {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+}
+
+.popUp_avaliation-owner {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 16px;
+    box-sizing: border-box;
+    background: white;
+    padding: 20px;
+    width: 950px;
+    padding: 40px 45px 15px 45px;
+    animation: fadeIn ease .27s;
+}
+
+#close_popUp_avaliation {
+    margin: -10px -20px 10px;
+}
+
+.popUp_flex {
+    display: flex; 
+    top: 0;
+}
+
+.popUp_flex img {
+    width: 200px;
+    margin: -20px 50px 0 -10px
+}
+
+.popUp_flex div {
+    width: 100%;
+}
+
+.popUp_flex label {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 10px 0 10px;
+    width: 15%;
+    list-style: none;
+}
+
+.rating li {
+    width: 50px;
+    cursor: pointer;
+}
+
+.rating img {
+    width: 30px;
+}
+
+.popUp_flex textarea {
+    border: 1px solid var(--gray-border);
+    border-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+    resize: none;
+    width: -webkit-fill-available;
+    outline: none;
+    margin-top: 15px;
+    font-family: var(--font-primary);
+    font-size: 16px;
+}
+
+.popUp_flex textarea {
+    font-size: 16px;
+}
+
+.popUp_flex~div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#submit {
+    background-color: var(--scale-2-purple);
+    border: none;
+    width: 150px;
+    height: 32px;
+    color: var(--white);
+    border-radius: 30px;
+}
+
+#submit {
+    font-size: 16px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+}
+
+/*Pop-up - Não confirmar solicitação*/
+#container_popUp-cancelRequest {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+}
+
+.popUp-cancelRequest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0px 0px 6px 5px rgb(1 1 1 / 9%);
+    padding: 20px;
+    width: 800px;
+    animation: fadeIn ease .27s;
+}
+
+#close_popUp_cancelRequest {
+    width: 18px;
+    cursor: pointer;
+    align-self: end;
+}
+
+.popUp-cancelRequest p {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.popUp-cancelRequest p>span {
+    color: var(--scale-12-red);
+}
+
+.popUp-cancelRequest div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popUp-cancelRequest>div button {
+    width: 188px;
+    height: 38px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 30px 0;
+}
+
+#yes {
+    background-color: white;
+    background-color: var(--scale-12-red);
+    color: #fff;
+    border: none;
+    margin-right: 30px;
+}
+
+#no { 
+    border: none;
+    color: #333;
+}
+
+#no:hover {
+    background-color: var(--scale-11-blue);
+    color: #fff;
+}
+
+@media(min-width: 320px) and (max-width: 480px) {
+    #container_menu>a>button {
+        width: 136px;
+        height: 36px;
+        margin: 0;
+        font-size: 13.5px;
+    }
+
+    #booking-requests>div {
+        padding-top: 140px;
+        flex-direction: column;
+        width: 96%;
+    }
+
+    #bottom-bar_booking-requests {
+        width: 100%;
+        position: relative;
+    }
+
+    #come_back {
+        font-size: 13px;
+    }
+
+    #bottom-bar_booking-requests ul {
+        display: flex;
+        overflow-x: scroll;
+        margin: -20px 5px 0 5px;
+        white-space: nowrap !important;
+    }
+
+    #bottom-bar_booking-requests ul::-webkit-scrollbar {
+        width: 100%;
+        height: 1px;
+        background: var(--gray-border); 
+    }
+
+    #bottom-bar_booking-requests ul li {
+        display: flex;
+        max-width: 160px;
+        padding: 0;
+        margin: 0 20px 0 0; 
+        align-items: center;
+    }
+
+    #bottom-bar_booking-requests ul li:nth-child(4) { 
+        margin: 0;  
+    }
+
+    .options_menu {
+        font-size: 13px;
+    }
+
+    .option-checked {
+        border-bottom: 3px solid var(--scale-13-blue);
+        border-left: 0;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--scale-13-blue);
+    }
+
+    #booking-requests_articles {
+        width: 100%;
+    }
+
+    #booking-requests>div article {
+        width: 100%;
+    }
+
+    #booking-requests>div h1 {
+        margin: 30px 0 20px 0;
+    }
+
+    #booking-requests_articles article ul li {
+        height: 200px;
+        flex-direction: column;
+    }
+
+    .actions { 
+        width: 220px;
+    }
+
+    .actions .viewDates {
+        width: 138px;
+        background-color: var(--scale-13-blue);
+    }
+
+    .actions button { 
+        width: 31px;
+        height: 30px;  
+        font-size: 13px;
+    }
+
+    .actions button i {
+        font-size: 14px; 
+    }
+
+    #client-avaliation .avaliation {
+        font-size: 13px;
+        font-weight: 600;
+        width: 138px;
+        background-color: var(--scale-13-blue);
+    }
+
+    .popUp_avaliation-owner {
+        margin: 0 8px;
+        padding: 30px 30px 15px 30px;
+        width: 95%;
+    }
+
+    #ilustration {
+        display: none;
+    }
+
+    #close_popUp_avaliation {
+        width: 16px;
+        height: 16px;
+        margin: -10px -10px 10px;
+    }
+
+    .rating li img {
+        width: 28px;
+    }
+
+    .popUp_avaliation-owner div div label {
+        font-size: 20px;
+    }
+
+    .popUp_avaliation-owner div div textarea {
+        font-size: 14px;
+        margin: 20px 0 10px 0;
+    }
+
+    #submit {
+        font-size: 13.5px;
+        width: 120px;
+    }
+
+    /*Pop up - Cancelar solicitação de reserva definitivamente*/  
+    .popUp-cancelRequest {
+        width: 70%;
+        margin: 0 16px;
+    }
+
+    .popUp-cancelRequest p { 
+        font-size: 14px; 
+    }
+
+    .popUp-cancelRequest>div button {
+        width: 110px;
+        height: 29px; 
+        font-size: 15px; 
+    }
+
+    #yes {
+        margin-right: 15px;
+    } 
+}
+
+@media(min-width: 480px) and (max-width: 841px) {
+    #container_menu>a>button {
+        width: 136px;
+        height: 36px;
+        margin: 0;
+        font-size: 13.5px;
+    }
+
+    #booking-requests>div {
+        padding-top: 150px;
+        flex-direction: column;
+        width: 96%;
+    }
+
+    #bottom-bar_booking-requests {
+        width: 100%;
+        position: relative;
+    }
+
+    #come_back {
+        font-size: 13px;
+    }
+
+    #bottom-bar_booking-requests ul {
+        display: flex;
+        overflow-x: scroll;
+        margin: -20px 5px 0 5px;
+        white-space: nowrap !important;
+    }
+
+    #bottom-bar_booking-requests ul::-webkit-scrollbar {
+        width: 100%;
+        height: 1px;
+        background: var(--gray-border); 
+    }
+
+    #bottom-bar_booking-requests ul li {
+        display: flex;
+        max-width: 160px;
+        padding: 0;
+        margin: 0 20px 0 0; 
+        align-items: center;
+    }
+
+    #bottom-bar_booking-requests ul li:nth-child(4) { 
+        margin: 0;  
+    }
+
+    .options_menu {
+        font-size: 13px;
+    }
+
+    .option-checked {
+        border-bottom: 3px solid var(--scale-13-blue);
+        border-left: 0;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--scale-13-blue);
+    }
+
+    #booking-requests>div h1 {
+        margin: 30px 0 20px 0;
+    }
+
+    #booking-requests_articles {
+        width: 100%;
+    }
+
+    #bottom-bar_booking-requests-desktop ul {
+        display: none;
+    }
+
+    ul li .profile {
+        width: 120px;
+    }
+
+    .profile div {
+        width: 55px;
+        height: 55px; 
+    }
+
+    #booking-requests>div article {
+        width: 100%;
+    }
+
+    #booking-requests>div h1 {
+        margin-bottom: 20px;
+    }
+
+    .actions {
+        max-width: 120px;
+    }
+
+    .actions button {
+        width: 35px;
+        height: 35px;
+    }
+
+    #confirmed ul li .actions {
+        width: 90px;
+    }
+
+    .actions .viewDates {
+        width: 35px; 
+    }
+
+    .viewDates span {
+        display: none;
+    }
+
+    .calendar {
+        margin: 0;
+    } 
+    
+    .popUp_avaliation-owner {
+        width: 100%; 
+        margin: 0 16px;
+        padding: 30px 30px 15px 30px;
+    }
+
+    #close_popUp_avaliation {
+        width: 16px;
+        height: 16px;
+        margin: -10px -10px 10px;
+    }
+
+    #ilustration {
+        width: 165px; 
+    }
+
+    .rating img {
+        width: 28px;
+    }
+
+    .popUp_avaliation-owner label {
+        font-size: 20px;
+    }
+
+    .popUp_avaliation-owner textarea {
+        font-size: 14px;
+        margin: 20px 0 10px 0;
+    }
+
+    /*Pop-up - Cancelar solicitação de reserva defitivamente*/
+    .popUp-cancelRequest {
+        margin: 0 16px;
+    }   
+}
+
+@media(min-width: 841px) and (max-width: 1159px) {
+    .options_menu {
+        font-size: 14.5px;
+    }
+
+    #booking-requests_articles {
+        width: 78%;
+    }
+
+    #booking-requests>div article {
+        width: 100%;
+    }
+
+    .actions {
+        width: 140px;
+    }
+
+    #confirmed ul li .actions {
+        width: 90px;
+    }
+
+    .actions .viewDates {
+        width: 36px;
+        background-color: var(--scale-13-blue);
+    }
+
+    .viewDates span {
+        display: none;
+    }
+
+    .calendar {
+        margin: 0;
+    }
+
+    /*Pop up - Cancelar solicitação de reserva*/
+    .popUp-cancelRequest { 
+        width: 766px; 
+    }
+}

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js" integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtJGza4SniYHefeNwCdE4gU3sg1AU4fiU&&libraries=places"></script>
+  <link rel="stylesheet" href="style/default/default.css">
+  <link rel="stylesheet" href="style/search-spaces/officing-description.css">
+</head>
+
+<div id='box_black'></div>
+
+<body>
+  <header id="header" class="container_margin_default">
+    <div class="default_margin">
+      <a href="/"> <img src="images/default/logo.svg" alt="logo"> </a>
+      <div id="container_search">
+        <ul id="type_office">
+          <li class="option_office checked">Espaço adaptado</li>
+          <li class="option_office">Espaço corporativo</li>
+        </ul>
+        <div class="container_search_input">
+          <form action="/encontrar-espacos" method="post">
+            <span id="search_txt">Pesquise locais para trabalhar</span>
+            <div id='container_informations_find_coworking'>
+              <div class="gap_input_checked">
+                <input id="search_input" class="booking_informations" type="text" name="localizacao" placeholder="Localização:">
+              </div>
+              <div class="gap_input_checked" id="container_reservation">
+                <div class="booking_informations booking_informations_user input_checked" id="reservation">
+                  <div>
+                    <input type="text" placeholder="Check-in" id="dateFrom" name="dateFrom" autocomplete="off" value="">
+                    <hr>
+                    <input type="text" placeholder="Check-out" id="dateTo" name="dateTo" autocomplete="off" value="">
+                  </div>
+                </div>
+                <div class="popUp_input teste5">
+                  <div>
+                    <div id="from" class="teste"></div>
+                    <div id="to" class="teste"></div>
+                  </div>
+                  <span>
+                    Dias reservados:
+                    <input type="number" value="" name="reserved_days" id="reserved-days" disabled>
+                  </span>
+                </div>
+              </div>
+              <div class="gap_input_checked">
+                <span class="booking_informations booking_informations_user">N° de Pessoas</span>
+                <div id="container-guests" class="popUp_input">
+                  <div id="guests">
+                    <h5>N° de pessoas</h5>
+                    <div class="specification">
+                        <img class="subtract" src="images/search-spaces/search/subtract.png" alt="subtrair">
+                      <input type="number" min="0" value="4" name="people">
+                        <img class="addition" src="images//search-spaces/search/button-add.png" name="addition" alt="adicionar">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit">
+              <img src="images/default/search.svg" alt="pesquisa">
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div id="menu">
+        <div id='menu_sign-in-up'>
+          <img src="images/default/user.svg" alt="usuário">
+          <img src="images/default/menu_hamburguer.svg" alt="menu">
+        </div>
+        <%
+                if(autenticado){
+            %>
+        <%- include('../../partial/header/menu_autenticado.ejs'); %>
+        <%       
+            }else{
+            %>
+        <%- include('../../partial/header/menu.ejs'); %>
+        <%
+            } 
+          %>
+      </div>
+    </div>
+    <div id="container_popUp_login-signUp">
+      <div class="popUp">
+        <img class="close_popup" src="images/default/close_icon.svg" alt="close">
+        <h2>Umbrella Officing</h2>
+        <h3>Seja bem-vindo</h3>
+        <div>
+          <span>Faça seu login para continuar</span>
+          <form method="post" action="/login">
+            <label for="cpf-email">
+              CPF ou E-mail :
+              <input type="text" id="cpf-email" name="cpfEmail">
+            </label>
+
+            <label for="password-login">
+              Senha:
+              <input type="password" id="password-login" name="password">
+            </label>
+
+            <div>
+              <a href="#">Esqueceu a senha?</a>
+            </div>
+
+            <button class="form_button" type="submit">LOGIN</button>
+          </form>
+          <div id="alternatives">
+            <div><span>OR</span></div>
+            <div>
+              <span>Faça login com suas Redes Sociais</span>
+              <img src="images/default/icon-google.png" alt="ícone do google">
+              <img src="images/default/icon-facebok.svg" alt="ícone do facebbok">
+              <img src="images/default/icon-apple.png" alt="ícone do facebbok">
+              <span>Ainda não possui conta? <a href="#">Cadastre-se</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popUp">
+        <img class="close_popup" src="images/default/close_icon.svg" alt="close">
+        <h2>Umbrella Officing</h2>
+        <h3>Seja bem-vindo</h3>
+        <div>
+          <span>Cadastre-se e faça parte da nossa comunidade</span>
+          <form id="myform" method="post" action="/cadastro">
+            <fieldset id="test1" class="test">
+              <label for="name">
+                Nome:
+                <input type="text" id="name" name="name">
+              </label>
+              <label for="email">
+                E-mail:
+                <input type="email" id="email" name="email">
+              </label>
+
+              <label for="cpf">
+                CPF:
+                <input type="text" id="cpf" name="cpf">
+              </label>
+
+              <label for="password">
+                Senha:
+                <input type="password" id="password" name="password">
+              </label>
+
+              <label for="conf_password">
+                Confirmar senha:
+                <input type="password" class="form-control" id="conf_password" name="conf_password">
+              </label>
+              <input type="button" class="form_button next" value="Próximo">
+            </fieldset>
+            <fieldset id="test2" class="test campos">
+              <label for="birth_date">
+                Data de nascimento
+                <input type="date" id="birth_date" name="birth_date" required>
+              </label>
+              <label for="phone">
+                Telefone:
+                <input type="text" id="phone" name="phone" required>
+              </label>
+              <label for="profession">
+                Profissão:
+                <input type="text" id="profession" name="profession" required>
+              </label>
+              <button class="form_button" type="submit">CADASTRAR</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="container_popUp_profilePicture">
+      <div class="popUp_profilePicture">
+        <h2>Adicionar imagem de perfil</h2>
+        <div>
+          <form action="/perfil2" method="post" enctype="multipart/form-data">
+            <div class="actionPicture">
+              <div>
+                <%
+                                if(autenticado){
+                            %>
+                <%if(autenticado.profile_picture != null){%>
+                <img class="image_profile" src="data:image/gif;base64,<%=autenticado.profile_picture%>" alt="Foto de perfil">
+                <%}%>
+    
+                                <%if(autenticado.profile_picture == null){%>
+                <img class="image_profile" src="images/default/perfil.png" alt="Foto de perfil">
+                <%}%>
+                                
+                            <%       
+                            }else{
+                            %>
+                <img class="image_profile" src="images/default/perfil.png" alt="Foto de perfil">
+                <%
+                            } 
+                            %>
+              </div>
+            </div>
+
+            <div>
+              <div class="uploadPicture">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                <label for="ImagemPerfil">
+                  Carregar imagem
+                </label>
+                <input accept="image/" class="form-control" id="ImagemPerfil" name="ImagemPerfil" onchange="loadImg()" type="file" value="" />
+              </div>
+              <div class="deletePicture">
+                <i class="fa-solid fa-trash"></i>
+                <span>Remover imagem</span>
+              </div>
+              <div>
+                <input id="close" type="button" value="Fechar">
+                <button id="salve" type="submit">Guardar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav id="bottom-bar_mobile">
+    <div>
+      <h5><span>R$ 15</span>/hora, por pessoa</h5>
+
+      <button class="reserve">Reservar</button>
+    </div>
+  </nav>
+
+  <div id='box_black'></div>
+
+  <main>
+    <section id="officing_description_section1" class="container_margin_default">
+      <div class="default_margin">
+        <div>
+          <h1>Escritório Lape</h1>
+          <span class="p"><img src="images/search-spaces/officing-description/localization-pin.png" alt="localização"> Rio
+            das Flores, Rio de Janeiro - Brasil</span>
+          <div>
+            <div id="grid-container">
+              <div class="item content">
+                <img class="content" src="images/search-spaces/officing-description/escritorio-lape-1.jpg" alt="" srcset="">
+              </div>
+              <div class="item sidenav">
+                <img class="sidenav" src="images/search-spaces/officing-description/escritorio-lape-2.jpg" alt="">
+              </div>
+              <div class="item advert">
+                <img class="advert" src="images/search-spaces/officing-description/escritorio-lape-3.jpg" alt="">
+              </div>
+              <div class="item footer viewPhotos">
+                <img class="footer" src="images/search-spaces/officing-description/escritorio-lape-4.jpg" alt="">
+              </div>
+            </div>
+            <div id="slider-container">
+              <button id="morePictures">Ver fotos</button>
+              <ul class="slider-imgs">
+                <li>
+                  <div>
+                    <img class="space" src="images/search-spaces/officing-description/escritorio-lape-1.jpg" alt="" srcset="">
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <img class="space" src="images/search-spaces/officing-description/escritorio-lape-2.jpg" alt="">
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <img class="space" src="images/search-spaces/officing-description/escritorio-lape-3.jpg" alt="">
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <img class="space" src="images/search-spaces/officing-description/escritorio-lape-3.jpg" alt="">
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <span>
+          </div>
+
+          <div id="container-descrition">
+            <div id="description_officing">
+              <div>
+                <h2>Apartamento adaptado</h2>
+                <h3>Descrição</h3>
+                <p>Lugar inspirador, onde você vai ter experiências inovadoras e oportunidades disruptivas. Uma nova forma de trabalhar e se relacionar.</p>
+              </div>
+
+              <div id="rooms-available">
+                <h3>Salas disponíveis: 2</h3>
+                <ul>
+                  <li>
+                    <div class="rooms-available-container">
+                      <div>
+                        <img src="images/search-spaces/officing-description/room-illustration.png" alt="ilustração do local">
+                      </div>
+                      <div class="officing-description">
+                        <span class="viewPhotos"><img src="images/search-spaces/officing-description/camera-icon.png" alt="câmera">Ver fotos</span>
+                        <div>
+                          <h4>Sala 01</h4>
+                          <span>1 a 2 pessoas | 12m² | 1 banheiro</span>
+                        </div>
+                        <ul>
+                          <li>
+                            <img src="images/search-spaces/officing-description/wi-fi.svg" alt="" srcset="">
+                            Excelente
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/air-conditioning.png" alt="" srcset="">
+                            1
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/table.png" alt="" srcset="">
+                            1
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/chair.png" alt="" srcset="">
+                            3
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/computer.svg" alt="" srcset="">
+                            2
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/sockets.svg" alt="" srcset="">
+                            3
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="rooms-available-container">
+                      <div>
+                        <img src="images/search-spaces/officing-description/room-illustration.png" alt="ilustração do local">
+                      </div>
+                      <div class="officing-description">
+                        <span class="viewPhotos"><img src="images/search-spaces/officing-description/camera-icon.png" alt="câmera">Ver fotos</span>
+                        <div>
+                          <h4>Sala 02</h4>
+                          <span>1 a 4 pessoas | 24m² | 2 banheiro</span>
+                        </div>
+                        <ul>
+                          <li>
+                            <img src="images/search-spaces/officing-description/wi-fi.svg" alt="" srcset="">
+                            Excelente
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/air-conditioning.png" alt="" srcset="">
+                            2
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/table.png" alt="" srcset="">
+                            2
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/chair.png" alt="" srcset="">
+                            6
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/computer.svg" alt="" srcset="">
+                            4
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/sockets.svg" alt="" srcset="">
+                            6
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div id="announcer">
+                <div id="announcer-perfil">
+                  <div class="perfil">
+                    <div class="box_img">
+                      <img src="images/search-spaces/officing-description/announcer-profile.png" alt="anunciador">
+                    </div>
+                    <div>
+                      <h3>Anunciado por Aline</h3>
+                      <span>Desde de 2019</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span>Avaliado: <img src="images/search-spaces/officing-description/background-star.png" alt="estrela"> 4.92</span>
+                  </div>
+                </div>
+                <div id="announcer-description">
+                  <h4>Um pouco sobre mim:</h4>
+                  <p>Sou Web Design, e anúncio espaços de trabalho para obter uma renda extra e prezo pela satisfação dos meus clientes.</p>
+                </div>
+                <div>
+                  <a href="/perfil"><button>Ver perfil</button></a>
+                  <ul>
+                    <li>
+                      <i class="fa-brands fa-whatsapp whats"></i>
+                    </li>
+                    <li>
+                      <img src="images/search-spaces/officing-description/insta.svg" alt="instagram">
+                    </li>
+                    <li>
+                      <i class="fa-brands fa-facebook face"></i>
+                    </li>
+                    <li>
+                      <i class="fa-brands fa-linkedin linkedin"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="working_place">
+                <h3>Trabalhando neste local</h3>
+                <ul>
+                  <li>
+                    <div class="box_img">
+                      <img src="images/search-spaces/officing-description/larissa-img-profile.png" alt="Larissa">
+                    </div>
+                    <div>
+                      <h5>Larissa Ferreira</h5>
+                      <span>Web designer</span>
+                      <a href="#">Ver perfil</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box_img">
+                      <img src="images/search-spaces/officing-description/rodrigo-img-profile.png" alt="Rodrigo">
+                    </div>
+                    <div>
+                      <h5>Rodrigo Queiroz</h5>
+                      <span>Arquiteto</span>
+                      <a href="#">Ver perfil</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box_img">
+                      <img src="images/search-spaces/officing-description/stephanie-img-profile.png" alt="Stephanie">
+                    </div>
+                    <div class="box_img">
+                      <h5>Stephanie</h5>
+                      <span>Publicitária</span>
+                      <a href="#">Ver perfil</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box_img">
+                      <img src="images/search-spaces/officing-description/arthur-img-profile.png" alt="Arthur">
+                    </div>
+                    <div>
+                      <h5>Arthur Ehrenberg</h5>
+                      <span>Analista de dados</span>
+                      <a href="#">Ver perfil</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div id="comments">
+                <div>
+                  <h3>Comentários</h3>
+                  <span><img src="images/search-spaces/officing-description/background-star.png" alt="estrela">4.8
+                    | <img src="images/search-spaces/officing-description/baloes-de-fala.png" alt="chat">12
+                  </span>
+                  <ul class="comments-box first">
+                    <li>
+                      <div>
+                        <img src="images/search-spaces/officing-description/carol-img-profile.png" alt="imagem de my-perfil">
+                      </div>
+                      <div>
+                        <h5>Carol Marinho</h5>
+                        <p>Funcionários super simpáticos, a localização é mais que perfeita.</p>
+                      </div>
+                      <div class="container-rating">
+                        <span>05 de Julho 2021</span>
+                        <ul>
+                          <li>
+                            <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="comments-box">
+                    <li>
+                      <div>
+                        <img src="images/search-spaces/officing-description/stephanie-img-profile.png" alt="imagem de my-perfil">
+                      </div>
+                      <div>
+                        <h5>Stephanie</h5>
+                        <p>Local de fácil acesso, que atendeu todas as minhas necessidades.</p>
+                      </div>
+                      <div class="container-rating">
+                        <span>15 de Julho 2021</span>
+                        <ul>
+                          <li>
+                            <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                          </li>
+                          <li>
+                            <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                  <span id="more">Ver mais +</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div id="price">
+                <div>
+                  <h5><span>R$ 15</span>/hora, por pessoa</h5>
+                  <ul>
+                    <li>
+                      <span>Dias reservados</span>
+                      3 dias
+                    </li>
+                    <li>
+                      <span>Horas totais</span>
+                      12h
+                    </li>
+                    <li>
+                      <span>Desconto</span>
+                      R$ 10%
+                    </li>
+                  </ul>
+                  <div id="result">
+                    <span>Total</span>
+                    <span>R$ 180,00</span>
+                  </div>
+                </div>
+                <button class="reserve">Reservar</button>
+              </div>
+              <div id="room-description">
+                <div>
+                  <div id="calendar">
+                    <h5>Selecione uma data</h5>
+
+                  </div>
+
+                  <form>
+                    <div class="schedules">
+                      <div>
+                        <label for="time">Chegada às:</label>
+                        <input type="text" class="outline-focus" name="time" id="time">
+                      </div>
+                      <div>
+                        <label for="stay">Permanência:</label>
+                        <input type="text" class="outline-focus" name="stay" id="stay">
+                      </div>
+                    </div>
+
+                    <div class="select-box">
+                      <label for="work">Modelo de trabalho</label>
+                      <div class="options-container">
+                        <div class="option">
+                          <input type="radio" class="radio" id="private" name="category" class="outline-focus" />
+                          <option for="private">Privado</option>
+                        </div>
+
+                        <div class="option">
+                          <input type="radio" class="radio" id="shared" name="category" />
+                          <option for="shared">Compartilhado</option>
+                        </div>
+
+                        <div class="option">
+                          <input type="radio" class="radio" id="or" name="category" />
+                          <option for="or">Qualquer um</option>
+                        </div>
+                      </div>
+
+                      <div class="selected">
+                        Privado
+                      </div>
+                    </div>
+
+                    <div>
+                      <label for="name">Reservar para:</label>
+                      <input type="text" class="outline-focus" name="name" id="name">
+                    </div>
+                  </form>
+                  <button id="clear-data">Limpar dados</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="officing_description_section2" class="container_margin_default">
+      <div class="default_margin">
+        <div id="near_officing">
+          <h2>Officing por perto</h2>
+          <div>
+            <ul class="slider">
+              <li>
+                <div>
+                  <div class="rating-officing">
+                    <img src="/images/my-account/reservations/officer_aqua.png" alt="Escritório Aqua">
+                    <div>
+                      <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                      5,0
+                    </div>
+                  </div>
+                  <div class="description">
+                    <h3>Escritório Aqua</h3>
+                    <span class="amount-people">Até 10 pessoas</span>
+                    <p>Com ar condicionado e caixa
+                      de som. Ideal para equipes...</p>
+                    <span><b>R$: 150/dia</b></span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="rating-officing">
+                    <img src="/images/my-account/reservations/officer_aqua.png" alt="Escritório Aqua">
+                    <div>
+                      <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                      5,0
+                    </div>
+                  </div>
+                  <div class="description">
+                    <h3>Escritório Aqua</h3>
+                    <span class="amount-people">Até 15 pessoas</span>
+                    <p>Com ar condicionado e caixa
+                      de som. Ideal para equipes...</p>
+                    <span><b>R$: 180/dia</b></span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="rating-officing">
+                    <img src="/images/my-account/reservations/officer_aqua.png" alt="Escritório Aqua">
+                    <div>
+                      <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                      5,0
+                    </div>
+                  </div>
+                  <div class="description">
+                    <h3>Escritório Aqua</h3>
+                    <span class="amount-people">Até 5 pessoas</span>
+                    <p>Com ar condicionado e caixa
+                      de som. Ideal para equipes...</p>
+                    <span><b>R$: 110/dia</b></span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="rating-officing">
+                    <img src="/images/my-account/reservations/officer_aqua.png" alt="Escritório Aqua">
+                    <div>
+                      <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                      5,0
+                    </div>
+                  </div>
+                  <div class="description">
+                    <h3>Escritório Aqua</h3>
+                    <span class="amount-people">Até 10 pessoas</span>
+                    <p>Com ar condicionado e caixa
+                      de som. Ideal para equipes...</p>
+                    <span><b>R$: 100/dia</b></span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div class="rating-officing">
+                    <img src="/images/my-account/reservations/officer_aqua.png" alt="Escritório Aqua">
+                    <div>
+                      <img src="images/search-spaces/officing-description/background-star.png" alt="estrela">
+                      5,0
+                    </div>
+                  </div>
+                  <div class="description">
+                    <h3>Escritório Aqua</h3>
+                    <span class="amount-people">Até 13 pessoas</span>
+                    <p>Com ar condicionado e caixa
+                      de som. Ideal para equipes...</p>
+                    <span><b>R$: 120/dia</b></span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="container_popUp-seePictures">
+    <div id="popUp-seePictures">
+      <button id="seePictures-close">Fechar</button>
+
+      <div class="rooms-pictures">
+        <h4>Sala 01</h4>
+        <ul>
+          <li>
+            <div class="picture">
+              <img src="images/search-spaces/officing-description/escritorio-lape-1.jpg" alt="" srcset="">
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="rooms-pictures">
+        <h4>Sala 02</h4>
+        <ul>
+          <li>
+            <div class="picture">
+              <img src="images/search-spaces/officing-description/escritorio-lape-2.jpg" alt="">
+            </div>
+          </li>
+          <li>
+            <div class="picture">
+              <img src="images/search-spaces/officing-description/escritorio-lape-3.jpg" alt="">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="container_margin_default">
+    <%- include('../../partial/footer.ejs')%>
+  </footer>
+ 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="script/default/header/header.js"></script>
+  <script src="script/default/register/register.js"></script> 
+  <script src="script/default/header/autocomplete_api.js"></script>
+  <script src="script/default/header/date-picker.js"></script>
+  <script src="script/search-spaces/officing-description/more-officing.js"></script> 
+  <script src="script/search-spaces/officing-description/slider.js"></script>
+  <script src="script/search-spaces/officing-description/popUps.js"></script>
+  <script src="script/search-spaces/officing-description/rooms-interactions.js"></script>
+
+</body>
+
+</html>

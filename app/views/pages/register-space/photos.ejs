@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/default/default.css">
+    <link rel="stylesheet" href="style/register/default-register.css">
+    <link rel="stylesheet" href="style/register-space/photos.css">
+</head>
+
+<body>
+    <header id="header" class="container_margin_default">
+        <div class="default_margin">
+            <a href="/"> <img src="images/default/logo.svg" alt="logo"> </a>
+
+            <div class="header-buttons">
+                <a href="/central-de-ajuda"><button>Ajuda</button></a>
+                <a href="/"><button>Sair</button></a>
+            </div>
+        </div>
+    </header>
+
+    <div id='box_black'></div>
+
+    <main>
+        <fieldset id="photos_section" class="container_margin_default">
+            <div class="default_margin">
+                <nav>
+                    <ul class="breadcrumb">
+                      <li><a href="/adicionar-sala">Adicionar sala</a></li>
+                      <li>></li>
+                      <a href=""><li aria-current="page">Fotos</li></a>
+                    </ul>
+            </nav>
+                <h1>Adicione algumas fotos do seu espaço</h1>
+
+                <div id="space-photos">
+                    
+                    <div>
+                        <h2>Visão geral do ambiente</h2> 
+                        <img src="images/default/hint-icon.png" alt="Botão de dica">
+                    </div>
+                    
+                    <form action="">
+                        <div id="general-photos">
+                            <label for="photo1" id="first" class="imgArea">
+                                
+                                <span class="renderElement"></span>
+                                <input type="file" accept="image/png, jpg, jpeg, svg" name="photo1" id="photo1" class="hide photos">
+                            </label>
+
+                            
+                            <label for="photo2" id="second" class="imgArea">
+                                
+                                <span class="renderElement"></span>
+                                <input type="file" accept="image/png, jpg, jpeg, svg" name="photo2" id="photo2" class="hide photos">
+                            </label>
+
+                            <label for="photo3" id="third" class="imgArea">
+                                
+                                <span class="renderElement"></span>
+                                <input type="file" accept="image/png, jpg, jpeg, svg" name="photo3" id="photo3" class="hide photos">
+                            </label>
+                        </div>
+                        <input type="button" value="Avançar" class="advanceButton"> 
+                    </form>
+ 
+                </div>
+
+            </div>
+        </fieldset>
+    </main>
+
+    <script src="script/register-space/photos.js"></script>
+
+</body>
+
+</html>

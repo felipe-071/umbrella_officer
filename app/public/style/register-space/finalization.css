@@ -1,0 +1,150 @@
+ul{
+    list-style: none;
+}
+
+.container_search{
+    display: none;
+}
+
+#finalization_section1{
+    padding-top: 180px;
+}
+
+#finalization_section1 > div{
+    align-items: initial;
+    justify-content: space-around;
+}
+
+.header-buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 210px;
+}
+
+.header-buttons > a  button:hover{
+    background-color: #bdbdbd;
+}
+
+.header-buttons button{
+    transition: .3s ease;
+    width: 95px;
+    height: 40px;
+    background-color: var(--scale-2-gray);
+    border: none;
+    border-radius: 20px;
+    color: var(--text-1-black);
+    font-weight: 600;
+}
+
+#finalization_section1 > div > div h1{
+    font-size: 30px;
+}
+
+#finalization_section1 > div > div p{
+    font-size: 14px;
+    font-weight: 400;
+    margin: 12px 0 30px 0;
+}
+
+#provisory-img{
+    width: 344px;
+    height: 269px;
+}
+
+
+#finalization_section1 > div > div > ul > li h2{
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--black-scale-2);
+    margin-top: 10px;
+}
+
+#finalization_section1 > div > div > ul > li strong{
+    color: var(--scale-1-blue);
+}
+
+#finalization_section1 > div > div > ul :nth-child(3){
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#finalization_section1 > div > div > ul :nth-child(4){
+    font-size: 14px;
+    margin: 5px 0 8px 0;
+}
+
+#finalization_section1 > div > div > ul > li p{
+    max-width: 345px;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+#second_list > li{
+    border-bottom: 1px solid var(--gray-border);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+#second_list > li > div{
+    display: flex;
+    align-items: center;
+}
+
+#second_list > li > div  label{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.h3Align{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+#second_list > li > h3{
+    font-size: 16px;
+    color: var(--black-scale-2);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+#second_list > li > div > h3{
+    font-size: 16px;
+    color: var(--black-scale-2);
+    font-weight: 700;
+}
+
+#second_list > li > div button{
+    background-color: #fff;
+    border: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+
+#second_list > li > div > img{
+    margin-right: 10px;
+}
+
+#finalization_section1 > div > div > div > button{
+    width: 195px;
+    height: 40px;
+    background: linear-gradient(180deg, #83019d, #650c85);
+    border: none;
+    color: var(--white);
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#finalization_section1 > div > div > div{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+
+
+

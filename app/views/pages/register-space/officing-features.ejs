@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/default/default.css">
+    <link rel="stylesheet" href="style/register-space/officing-features.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <header id="header" class="container_margin_default">
+        <div class="default_margin">
+            <a href="/"> <img src="images/default/logo.svg" alt="logo"> </a>
+
+            <div class="header-buttons">
+                <a href="/central-de-ajuda"><button>Ajuda</button></a>
+                <a href="/"><button>Sair</button></a>
+            </div>
+        </div>
+    </header>
+
+    <div id='box_black'></div>
+
+    <main>
+
+        <section id="officing_features_section" class="container_margin_default">
+            <div class="default_margin">
+               
+                <nav id="breadcrumb-father">
+                    <ul class="breadcrumb">
+                        <li>...</li>
+                      <li><a href="/adicionar-sala">Adicionar sala</a></li>
+                      <li>></li>
+                      <a href=""><li aria-current="page">Características do espaço</li></a>
+                    </ul>
+            </nav>
+                        
+                        <h1>Adicione as características<br> do seu Officing</h1>
+
+
+                    <form class="formSteps" action="" method="" data-js='form'>
+                        <div id="first-step" class="step" class="step">
+                            <ul>
+                                <li class="liAlign1">
+                                    <label>
+                                        <h2>Pessoas</h2>
+                                        <p class="hintText">Indicamos 1 pessoa/7m²</p>
+                                    </label>
+                                    <div class="specification">
+                                        <img class="subtract" src="images/search-spaces/search/subtract.png" alt="subtrair">
+                                        <input type="number" min="0" value="4" name="people" >
+                                        <img class="addition" src="images//search-spaces/search/button-add.png" name="addition" alt="adicionar">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="liAlign1">
+                                        <label>
+                                            <h2>Acesso a <br> banheiros</h2>
+                                        </label>
+                                        <div class="specification">
+                                            <img class="subtract" src="images/search-spaces/search/subtract.png" alt="subtrair">
+                                            <input type="number" min="0" value="4" name="people" >
+                                            <img class="addition" src="images//search-spaces/search/button-add.png" name="addition" alt="adicionar">
+                                        </div>
+                                    </div>
+                                    <div class="bathroom">
+                                        <p>Algum dos banheiros indicados é privado?</p>
+
+                                        <div id="align2">
+                                            <div>
+                                                <label for="yes" class="label-yn">Sim</label>
+                                                <input type="radio" name="yesOrNo" id="yes">
+                                            </div>
+
+                                            <div>
+                                                <label for="no" class="label-yn">Não</label>
+                                                <input type="radio" name="yesOrNo" id="no">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="liAlign1">
+                                    <label>
+                                        <h2>Tamanho da sala</h2>
+                                        <p class="hintText">Em m²</p>
+                                    </label>
+
+                                    <input type="text" class="outline-focus" name="roomSize" id="roomSize" placeholder="Ex: 10m²">
+                                </li>
+                            </ul>
+
+                            <div class="buttons">
+                                <button id="return1" class="return">Voltar</button>
+                                <button id="advance1" class="advanceButton" type="button">Avançar</button>
+                            </div>
+                        </div> 
+
+                        <div id="second-step" class="step">
+                            <div>
+                                <img class="feature-icon" src="images/register-space/wi-fi.png" alt="Ícone - Wifi">
+                                <h2>Wifi</h2>   
+                            </div>
+
+                            <ul>
+                                <li>
+                                    <h3>Qualidade alta</h3>
+                                    <p>Eficaz no download, upload e carregamento de
+                                        arquivos pesados</p>
+                                    <p><b>Mais de 25 MB por usuário</b></p>
+                                </li>
+                                <li>
+                                    <h3>Qualidade média</h3>
+                                    <p>Processamento médio de grandes informações,
+                                        eficiente em médios e pequenos processos.</p>
+                                    <p><b>Entre 5 e 15 MB por usuário</b></p>
+                                </li>
+                                <li>
+                                    <h3>Qualidade baixa</h3>
+                                    <p>Carregamento de pequenas informações.
+                                        Atende à demanda básica de uso do wi-fi.</p>
+                                    <p><b>Menos de 5 MB por usuário</b></p>
+                                </li>
+                            </ul>
+                            <div class="buttons">
+                                <button id="return1" class="return">Voltar</button>
+                                <button id="advance1" class="advanceButton" type="button">Avançar</button>
+                            </div>
+                        </div> 
+
+                        <div id="third-step" class="step">
+                            <div id="align-pc">
+                                <div>
+                                    <img class="feature-icon" src="images/register-space/pc.png" alt="Ícone - Computador">
+                                    <h2>Computadores</h2>
+                                </div>
+                            </div>
+
+                            <ul>
+                                <li>
+                                    <span>Máquina 01</span> 
+                                    <select name="quality" id="quality" class="optionsList">
+                                        <option value="" disabled selected>Selecione a qualidade</option>
+                                        <option value="high">Alta qualidade</option>
+                                        <option value="medium">Boa qualidade</option>
+                                        <option value="low">Baixa qualidáde</option>
+                                    </select>
+                                </li>
+                                <li id="add" class="beforeAdd">
+                                    <span id="spanzito">Adicionar PC +</span>
+                                    <span id="segundo">Máquina 02</span> 
+                                    <select name="quality2" id="quality2" class="optionsList">
+                                        <option value="" disabled selected>Selecione a qualidade</option>
+                                        <option value="high">Alta qualidade</option>
+                                        <option value="medium">Boa qualidade</option>
+                                        <option value="low">Baixa qualidáde</option>
+                                    </select>
+                                </li>
+
+                                <li id="added" class="beforeAdd">
+                                    <span>Adicionar PC +</span>
+                                </li>
+
+                            </ul>
+                            
+                            <div class="buttons">
+                                <button id="return1" class="return">Voltar</button>
+                                <button id="advance1" class="advanceButton" type="button">Avançar</button>
+                            </div>
+                        </div> 
+
+                        <div id="fourth-step" class="step">
+                            <ul>
+                                <li>
+                                    <div>
+                                        <img class="feature-icon" src="images/register-space/plug.png" alt="">
+                                        <p>Tomadas</p>
+                                    </div>
+                                    <div class="specification">
+                                        <img class="subtract" src="images/search-spaces/search/subtract.png" alt="subtrair">
+                                        <input type="number" min="0" value="4" name="people" >
+                                        <img class="addition" src="images//search-spaces/search/button-add.png" name="addition" alt="adicionar">
+                                        </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <img class="feature-icon" src="images/register-space/snowflake.png" alt="">
+                                        <p>Ar-condicionado</p>
+                                    </div>
+                                    <div class="specification">
+                                        <img class="subtract" src="images/search-spaces/search/subtract.png" alt="subtrair">
+                                        <input type="number" min="0" value="4" name="people" >
+                                        <img class="addition" src="images//search-spaces/search/button-add.png" name="addition" alt="adicionar">
+                                        </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <img class="feature-icon" src="images/register-space/table.png" alt="">
+                                        <p>Mesas</p>
+                                    </div>
+                                    <div class="specification">
+                                        <img class="subtract" src="images/search-spaces/search/subtract.png" alt="subtrair">
+                                        <input type="number" min="0" value="4" name="people" >
+                                        <img class="addition" src="images//search-spaces/search/button-add.png" name="addition" alt="adicionar">
+                                        </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <img class="feature-icon" src="images/register-space/chair.png" alt="">
+                                        <p>Assentos</p>
+                                    </div>
+                                    <div class="specification">
+                                        <img class="subtract" src="images/search-spaces/search/subtract.png" alt="subtrair">
+                                        <input type="number" min="0" value="4" name="people" >
+                                        <img class="addition" src="images//search-spaces/search/button-add.png" name="addition" alt="adicionar">
+                                        </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <img class="feature-icon" src="images/register-space/window.png" alt="">
+                                        <p>Janelas</p>
+                                    </div>
+                                    <div class="specification">
+                                        <img class="subtract" src="images/search-spaces/search/subtract.png" alt="subtrair">
+                                        <input type="number" min="0" value="4" name="people" >
+                                        <img class="addition" src="images//search-spaces/search/button-add.png" name="addition" alt="adicionar">
+                                        </div>
+                                </li>
+                                
+                            </ul>
+                            <div class="buttons">
+                                <button id="return1" class="return">Voltar</button>
+                                <button id="advance1" class="advanceButton" type="button"><a href="/finalizacao-do-anuncio">Avançar</a></button>
+                            </div>
+                        </div>
+                    </form>
+
+                   
+            </div>
+        </section>
+    </main>
+
+
+    <script src="https://kit.fontawesome.com/e4e1096c30.js" crossorigin="anonymous"></script>
+    <script src="script/register-space/officing-features.js"></script>
+    <!-- <script src="script/default/header/header.js"></script> -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+#ads-control_section1 {
+    width: 744px;
+    flex-direction: column;
+}
+
+#ads-control_section1 h1 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+#ads-control_section1 ul li {
+    list-style: none;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px rgb(128 128 128 / 35%);
+    width: 744px;
+    box-sizing: border-box;
+}
+
+#ads-control_section1 ul li {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 290px 300px 100px;
+    grid-column-gap: 10px;
+}
+
+#ads-control_section1 ul li div h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#ads-control_section1 ul li div h4 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#ads-control_section1 ul li div p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+#ads-control_section1 ul li div p strong {
+    font-weight: 500;
+}
+
+#ads-control_section1 ul li div:nth-child(3) button {
+    width: 100px;
+    height: 28px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+#ads-control_section1 ul li div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+}
+
+#view-photos {
+    background-color: var(--scale-13-blue);
+    margin-right: 10px;
+}
+
+#delete-user {
+    background-color: var(--scale-12-red);
+}
+
+@media(min-width: 300px) and (max-width: 500px)  { 
+    #admin nav {
+        display: none;
+    }
+
+    #admin::before {
+        display: none;
+    }
+
+    #ads-control_section1 {
+        width: 100%;
+    }
+    
+
+    #ads-control_section1 ul li {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    #ads-control_section1 ul li div:nth-child(3) {
+        flex-direction: row;
+    }
+} 
+
+@media(min-width: 500px) and (max-width: 841px) {
+    #admin nav {
+        display: none;
+    }
+
+    #admin::before {
+        display: none;
+    }
+
+    #ads-control_section1 {
+        width: 100%;
+    }
+
+    #ads-control_section1 ul li {
+        width: 100%;
+        display: flex;
+        text-align: left;
+        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media(min-width: 841px) and (max-width: 1159px) {
+    #admin::before {
+        width: 28%;
+    }
+
+    #ads-control_section1 {
+        width: 68%;
+    }
+
+    #ads-control_section1 ul li {
+        display: flex;
+        width: 100%; 
+        justify-content: space-between;
+    }
+}
+

@@ -1,0 +1,175 @@
+/* PERTENCENTE AO PARTIAL*/
+
+#add-room_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 105px;
+    height: calc(100vh - 105px);
+    flex-direction: column;
+    max-height: 1050px;
+    background: linear-gradient(to left, var(--white) 50%, var(--scale-4-blue) 50%);
+    background-repeat: no-repeat;
+}
+
+a{
+    text-decoration: none;
+}
+
+#add-room_section > div{
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+}
+
+nav{
+    position: absolute;
+    left: 0;
+    top: 30px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+nav a, nav li{
+    color: #FFF;
+    text-decoration: none;
+}
+
+nav a:first-child:hover{
+    text-decoration: underline;
+}
+
+.breadcrumb{
+    display: flex;
+    list-style: none;
+    width: 105%;
+    justify-content: space-between;
+}
+
+#add-room_section > div > div{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 46%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#add-room_section > div > h1{
+    color: var(--white);
+    font-size: 40px;
+    max-width: 475px;
+    margin-top: 30px;
+}
+
+#add-room{
+    max-width: 800px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    max-height: 575px;
+    color: var(--text-1-black);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+    border: 1px solid var(--gray-border);
+    border-radius: 20px;
+    padding: 24px;
+    flex-direction: column;
+}
+
+#add-room img{
+    width: 250px;
+    height: 250px;
+    margin-left: 20px;
+}
+
+#add-room img:after{
+    content: '';
+    height: 6px;
+    width: 100%;
+    background-color: red;
+    display: block;
+}
+
+#add-room > input[type='button']{
+    color: white;
+    font-weight: 700;
+    background: var(--scale-2-purple);
+    border: 1px solid;
+    border-radius: 10px;
+    width: 100%;
+    padding: 5px 0;
+}
+
+#add-room:hover{
+    background: #ededff;
+}
+
+/*PERTENCENTE AO PARTIAL*/
+#advance-return{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    border-top: 1px solid var(--gray-border);
+    height: 10px;
+}
+
+
+
+/* #advance-return > :first-child{
+    border: 0;
+    background: rgba(0, 0, 0, 0);
+    text-decoration: underline;
+    font-size: 16px;
+    width: 185px;
+    height: 36px;
+    font-weight: 600;
+}
+
+#advance-return > :last-child{
+    width: 185px;
+    height: 36px;
+    background-color: var(--scale-2-purple);
+    font-weight: 600;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+} */
+
+#advance{
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+    left: 50%;
+    border-top: 1px solid var(--gray-border);
+    padding: 20px 0;
+}
+
+#advance > div{
+    width: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#advance > div > input[type='button']{
+    width: 185px;
+    height: 36px;
+    background-color: var(--gray-border);
+    border: none;
+    color: rgb(112, 111, 111);
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 20px;
+}
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/default/default.css">
+    <link rel="stylesheet" href="style/register-space/type-of-environment.css">
+</head>
+
+<body>
+    <header id="header" class="container_margin_default">
+        <div class="default_margin">
+            <a href="/"> <img src="images/default/logo.svg" alt="logo"> </a>
+
+            <div class="header-buttons">
+                <a href="/central-de-ajuda"><button>Ajuda</button></a>
+                <a href="/"><button>Sair</button></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="type-of-environment_section" class="container_margin_default">
+            <div class="default_margin">
+         
+                <div id="flex-direction">
+                <div>
+                    <h1>Cadastre seu espaço em poucos passos</h1>
+                    <div id="second">
+
+                            <p>Para começar, escolha o tipo do ambiente em que seu espaço está:</p>
+                        <!--Inclui o botão no contexto da segunda parte da página-->
+                        <div>
+                            <!--Engloba os elementos antes do botão para que não se dispersem com o flex-direction: colunm, usado por causa do botão -->
+                            
+    
+                            <div>
+                                <!--Alinha as duas divs com margem que contém as imagens ilustrativas-->
+                                <div class="space-box outline-focus" id="adaptable">
+                                    <div class="hint">
+                                        <a href="javascript:hint(1);">
+                                            <img class="hint" src="images/default/hint-icon.png" alt="Dica">
+                                        </a>
+                                    </div>
+                                    <img class="space-drawing" id="typeOf1" src="images/register-space/type-of-environment/adaptable.png"
+                                        alt="Espaços adaptáveis">
+                                    <p>Ambiente adaptado</p>
+                                </div>
+
+                                <div class="space-box outline-focus" id="corporate">
+                                    <div class="hint">
+                                        <a href="javascript:hint(2);">
+                                            <img class="hint" src="images/default/hint-icon.png" alt="Dica">
+                                        </a>
+                                    </div>
+    
+                                    <img class="space-drawing" src="images/register-space/type-of-environment/corporate.png"
+                                        alt="Espaços corporativos">
+                                    <p>Ambiente corporativo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <a id="avancar" href=""><button>Avançar</button></a>
+                </div>
+                <article id="hint-adaptable">
+                    <div>
+                        <div>
+                            <a href="javascript:hint(3);">
+                                <img class="close-x" src="images/default/close-icon.svg" alt="Fechar">
+                            </a>
+                        </div>
+    
+                        <div>
+                            <div>
+                                <img class="space-drawing" src="images/register-space/type-of-environment/adaptable.png" alt="Espaço corporativo">
+                                <h3>Ambiente adaptado</h3>
+                            </div>
+                                <p>Seja sua casa ou até mesmo um trailer. São espaços que podem ser adaptados ao
+                                    trabalho.</p>
+                        </div>
+    
+                    </div>
+                </article>
+    
+                <article id="hint-corporate">
+                    <div>
+                        <div>
+                            <a href="javascript:hint(4);">
+                                <img class="close-x" src="images/default/close-icon.svg" alt="Fechar">
+                            </a>
+                        </div>
+    
+                        <div>
+                            <div>
+                                <img class="space-drawing" src="images/register-space/type-of-environment/corporate.png" alt="">
+                                <h3>Ambiente corporativo</h3>
+                            </div>
+                                <p>Locais essencialmente destinados ao trabalho, como coworkings
+                                    e escritórios tradicionais.</p>
+                        </div>
+    
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div id='box_black'></div>
+
+    <!-- <script src="script/default/header/header.js"></script> -->
+    <script src="script/register-space/type-of-environment.js"></script>
+</body>
+
+</html>

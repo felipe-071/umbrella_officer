@@ -1,0 +1,83 @@
+#header div span {
+    display: flex;
+    align-items: center;
+}
+
+#container_menu{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#container_menu > a > button{
+    width: 160px;
+    height: 40px;
+    background-color: var(--scale-2-purple);
+    border: none;
+    border-radius: 50px;
+    margin-right: 40px;
+}
+
+#container_menu > a > button{
+    font-size: 14.5px;
+    font-weight: 600;
+    color: white;
+}
+
+/*Menu lateral */ 
+#my-account-menu ul {
+    list-style: none;
+    position: relative;
+}
+
+#my-account-menu ul li {
+    display: flex;
+    height: 40px;
+    margin-bottom: 25px;
+    align-items: center;
+}
+
+#my-account-menu ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.option span {
+    font-size: 16px;
+    color: var(--text-1-black);
+}
+
+.option a div {
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    background-color: var(--scale-16-gray);
+    border-radius: 5px;
+    display: flex;
+    align-items: center; 
+    margin-right: 5px;
+}
+
+.option .icon { 
+    font-size: 24px;
+    text-align: center;
+    color: var(--text-3-black);
+    margin-right: 10px;
+}
+
+.on a div {
+    background-color: var(--scale-5-blue); 
+}
+
+.on a .icon,
+.on .announcer {
+    color: #fff; 
+}
+
+.announcer {
+    font-size: 20px;
+    color: var(--text-3-black);
+    padding-left: 2px;
+}
+ 

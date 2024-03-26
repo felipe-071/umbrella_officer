@@ -1,0 +1,233 @@
+a {
+    text-decoration: none;
+}
+
+#favorites_section1>div {
+    position: relative;
+    padding-top: 181px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/*Conteúdo*/
+#favorites_section1>div h1 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+#favorites_section1>div ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 45px;
+}
+
+#favorites_section1>div ul li .space-favorite {
+    display: flex; 
+    width: 450px; 
+}
+
+.space-img {
+    width: 203px;
+    height: 209px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 0px 0px 10px;
+    position: relative;
+}
+
+.space-img img {
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+.space-description {
+    width: 247px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.space-description button {
+    border: 0;
+    background: var(--scale-5-purple);
+    padding: 8px 10px 8px 10px;
+    border-radius: 50%;
+    font-size: 14px;
+    color: #fff;
+    width: max-content;
+    align-self: flex-end;
+}
+
+.space-description #f h4 {
+    font-size: 20px;
+    font-weight: 600; 
+    margin-bottom: 12px;
+}
+
+.space-description #f {
+    font-size: 16px;
+    font-weight: 500;  
+}
+
+.space-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+#view {  
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--scale-5-purple); 
+    background: #fff;
+    text-align: left;
+    padding: 0;
+}
+
+.space-actions div { 
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    align-self: center;
+}
+
+.space-actions div img {
+    width: 15px;
+}
+
+img[alt="estrela"] {
+    margin-right: 5px;
+}
+
+img[alt="chat"] {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+@media(min-width: 320px) and (max-width: 550px) {
+    #container_menu>a>button {
+        width: 136px;
+        height: 36px;
+        margin: 0;
+        font-size: 13.5px;
+    }
+
+    #favorites_section1>div { 
+        padding-top: 140px; 
+        align-items: center;
+    }
+
+    #favorites_section1>div h1 {
+        width: 86%;
+    }
+
+    #favorites_section1>div ul {
+        display: block; 
+        width: 86%;
+    }
+
+    #favorites_section1>div ul li .space-favorite {
+        width: 100%; 
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 35px;
+    }
+
+    .space-description {
+        width: 100%;
+        margin: 15px 0 0 0;
+    }
+
+    .space-img {
+        width: 100%; 
+    }
+
+    .space-description button {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
+    .space-description #f h4 {
+        font-size: 18px; 
+    }
+
+    .space-description #f {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .space-actions { 
+        margin-top: 40px;
+    }
+
+    .space-actions div {
+        font-size: 12px; 
+    }
+}
+
+@media(min-width: 551px) and (max-width: 840px) { 
+    #container_menu>a>button {
+        width: 136px;
+        height: 36px;
+        margin: 0;
+        font-size: 13.5px;
+    }
+
+    #favorites_section1>div { 
+        padding-top: 150px;  
+    }
+
+    #favorites_section1>div ul {
+        display: block;  
+    }
+
+    #favorites_section1>div ul li .space-favorite {
+        width: 100%; 
+        margin-bottom: 35px;
+    }
+
+    .space-description {
+        width: 62%; 
+    }
+
+    .space-img {
+        width: 35%; 
+    }
+}
+ 
+@media(min-width: 841px) and (max-width: 1000px) {
+    #favorites_section1>div {
+        width: 100%;
+    }
+
+    #favorites_section1>div ul {
+        width: 100%; 
+    }
+
+    #favorites_section1>div ul li {
+        width: 80%;  
+    }
+
+    #favorites_section1>div ul li:first-child {
+        margin-right: 45px;  
+    }
+
+    #favorites_section1>div ul li .space-favorite { 
+        width: 100%;
+    }
+
+    .space-img {
+        width: 35%;
+    } 
+}

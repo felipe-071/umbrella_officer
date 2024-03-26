@@ -1,0 +1,365 @@
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#localization_section{
+    background: linear-gradient(to left, var(--white) 50%, var(--scale-4-blue) 50%);
+    background-repeat: no-repeat;
+}
+
+.default_margin{
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+#localization_section{
+    margin-top: 105px;
+    height: calc(100vh - 105px);
+    max-height: 1050px;
+}
+
+#localization_section nav{
+    position: absolute;
+    left: 0;
+    top: 30px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+#localization_section nav a, nav li{
+    color: #FFF;
+    text-decoration: none;
+}
+
+#localization_section nav a:first-child:hover{
+    text-decoration: underline;
+}
+
+#localization_section .header-buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 210px;
+}
+
+#localization_section .header-buttons > a  button:hover{
+    background-color: #bdbdbd;
+}
+
+#localization_section .header-buttons button{
+    transition: .3s ease;
+    width: 95px;
+    height: 40px;
+    background-color: var(--scale-2-gray);
+    border: none;
+    border-radius: 20px;
+    color: var(--text-1-black);
+    font-weight: 600;
+}
+
+#localization_section .breadcrumb{
+    display: flex;
+    list-style: none;
+    width: 105%;
+    justify-content: space-between;
+}
+
+#localization_section #hint-icon{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+#localization_section #hint{
+    color: #fff;
+    font-size: 14px;
+    max-width: 370px;
+    margin-top: 20px;
+    display: none;
+}
+
+#localization_section h1{
+    max-width: 350px;
+    font-size: 40px;
+    color: var(--white);
+}
+
+#map{
+    width: 100vw;
+    left: 50%;
+    position: fixed;
+    height: 100vh;
+    max-height: calc(1000px - 105px);
+    position: fixed;
+}
+
+iframe{
+    width: 100vw;
+    height: 100%; /*Por que ele não toma o total das telas maiores?*/
+    max-height: 1050px;
+    position: fixed;
+    left: 50%;
+    top: 99px;
+}
+
+/*FORM, INPUTS E CIA*/
+
+#localization_section #search-container{
+    position: relative;
+    z-index: 99;
+}
+
+#localization_section #search-container > div{
+    background-color: var(--scale-2-purple);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 6px;
+    margin-right: 20px;
+}
+
+#localization_section #search-container > div > img{
+    width: 15px;
+    height: 15px;
+}
+
+#localization_section #encompass-form{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#localization_section #encompass-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer
+}
+
+#localization_section #encompass-form > form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    transition: 500ms ease-in-out;
+    opacity: 1;
+}
+
+#localization_section #first-step{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 90;
+}
+
+#search-localization{
+    width: 390px;
+    height: 42px;
+    border-radius: 20px;
+    border: 1px solid var(--gray-border);
+    padding-left: 20px;
+    font-size: 14px;
+    outline: none; /*Provisoriamente*/
+}
+
+#current-location{
+    width: 300px;
+    height: 30px;
+    color: var(--scale-15-blue);
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid var(--scale-15-blue);
+    border-radius: 10px;
+    text-decoration: underline;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0 8px 0;
+}
+
+#location-data{
+    background-color: #fff;
+    border: 1px solid var(--gray-border);
+    border-radius: 20px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    display: none;
+}
+
+#location-data > input{
+    border: 1px solid var(--gray-border);
+    border-radius: 10px;
+    font-size: 13px;
+    height: 34px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    width: calc(100% - 18px);
+}
+
+#localization_section .half-inputs{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#location-data > div > input[type= "text"]{
+    width: calc(50% - 25px);
+    height: 34px;
+    padding-left: 15px;
+    border: 1px solid var(--gray-border);
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+#location-data > div > select{
+    width: calc(50% - 9px); /*Revisar essas medidas*/
+    height: 38px;
+    padding-left: 15px;
+    border: 1px solid var(--gray-border);
+    border-radius: 10px;
+    font-size: 13px;
+    font-family: var(--font-primary);
+}
+
+#location-data > h3{
+    font-size: 14px;
+    color: #4E4AFF;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#type-of-environment{
+    display: flex;
+    justify-content: space-around;
+    margin: 4px 0 12px 0;
+}
+
+#location-data > div > div{
+    display: flex;
+    align-items: center;
+}
+
+#location-data > div > div > label{
+    font-size: 13px;
+}
+
+#continue{
+    background-color: transparent;
+    border: 1px solid #4E4AFF;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #4E4AFF;
+    height: 30px;
+    width: 100%;
+}
+
+#second-step{
+    background: #FFF;
+    padding: 32px 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    z-index: 90;
+}
+
+#second-step h2{
+    font-size: 18px;
+    color: var(--scale-2-purple);
+    margin-bottom: 15px;
+}
+
+#localization_section .inputDiv{
+    width: 100%;
+    position: relative;
+}
+
+#localization_section .inputDiv:nth-child(2), .inputDiv:nth-child(3){
+    display: none;
+}
+
+#localization_section .inputDiv:nth-child(2){
+    margin-top: 15px;
+}
+
+#localization_section .inputDiv > input{
+    width: calc(100% - 18px);
+    border-radius: 10px;
+    border: 1px solid var(--gray-border);
+    padding: 9px 9px 9px 12px;
+}
+
+#localization_section .inputDiv img{
+    position: absolute;
+    top: 6px;
+    right: 12px;
+}
+
+#addMore{
+    margin-top: 20px;
+    background-color: transparent;
+    font-weight: 600;
+    border: none;
+    font-size: 12px;
+    text-decoration: underline;
+    color:#4E4AFF;
+    transition: .2s ease;
+}
+
+#addMore:hover{
+    color:rgb(49, 47, 190)
+    
+}
+
+#return{
+    width: 100%;
+    background: transparent;
+    border: 1px solid;
+    border-radius: 10px;
+    color: #4E4AFF;
+    font-weight: 600;
+    padding: 5px 0;
+    margin-top: 20px;
+}
+
+#advance{
+    position: absolute !important;
+    width: 186px;
+    height: fit-content !important;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--gray-border);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 17.5px;
+    margin-bottom: 25px;
+    z-index: 3;
+    box-shadow: 6px 6px 10px rgba(44, 44, 44, 0.37);
+    right: 2% !important;
+    left: unset !important;
+    padding: 7px 0 !important;
+}
+
+#btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 4;
+}

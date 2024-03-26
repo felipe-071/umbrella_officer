@@ -1,0 +1,317 @@
+nav {
+    width: 100%;
+}
+
+nav {
+    border-bottom: 1px solid var(--gray-border);
+    padding-bottom: 10px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 40%;
+    margin: 20px 0 0 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-1-black);
+}
+
+a:focus{
+    font-weight: 900;
+    color: var(--scale-3-purple);
+    outline: none
+}
+
+nav ul li {
+    font-size: 16px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+.acctive-notifications {
+    font-weight: 900;
+    color: var(--scale-3-purple);
+    outline: none;
+    border-bottom: 3px solid var(--scale-3-purple);
+    padding-bottom: 10px;
+}
+
+.notifications {
+    margin: 0 10px 0 18px;
+}
+
+#notifications_section1{
+    padding-top: 193px;
+}
+
+#notifications_section1 > div{
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#notifications_section1 > div > article > select{
+    font-family: var(--font-primary);
+    font-size: 14px;
+    padding: 0 15px;
+    margin-bottom: 35px;
+    width: 176px;
+    height: 32px;
+    border-radius: 30px;
+    border: 1px solid var(--scale-7-blue);
+}
+
+/* Articles dinâmicos*/
+#last-notifications{
+    display: block;
+}
+
+#unread-notifications {
+    display: none;
+}
+
+#read-notifications{
+    display: none;
+}
+
+.notification{
+    display: flex;
+    margin-bottom: 35px;
+    align-items: center;
+}
+
+.notification img{
+    margin-right: 30px;
+}
+
+.notification > div > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.notification > div > div h2{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.notification > div > div h2 ~ div {
+    width: 78px;
+    height: 22px;
+    background-color: var(--scale-11-blue);
+    border-radius: 20px;
+}
+
+.notification > div > div > div h3{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    text-align: center;
+    padding: 2.5px;
+}
+
+.notification > div > div p{
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.notification > div > div h4{
+    font-size: 14px;
+    font-weight: 600;
+    text-align: right;
+    margin-top: 32px;
+}
+
+.select-box {
+    display: flex;
+    width: 244px;
+    flex-direction: column;
+    margin: 20px 0 30px 0;
+}
+
+.select-box .options-container {
+    background: white;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 10px;
+    overflow: hidden;
+
+    order: 1;
+}
+
+.selected:after {
+    content: '\f106';
+    position: absolute;
+    right: 20px;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 20px;
+    font-weight: 700;
+    color: black;
+    transform: rotate(180deg);
+    transition: all .4s;
+}
+
+.selected {
+    background: white;
+    border-radius: 50px;
+    border: 1px solid var(--gray-border);
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--text-1-black);
+    position: relative;
+    order: 0;
+}
+
+.select-box .options-container.active {
+    max-height: 76px;
+    border: 1px solid var(--gray-border);
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.select-box .options-container::-webkit-scrollbar {
+    width: 8px;
+    background: var(--gray-border);
+    border-radius: 0 8px 8px 0;
+}
+
+.select-box .options-container::-webkit-scrollbar-thumb {
+    background: var(--scale-13-blue);
+    border-radius: 0 8px 8px 0;
+}
+
+.select-box .option,
+.selected {
+    height: 38px;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.select-box .option:hover {
+    background: #f1f6ff;
+}
+
+.select-box label {
+    cursor: pointer;
+}
+
+.select-box .option .radio {
+    display: none;
+}
+
+
+@media(min-width: 300px) and (max-width: 570px){
+    #header>div a img {
+        width: 80%;
+    }
+
+    #container_search, 
+    #menu {
+        display: none;
+    }  
+
+    #container_menu > a > button { 
+        width: 136px;
+        height: 36px;
+        margin: 0;
+        font-size: 13.5px;
+    } 
+
+    main #notifications_section1 {
+        padding-top: 130px;
+    }
+
+    article .notification div:nth-child(2) {
+        flex-direction: column;
+    }
+
+    article .notification > div > div h2 {
+        font-size: 16px; 
+    }
+
+    article .notification > div > div > div h3 {
+        font-size: 12.5px; 
+    }
+
+    article .notification > div > div h2 ~ div {
+        width: 60px; 
+    }
+
+    article .notification > div > div p {
+        font-size: 14px;  
+        max-width: 95%;
+    }
+
+    article .notification > div > div h4 { 
+        margin-top: 20px;
+    }
+
+    article .select-box { 
+        width: 180px; 
+    }
+
+    .select-box .option, .selected {
+        height: 36px; 
+    }
+   
+    footer h5,
+    footer ul li,
+    #scroll_up {
+        display: none;
+    }
+}
+
+@media(min-width: 571px) and (max-width: 841px) {
+    #header>div a img {
+        width: 80%;
+    }
+
+    #container_search, 
+    #menu {
+        display: none;
+    } 
+
+    #container_menu > a > button {  
+        height: 36px;
+        margin: 0;
+        font-size: 14px;
+    }
+
+    main #notifications_section1 {
+        padding-top: 130px;
+    }
+
+    article .notification > div > div p {
+        font-size: 14px;  
+        max-width: 80%;
+    }
+
+    footer h5,
+    footer ul li,
+    #scroll_up {
+        display: none;
+    }
+}
+
+@media(min-width: 841px) and (max-width: 1000px) {  
+    article .notification > div > div p {
+        font-size: 14px;  
+        max-width: 80%;
+    }
+
+    #logo { 
+        max-width: 275px;
+    }
+
+    footer ul h5 {
+        font-size: 17px; 
+    }
+} 

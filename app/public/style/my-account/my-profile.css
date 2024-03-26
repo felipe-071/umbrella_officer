@@ -1,0 +1,318 @@
+#my-profile {
+    position: relative;
+}
+
+#my-profile a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#my-profile>div {
+    padding: 180px 0 80px 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: var(--text-1-black);
+} 
+
+#my-profile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: calc(50% - 280px);
+    background-color: var(--scale-9-blue);
+}
+
+/*Meu perfil: conteúdo*/
+#my-profile_section1 {
+    width: 744px;
+}
+
+#my-profile_section1 h1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#my-profile_section1 h1~p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 20px 0 40px;
+}
+
+
+#my-profile_section1 form>div label {
+    display: flex;
+    flex-direction: column;
+}
+
+#my-profile_section1 form>div label {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: var(--font-primary);
+}
+
+#my-profile_section1 form>div textarea {
+    border: 1px solid var(--gray-border);
+    border-radius: 5px;
+    padding: 4px;
+    resize: none;
+    font-size: 14.5px;
+    font-family: var(--font-primary); 
+    width: -webkit-fill-available; 
+    height: 150px;
+    overflow: hidden;
+    color: var(--text-1-black);
+    margin: 10px 0 40px 0;
+}
+
+.form-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-flex>div:nth-child(1) {
+    border: 1px solid var(--gray-border);
+    border-radius: 5px;
+    padding: 35px;
+}
+
+.form-flex>div:nth-child(1) p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.form-flex>div:nth-child(1) h4 {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-primary);
+    margin: 28px 0 14px 0;
+}
+
+.rating {
+    display: flex;
+    list-style: none;
+}
+
+.rating-bar {
+    width: 30px;
+    height: 10px;
+    margin-right: 5px;
+    border: 1px solid var(--gray-border);
+    border-radius: 10px;
+}
+
+.rating-bar-active {
+    width: 30px;
+    height: 10px;
+    margin-right: 5px;
+    border: 1px solid var(--scale-2-purple);
+    background-color: var(--scale-2-purple);
+    border-radius: 10px;
+}
+
+.rating-bar input {
+    display: none;
+    margin: -1px 0 10px 8px;
+    position: absolute;
+}
+
+.social-medias {
+    width: 50%;
+}
+
+.social-medias h3 {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: var(--font-primary);
+}
+
+.social-medias p {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.social-medias_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 20px;
+}
+
+.social-medias_flex div {
+    width: 100%;
+}
+
+.social-medias_flex div input {
+    border: 1px solid var(--gray-border);
+    border-radius: 5px;
+    padding: 11px;
+    resize: none;
+    font-size: 14.5px;
+    font-family: var(--font-primary);
+    width: -webkit-fill-available;
+    color: var(--text-1-black); 
+}
+
+.whats,
+.face,
+.linkedin {
+    font-size: 2.2rem;
+    justify-content: space-between;
+}
+
+
+.social-medias_flex img,
+.whats {
+    width: 30px;
+    color: #15cc3a;
+    margin: 5px;
+}
+
+.face {
+    color: #1749b3;
+    margin: 4px;
+}
+
+.linkedin {
+    color: #0c87c1;
+    margin: 5px;
+}
+
+.form-flex ~ div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#save {
+    background-color: var(--scale-2-purple);
+    border: none;
+    width: 226px;
+    height: 36px;
+    color: var(--white);
+    border-radius: 30px;
+}
+
+#save {
+    font-size: 14px;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+#my-profile_section1 form .help-block {
+    font-size: 12px;
+    color: red;
+    position: absolute;
+    margin-bottom: 10px;
+    transform: translateY(-0.5px);
+}
+
+@media(min-width: 320px) and (max-width: 480px){
+    #container_menu > a > button { 
+        width: 136px;
+        height: 36px;
+        margin: 0;
+        font-size: 13.5px;
+    }
+
+    #my-profile::before { 
+        display: none; 
+    }
+
+    #my-profile nav {
+        display: none;
+    }
+
+    #my-profile>div {
+        padding-top: 140px;  
+    }
+    
+    #my-profile_section1 {
+        width: 100%;
+    }
+
+    #my-profile_section1 h1 {
+        font-size: 25px; 
+    }
+
+    #my-profile_section1 h1~p {
+        font-size: 14px; 
+    }
+
+    #my-profile_section1 form>div label {
+        font-size: 16px; 
+    }
+
+    form .form-flex {
+        flex-direction: column; 
+    }
+
+    form .form-flex>div:nth-child(1) { 
+        padding: 35px 25px; 
+    }
+
+    form .social-medias {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    form .social-medias_flex div input { 
+        font-size: 13.5px;
+    }
+
+    form .social-medias p {
+        font-size: 11.5px; 
+    }
+}
+
+@media(min-width: 481px) and (max-width: 841px) {
+    #container_menu > a > button { 
+        width: 136px;
+        height: 36px;
+        margin: 0;
+        font-size: 13.5px;
+    }
+    
+    #my-profile::before { 
+        display: none; 
+    }
+
+    #my-profile nav {
+        display: none;
+    } 
+
+    #my-profile>div {
+        padding-top: 150px; 
+    }
+
+    #my-profile_section1 {
+        width: 100%;
+    } 
+
+    #my-profile_section1 h1 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    form .form-flex>div:nth-child(1) { 
+        width: 45%;
+        box-sizing: border-box;
+        padding: 22px;
+    }
+
+    form .social-medias_flex div input { 
+        font-size: 14px;
+    } 
+}
+
+@media(min-width: 841px) and (max-width: 1000px) { 
+    #my-profile::before {  
+        width: 28%;
+    }
+
+    #my-profile_section1 {
+        width: 68%;
+    } 
+} 

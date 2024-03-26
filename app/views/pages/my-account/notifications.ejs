@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <!-- <meta charset="UTF-8"> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js" integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtJGza4SniYHefeNwCdE4gU3sg1AU4fiU&&libraries=places"></script>
+  <link rel="stylesheet" href="style/default/default.css">
+  <link rel="stylesheet" href="style/my-account/my-account.css">
+  <link rel="stylesheet" href="style/my-account/notifications.css">
+</head>
+
+<body>
+  <header id="header" class="container_margin_default">
+    <div class="default_margin">
+      <a href="/"> <img src="images/default/logo.svg" alt="logo"> </a>
+      <div id="container_menu">
+        <a href="/tipo-de-ambiente"><button id="advertiser">Quero anunciar</button></a>  
+
+        <div id="menu">
+          <div id='menu_sign-in-up'>
+            <img src="images/default/user.svg" alt="usuário">
+            <img src="images/default/menu_hamburguer.svg" alt="menu">
+          </div>
+          <%
+                        if(autenticado){
+                    %>
+          <%- include('../../partial/header/menu_autenticado.ejs'); %>
+          <%       
+                    }else{
+                    %>
+          <%- include('../../partial/header/menu.ejs'); %>
+          <%
+                    } 
+                  %>
+        </div>
+      </div>
+
+      <div id="container_popUp_login-signUp">
+        <div class="popUp">
+          <img class="close_popup" src="images/default/close_icon.svg" alt="close">
+          <h2>Umbrella Officing</h2>
+          <h3>Seja bem-vindo</h3>
+          <div>
+            <span>Faça seu login para continuar</span>
+            <form method="post" action="/login">
+              <label for="cpf-email">
+                CPF ou E-mail :
+                <input type="text" id="cpf-email" name="cpfEmail">
+              </label>
+
+              <label for="password-login">
+                Senha:
+                <input type="password" id="password-login" name="password">
+              </label>
+
+              <div>
+                <a href="#">Esqueceu a senha?</a>
+              </div>
+
+              <button class="form_button" type="submit">LOGIN</button>
+            </form>
+            <div id="alternatives">
+              <div><span>OR</span></div>
+              <div>
+                <span>Faça login com suas Redes Sociais</span>
+                <img src="images/default/icon-google.png" alt="ícone do google">
+                <img src="images/default/icon-facebok.svg" alt="ícone do facebbok">
+                <img src="images/default/icon-apple.png" alt="ícone do facebbok">
+                <span>Ainda não possui conta? <a href="#">Cadastre-se</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popUp">
+          <img class="close_popup" src="images/default/close_icon.svg" alt="close">
+          <h2>Umbrella Officing</h2>
+          <h3>Seja bem-vindo</h3>
+          <div>
+            <span>Cadastre-se e faça parte da nossa comunidade</span>
+            <form id="myform" method="post" action="/cadastro">
+              <fieldset id="test1" class="test">
+                <label for="name">
+                  Nome:
+                  <input type="text" id="name" name="name">
+                </label>
+                <label for="email">
+                  E-mail:
+                  <input type="email" id="email" name="email">
+                </label>
+
+                <label for="cpf">
+                  CPF:
+                  <input type="text" id="cpf" name="cpf">
+                </label>
+
+                <label for="password">
+                  Senha:
+                  <input type="password" id="password" name="password">
+                </label>
+
+                <label for="conf_password">
+                  Confirmar senha:
+                  <input type="password" class="form-control" id="conf_password" name="conf_password">
+                </label>
+                <input type="button" class="form_button next" value="Próximo">
+              </fieldset>
+              <fieldset id="test2" class="test campos">
+                <label for="birth_date">
+                  Data de nascimento
+                  <input type="date" id="birth_date" name="birth_date" required>
+                </label>
+                <label for="phone">
+                  Telefone:
+                  <input type="text" id="phone" name="phone" required>
+                </label>
+                <label for="profession">
+                  Profissão:
+                  <input type="text" id="profession" name="profession" required>
+                </label>
+                <button class="form_button" type="submit">CADASTRAR</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="container_popUp_profilePicture">
+        <div class="popUp_profilePicture">
+          <h2>Adicionar imagem de perfil</h2>
+          <div>
+            <form action="/perfil2" method="post" enctype="multipart/form-data">
+              <div class="actionPicture">
+                <div>
+                  <%
+                                      if(autenticado){
+                                  %>
+                  <%if(autenticado.profile_picture != null){%>
+                  <img class="image_profile" src="data:image/gif;base64,<%=autenticado.profile_picture%>" alt="Foto de perfil">
+                  <%}%>
+          
+                                      <%if(autenticado.profile_picture == null){%>
+                  <img class="image_profile" src="images/default/perfil.png" alt="Foto de perfil">
+                  <%}%>
+                                      
+                                  <%       
+                                  }else{
+                                  %>
+                  <img class="image_profile" src="images/default/perfil.png" alt="Foto de perfil">
+                  <%
+                                  } 
+                                  %>
+                </div>
+              </div>
+
+              <div>
+                <div class="uploadPicture">
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                  <label for="ImagemPerfil">
+                    Carregar imagem
+                  </label>
+                  <input accept="image/" class="form-control" id="ImagemPerfil" name="ImagemPerfil" onchange="loadImg()" type="file" value="" />
+                </div>
+                <div class="deletePicture">
+                  <i class="fa-solid fa-trash"></i>
+                  <span>Remover imagem</span>
+                </div>
+                <div>
+                  <input id="close" type="button" value="Fechar">
+                  <button id="salve" type="submit">Guardar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </header>
+
+  <div id="bottom_bar-mobile">
+    <%
+                  if(autenticado){
+                %>
+    <%- include('../../partial/header/bottom_bar-mobile_autenticado.ejs'); %>
+    <%       
+                }else{
+                %>
+    <%- include('../../partial/header/bottom_bar-mobile.ejs'); %>
+    <%
+                } 
+              %>
+
+    <div id="container_search-mobile">
+
+      <img class="close_search" src="images/default/close_icon.svg" alt="close">
+
+      <ul id="type_office_mobile">
+        <li class="option_office checked">Espaço adaptado</li>
+        <li class="option_office">Espaço corporativo</li>
+      </ul>
+
+      <form action="search-informations" method="post">
+        <div id='container_adaptable'>
+          <div class="box">
+            <label name="search_input">Localização</label>
+            <input type="text">
+          </div>
+          <div class="box">
+            <label name="search_input">Selecione datas</label>
+
+            <div class="box_check">
+              <div>
+                <label name="box_check-in">Check in</label>
+                <input type="date" name="box_check-in">
+              </div>
+              <div>
+                <label name="box_check-out">Check-out</label>
+                <input type="date" name="box_check-out">
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <label name="search_input">Número de pessoas</label>
+            <div id="guests">
+              <div class="specification">
+                <button>
+                  <img class="subtract" src="images/search-spaces/search/subtract.png" alt="subtrair">
+                </button>
+                <input type="number" min="0" value="4" name="people" class="input_checked" disabled>
+                <button>
+                  <img class="addition" src="images//search-spaces/search/button-add.png" name="addition" alt="adicionar">
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button class="search_mobile">Pesquisar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <body>
+
+    <main>
+
+      <section id="notifications_section1" class="container_margin_default">
+        <div class="default_margin">
+
+          <h1>Notificações</h1>
+
+          <nav>
+            <ul>
+              <a href="javascript:notificacoes(1);" autofocus>
+                <li id="li-lastN">Últimas notificações</li>
+              </a>
+              <a href="javascript:notificacoes(2);">
+                <li id="li-unreadN">Não lidas</li>
+              </a>
+              <a href="javascript:notificacoes(3);">
+                <li id="li-readN">Lidas</li>
+              </a>
+            </ul>
+          </nav>
+          <hr>
+
+          <article id="last-notifications">
+            <div class="select-box">
+              <div class="options-container">
+                <div class="option">
+                  <input type="radio" class="radio" id="most-recents" name="category" />
+                  <label for="most-recents">Mais recentes</label>
+                </div>
+
+                <div class="option">
+                  <input type="radio" class="radio" id="oldest" name="category" />
+                  <label for="oldest">Mais antigas</label>
+                </div>
+
+                <div class="option">
+                  <input type="radio" class="radio" id="alphabetical-order" name="category" />
+                  <label for="alphabetical-order">De A-Z</label>
+                </div>
+              </div>
+
+              <div class="selected">
+                Ordernar por
+              </div>
+            </div>
+          </article>
+
+          <article id="unread-notifications">
+            <div class="select-box">
+              <div class="options-container">
+                <div class="option">
+                  <input type="radio" class="radio" id="most-recents" name="category" />
+                  <label for="most-recents">Mais recentes</label>
+                </div>
+
+                <div class="option">
+                  <input type="radio" class="radio" id="oldest" name="category" />
+                  <label for="oldest">Mais antigas</label>
+                </div>
+
+                <div class="option">
+                  <input type="radio" class="radio" id="alphabetical-order" name="category" />
+                  <label for="alphabetical-order">De A-Z</label>
+                </div>
+              </div>
+
+              <div class="selected">
+                Ordernar por
+              </div>
+            </div>
+            <div class="notification">
+              <img src="images/my-account/dolar.svg" alt="Ícone de dinheiro">
+
+              <div>
+                <div>
+                  <h2>Lorem Ipsum dolor sit</h2>
+
+                  <div>
+                    <h3>Novo</h3>
+                  </div>
+                </div>
+
+                <div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum
+                    laoreet.
+                    Proin gravida dolor sit amet lacus </p>
+
+                  <h4>22/03/2022</h4>
+                </div>
+
+              </div>
+
+            </div>
+          </article>
+
+          <article id="read-notifications">
+            <div class="select-box">
+              <div class="options-container">
+                <div class="option">
+                  <input type="radio" class="radio" id="most-recents" name="category" />
+                  <label for="most-recents">Mais recentes</label>
+                </div>
+
+                <div class="option">
+                  <input type="radio" class="radio" id="oldest" name="category" />
+                  <label for="oldest">Mais antigas</label>
+                </div>
+
+                <div class="option">
+                  <input type="radio" class="radio" id="alphabetical-order" name="category" />
+                  <label for="alphabetical-order">De A-Z</label>
+                </div>
+              </div>
+
+              <div class="selected">
+                Ordernar por
+              </div>
+            </div>
+
+            <div class="notification">
+              <img src="images/my-account/dolar.svg" alt="Ícone de dinheiro">
+
+              <div>
+                <div>
+                  <h2>Lorem Ipsum dolor sit</h2>
+
+                  <div>
+                    <h3>Novo</h3>
+                  </div>
+                </div>
+
+                <div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum
+                    laoreet.
+                    Proin gravida dolor sit amet lacus </p>
+
+                  <h4>22/03/2022</h4>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="notification">
+              <img src="images/my-account/dolar.svg" alt="Ícone de dinheiro">
+
+              <div>
+                <div>
+                  <h2>Lorem Ipsum dolor sit</h2>
+
+                  <div>
+                    <h3>Novo</h3>
+                  </div>
+                </div>
+
+                <div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum
+                    laoreet.
+                    Proin gravida dolor sit amet lacus </p>
+
+                  <h4>22/03/2022</h4>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+        </div>
+        </div>
+      </section>
+
+      <script src="https://kit.fontawesome.com/e4e1096c30.js" crossorigin="anonymous"></script>
+      <script src="script/default/header/header.js"></script>
+      <script src="script/my-account/notifications.js"></script>
+
+    </main>
+
+    <footer class="container_margin_default">
+      <%- include('../../partial/footer.ejs')%>
+    </footer>
+
+  </body>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="script/default/header/header.js"></script>
+  <script src="script/default/register/register.js"></script> 
+  <script src="script/default/header/date-picker.js"></script>
+  <script src="script/my-account/edit-ad.js"></script>
+
+</html>

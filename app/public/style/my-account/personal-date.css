@@ -1,0 +1,278 @@
+#personal-date {
+    position: relative;
+}
+
+#personal-date>div {
+    padding: 180px 0 80px 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: var(--text-1-black);
+}
+
+#personal-date::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: calc(50% - 280px);
+    background-color: var(--scale-9-blue);
+}
+
+/*Dados pessoais: conteúdo*/
+#personal-date_section1 {
+    width: 744px; 
+}
+
+#personal-date_section1 h1 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: -10px;
+}
+
+#personal-date_section1 form h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+#personal-date_section1 form>div label {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0 10px 0;
+}
+
+#personal-date_section1 form>div label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#personal-date_section1 form>div input,
+select {
+    border: 1px solid var(--gray-border);
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+    width: -webkit-fill-available;
+    outline: none;
+    font-family: var(--font-primary);
+    font-size: 14px;
+}
+
+#personal-date_section1 form input:disabled {
+    cursor: default;
+    background-color: #f6f5fa6e;
+    color: #333;
+    border-color: var(--gray-border);
+}
+
+.personal-date-grid2{
+    display: grid;
+    grid-template-columns: 359.5px 359.5px;
+    grid-column-gap: 25px;
+    position: relative;
+}
+
+#password {
+    font-size: 14px;
+    color: var(--text-1-black);
+}
+
+.personal-date_section1_form-colum2-dif1 {
+    display: grid;
+    grid-template-columns: 440px 279px;
+    grid-column-gap: 25px;
+}
+
+.personal-date-grid2-dif {
+    display: grid;
+    grid-template-columns: 628px 91px;
+    grid-column-gap: 25px;
+}
+
+#justify {
+    display: flex;
+    justify-content: end;
+}
+
+#edit_ad {
+    background-color: var(--scale-2-purple);
+    border: none;
+    width: 226px;
+    height: 36px;
+    color: var(--white);
+    border-radius: 40px;
+}
+
+#edit_ad {
+    font-size: 14px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    margin: 40px 0 0 0;
+}
+
+#personal-date_section1 form .help-block {
+    font-size: 12px;
+    color: red;
+    position: absolute;
+    margin-bottom: 10px;
+    transform: translateY(-0.5px);
+}
+
+@media(min-width: 320px) and (max-width: 480px){
+    #container_menu > a > button {  
+        height: 36px;
+        margin: 0;
+        font-size: 13.5px;
+    }
+ 
+    #personal-date::before { 
+        display: none;
+    } 
+
+    #personal-date nav { 
+        display: none;
+    } 
+
+    #personal-date>div {
+        padding-top: 140px;  
+        width: 96.3%;
+    } 
+    
+    #personal-date_section1 {
+        width: 100%;
+    }
+
+    #personal-date_section1 h1 {
+        font-size: 25px; 
+    }
+
+    #personal-date_section1 form h2 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 40px;
+    }
+
+    form .personal-date-grid2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .select-box {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        position: relative; 
+    }
+
+    .personal-date-grid2-dif {
+        display: grid;
+        grid-template-columns: 74% 21%;
+        grid-column-gap: 5%;
+    }
+
+    .select-box .options-container.active {
+        top: 110px;
+        position: absolute;
+    }
+}
+
+@media(min-width: 481px) and (max-width: 841px) { 
+    #container_menu > a > button {  
+        height: 36px;
+        margin: 0;
+        font-size: 14px;
+    }
+
+    #my-account-sidebar_mobile {
+        display: block;
+    }
+
+    #personal-date {
+        position: relative;
+        width: 100%;
+    }
+
+    #personal-date::before { 
+        display: none;
+    } 
+
+    #personal-date nav { 
+        display: none;
+    } 
+
+    #personal-date>div {
+        padding-top: 150px; 
+    }
+    
+    #personal-date_section1 {
+        width: 100%;
+    }
+
+    main #personal-date_section1 h1 {
+        font-size: 25px; 
+    }
+
+    form .personal-date-grid2 {
+        grid-template-columns: 47.5% 47.5%;
+        grid-column-gap: 5%;
+    }
+
+    .select-box { 
+        width: 47.5%; 
+        right: 0;
+        position: absolute;
+    }
+
+    .personal-date-grid2-dif {
+        display: grid;
+        grid-template-columns: 74% 21%;
+        grid-column-gap: 5%;
+    }
+}
+
+@media(min-width: 841px) and (max-width: 1159px) { 
+    #personal-date {
+        position: relative;
+        width: 100%;
+    }
+
+    #personal-date::before { 
+        width: 28%; 
+    }  
+
+    .option a { 
+        font-size: 14px; 
+    }
+    
+    .option_active a { 
+        font-size: 14px; 
+    }
+    
+    #personal-date_section1 {
+        width: 68%;
+    }
+
+    #personal-date_section1 h1 {
+        font-size: 23px; 
+    }
+
+    form .personal-date-grid2 {
+        grid-template-columns: 47.5% 47.5%;
+        grid-column-gap: 5%;
+    }
+
+    .select-box { 
+        width: 47.5%; 
+        right: 0;
+        position: absolute;
+    }
+
+    .personal-date-grid2-dif {
+        display: grid;
+        grid-template-columns: 74% 21%;
+        grid-column-gap: 5%;
+    }
+}
+
+

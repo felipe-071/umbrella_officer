@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/default/default.css">
+    <link rel="stylesheet" href="style/register-space/categories/corporates/corporates-categories.css">
+    </head>
+<body>
+    <header id="header" class="container_margin_default">
+        <div class="default_margin">
+            <a href="/"> <img src="images/default/logo.svg" alt="logo"> </a>
+
+            <div id="menu">
+                <div id='menu_sign-in-up'>
+                    <img src="images/default/user.svg" alt="usuário">
+                    <img src="images/default/menu_hamburguer.svg" alt="menu">
+                </div>
+                <div class="menu_open">
+                    <div>
+                        <img src="images/default/perfil.png" alt="foto de perfil">
+                        <h3>Usuário <span>Cliente</span></h3>
+                    </div>
+                    <div>
+                        <nav>
+                            <ul>
+                                <li class="popUp-login-signUp">
+                                    <img src="images/default/my-perfil.png" alt="meu perfil">
+                                    Login
+                                </li>
+                                <li class="popUp-login-signUp">
+                                    <img src="images/default/sign_up.png" alt="cadastre-se">
+                                    Cadastre-se
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                    <div>
+                        <a href="/central-de-ajuda"></a><img src="images/default/question.png" alt="sair da conta">
+                       Central de ajuda</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="container_popUp_login-signUp">
+            <div class="popUp">
+                <img class="close_popup" src="images/default/close_icon.svg" alt="close">
+                <h2>Umbrella Officing</h2>
+                <h3>Seja bem-vindo</h3>
+                <div>
+                    <span>Faça seu login para continuar</span>
+                    <form>
+                        <label for="cpf-email">
+                            CPF ou E-mail :
+                            <input type="text" id="cpf-email">
+                        </label>
+
+                        <label for="password-login">
+                            Senha:
+                            <input type="password" id="password-login">
+                        </label>
+
+                        <div>
+                            <a href="#">Esqueceu a senha?</a>
+                        </div>
+
+                        <button type="submit">LOGIN</button>
+                    </form>
+                    <div id="alternatives">
+                        <div><span>OR</span></div>
+                        <div>
+                            <span>Faça login com suas Redes Sociais</span>
+                            <img src="images/default/icon-google.png" alt="ícone do google">
+                            <img src="images/default/icon-facebok.svg" alt="ícone do facebbok">
+                            <img src="images/default/icon-apple.png" alt="ícone do facebbok">
+                            <span>Ainda não possui conta? <a href="#">Cadastre-se</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popUp">
+                <img class="close_popup" src="images/default/close_icon.svg" alt="close">
+                <h2>Umbrella Officing</h2>
+                <h3>Seja bem-vindo</h3>
+                <div>
+                    <span>Cadastre-se e faça parte da nossa comunidade</span>
+                    <form>
+                        <label for="name">
+                            Nome:
+                            <input type="text" id="name">
+                        </label>
+
+                        <label for="middlename">
+                            Sobrenome:
+                            <input type="text" id="middlename">
+                        </label>
+
+                        <label for="cpf">
+                            CPF:
+                            <input type="number" id="cpf">
+                        </label>
+
+                        <label for="birth_date">
+                            Data de nascimento
+                            <input type="date" id="birth_date">
+                        </label>
+
+                        <label for="phone">
+                            Telefone:
+                            <input type="number" id="phone">
+                        </label>
+
+                        <button type="submit">CADASTRAR</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div id='box_black'></div>
+
+    <main>
+        <section id="corporates-categories_section" class="container_margin_default">
+            <div class="default_margin">
+            
+                        <nav>
+                            <ul class="breadcrumb">
+                                <li><a href="/tipo-de-ambiente">Tipo de ambiente</a></li>
+                                <li>></li>
+                                <a href=""><li aria-current="page">Categoria do ambiente</li></a>
+                              </ul>
+                        </nav>
+
+                <div class="align-elements center">
+                    <h1>Escolha a categoria</h1>
+                    <ul>
+                        <li class="space-box">
+                            Espaço colaborativo
+                        </li>
+                        
+                        <li class="space-box">
+                            Espaço privativo
+                        </li>
+
+                        <li class="space-box">
+                            Sala de treinamento
+                        </li>
+                    </ul>
+                </div>
+                <div class="align-elements" id="align-buttons">
+                  
+                        <a href="" id="advance"><button id="advanceButton">Avançar</button></a>
+                </div>
+
+                <!-- <div>
+                    <img src="images/default/return-arrow.png" alt="voltar"> 
+                    <h1>Escolha a categoria</h1>
+                    <button>Nenhuma das opções</button>
+                </div>
+
+                <div>
+                    <ul>
+                        <li>
+                            <div><img src="images/become-advertiser/categories/adaptables/house-category.png" alt="">
+                            <div class="subtitle">
+                                <h2>Casa</h2>
+                            </div>
+                        </div>
+                    </li>
+                        <li>
+                            <div>
+                                <img src="images/become-advertiser/categories/adaptables/apartment-category.png" alt="">
+                                <div class="subtitle">
+                                    <h2>Apartamento</h2>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="images/become-advertiser/categories/adaptables/unity-category.png" alt="">
+                                <div class="subtitle">
+                                    <h2>Unidade à parte</h2>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div id="buttonDiv">
+                        <button id="advanceButton">Avançar</button>
+                    </div>
+                    
+                </div> -->
+
+            </div>
+        </section>
+    </main>
+
+    <script src="script/default/header/header.js"></script>
+    <script src="script/register-space/corporates-categories/corporates-categories.js"></script>
+</body>
+</html>

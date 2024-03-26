@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style/default/default.css">
+    <link rel="stylesheet" href="style/admin/admin.css">
+    <link rel="stylesheet" href="style/admin/ads-control.css">
+</head>
+
+<body>
+    <header id="header-admin" class="container_margin_default">
+        <div class="default_margin">
+            <span>
+            <div>
+                <h3>
+                    Olá, <b>Julia</b><br>
+                    Administrador(a)
+                </h3>
+                <img src="/images/admin/admin-julia.png" alt="Administradora">
+            </div>
+        </div>
+    </header>
+
+    <div id='box_black'></div>
+
+    <main>
+        <div id="admin" class="container_margin_default">
+            <div class="default_margin">
+                <nav>
+                    <ul>
+                        <li class="option">
+                            <a href="/controle-geral"><i class="fa-solid fa-chart-column icon"></i>
+                                Controle geral</a>
+                        </li>
+                        <li class="option">
+                            <a href="/controle-de-usuarios">
+                                <i class="fa-regular fa-user icon"></i>
+                                Usuários</a>
+                        </li>
+                        <li class="option">
+                            <a href="#"><i class="fa-solid fa-bullhorn icon-ativo"></i>
+                                Anúncios</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <section id="ads-control_section1" class="container_margin_default">
+                    <h1>Anúncios</h1>
+
+                    <div>
+                        <div class="container_search-admin_input">
+                            <input id="search-admin_txt" placeholder="Procure um anúncio"></input>
+                            <div>
+                                <img src="images/default/search.svg" alt="Pesquisa">
+                            </div>
+                        </div>
+
+                        <div class="select-box">
+                            <div class="options-container">
+                                <div class="option">
+                                    <input type="radio" class="radio" id="most-recents" name="category" />
+                                    <label for="most-recents">Mais recentes</label>
+                                </div>
+
+                                <div class="option">
+                                    <input type="radio" class="radio" id="oldest" name="category" />
+                                    <label for="oldest">Mais antigas</label>
+                                </div>
+
+                                <div class="option">
+                                    <input type="radio" class="radio" id="alphabetical-order" name="category" />
+                                    <label for="alphabetical-order">De A-Z</label>
+                                </div>
+                            </div>
+
+                            <div class="selected">
+                                Ordernar por
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul>
+                        <li>
+                            <div>
+                                <h2>Água Branca</h2>
+                                <p>Salas cadastradas: 3</p>
+                                </span>
+                            </div>
+
+                            <div>
+                                <p>Aline dos Santos Ribeiro Luna</p>
+                                <p><strong>Cadastro: 22/04/2022
+                                        <br>Anúncio: --</strong></p>
+                            </div>
+
+
+                            <div>
+                                <button type="" id="view-photos">
+                                    Ver fotos
+                                </button>
+                                <button type="submit" id="delete-user">
+                                    Deletar
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://kit.fontawesome.com/e4e1096c30.js" crossorigin="anonymous"></script>
+    <script src="script/default/header/header.js"></script>
+    <script src="script/admin/admin.js"></script>
+
+</body>
+
+</html>

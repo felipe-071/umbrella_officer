@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js" integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.js"></script>
+    <link rel="stylesheet" href="style/default/default.css">
+    <style>
+        h1{
+            font-size: 16px;
+        }
+
+        section{
+            padding: 40px 0;
+        }
+
+        section > div{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        fieldset{
+            flex-direction: column;
+        }
+
+        .fields{
+            display: none;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button{
+            align-self: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    <section class="container_margin_default">
+        <div class="default_margin">
+            <h1>Cadastro</h1>
+            <form action="/espacos" method="post" enctype="multipart/form-data">
+                <!-- <fieldset id="test1" class="test">
+                    <label for="name">
+                      Nome:
+                      <input type="text" id="name" name="name">
+                    </label>
+                    <label for="email">
+                      E-mail:
+                      <input type="email" id="email" name="email">
+                    </label>
+      
+                    <label for="cpf">
+                      CPF:
+                      <input type="text" id="cpf" name="cpf">
+                    </label>
+      
+                    <label for="password">
+                      Senha:
+                      <input type="password" id="password" name="password">
+                    </label>
+      
+                    <label for="conf_password">
+                      Confirmar senha:
+                      <input type="password" class="form-control" id="conf_password" name="conf_password">
+                    </label>
+                    <input type="button" class="form_button next" value="Próximo">
+                  </fieldset>
+                  <fieldset id="test2" class="test campos">
+                    <label for="birth_date">
+                      Data de nascimento
+                      <input type="date" id="birth_date" name="birth_date" required>
+                    </label>
+                    <label for="phone">
+                      Telefone:
+                      <input type="text" id="phone" name="phone" required>
+                    </label>
+                    <label for="profession">
+                      Profissão:
+                      <input type="text" id="profession" name="profession" required>
+                    </label>
+                    <button class="form_button" type="submit">CADASTRAR</button>
+                  </fieldset> -->
+                
+                 <fieldset>
+                    <span>Status</span>
+                <input type="text" name="status_anun" value="Ativo">
+                <span>Tipo ambiente</span>
+                <input type="text" name="tipo_ambiente_anun" placeholder="tipo de ambiente" name="tipo_ambiente_anun" value="">
+                <input type="text" name="categoria_anun" placeholder="Categoria" value="">
+                <input type="text" placeholder="Título anunciado" name="titulo_anun" value="">
+                 <input type="number" placeholder="quantidade de salas" name="quant_sala" value=""> -->
+                <input type="text" placeholder="descrição" name="descricao_anun" value="">
+                <input name="teste" type="file" multiple/>
+                <input name="teste" type="file" multiple/>
+                <input type="text">
+                <input type="text" placeholder="Localização da cidade" name="loc_cidade" value="">
+                <input type="text" placeholder="Localização do estado" name="loc_estado" value=""> -->
+                <input type="datetime" placeholder="Data de cadastro" name="data_cadastro_anun" value="">
+                <input type="radio" name="teste" value="adaptado">
+                <input type="radio" name="teste" value="corporativo">
+                <input type="button" class="next" value="Próximo">
+                </fieldset>
+                <fieldset class="fields">
+                    <input type="text" placeholder="País">
+                    <input type="button" class="back" value="Voltar">
+                    <input class="next" type="button" value="Próximo">                
+                </fieldset>
+                <fieldset class="fields">
+                    <input type="text" required placeholder="Pontos de referência">
+                    <input type="button" value="Voltar" class="back">
+                    <button>Enviar</button>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+    <script>
+
+    const switchContent = () => {
+    const popUpCancel = document.querySelectorAll("fieldset");
+
+    popUpCancel.forEach((content, index, arr)=>{
+        content.addEventListener('click', (e) => {
+            console.log(e.target)
+            if(e.target.className == 'next'){
+                nextContent(index, arr)
+            }
+
+            if(e.target.className == 'back'){
+                previousContent(index, arr)
+            }
+
+        })
+    })
+
+    function nextContent(index, arr){
+        var lengthArray = arr.length-=1
+
+                if(index == index && index < lengthArray){
+                    console.log(arr)
+                    const teste = index*-1
+                    console.log(teste)
+                        var i = index
+                        arr[i].style.display = 'none'
+                        arr[i+=1].style.display = 'flex'
+                }
+    }
+
+    function previousContent(index, arr){
+                if(index == index){
+                        var i = index
+                        arr[i].style.display = 'none'
+                        arr[i-=1].style.display = 'flex'
+                }
+    }
+     
+}
+
+    switchContent()
+    </script>
+</body>
+</html>

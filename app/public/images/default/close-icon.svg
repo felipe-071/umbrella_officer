@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 26" width="27" height="26">
+	<title>Novo Projeto</title>
+	<defs>
+		<image  width="27" height="26" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAaCAMAAABxVtfCAAAAAXNSR0IB2cksfwAAAGZQTFRF////8/PzQEBAq6urw8PDSEhIPDw8AAAABAQEu7u7DAwMVFRU19fXGBgYj4+PJCQkk5OT5+fnKCgo4+PjODg4fHx8h4eHcHBwMDAwTExM+/v7LCwsi4uL39/fm5ub6+vrs7Oz5+fnaGkbRgAAACJ0Uk5TAAD///////////////////+A/8D///////8A/////0D/ACWYLRsAAAC2SURBVHicfdLrGoIgDAbgDy1n4iFN005W93+TgUg4UPdDgZdH2QYgohhhHI4CEAmlIZ4ySgQkUYhxqlYl8iLEiYocM5ZrpLBSQ3J4dgTUzRJLPWkuducSDdXuD3WrVzo1uvo0ZamiR69fLSOLg36opL0QNzIREnCXm7RnQm5+c+csLAeOlmDwsSzLYAnoeGFMOZ/zjBWUt4HhyyNg1A2s/m0f2alt46PNuxThvXoHPxkNX+zc3R/ZjguuWU1pqgAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>

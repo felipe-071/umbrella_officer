@@ -1,0 +1,997 @@
+ul {
+    list-style: none;
+}
+
+#my-reservations {
+    position: relative;
+}
+
+#my-reservations>div {
+    padding: 180px 0 80px 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: var(--text-1-black);
+}
+
+#my-reservations::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: calc(50% - 280px);
+    background-color: var(--scale-9-blue);
+}
+
+/*Minhas reservas: conteúdo*/
+#my-reservations>div>nav~div {
+    width: 744px;
+}
+
+#my-reservations_section1 h1 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#my-reservations_section1 ul li .reservations-space {
+    display: flex; 
+    width: 744px;
+    margin-bottom: 35px;
+}
+
+#my-reservations_section1 ul li div .space-img {
+    width: 200px;  
+    height: 209px;
+    position: relative;
+}
+
+#my-reservations_section1 ul li div .space-img img {
+    width: 100%; 
+    height: 209px;
+    border-radius: 10px 0 0 10px; 
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+#my-reservations_section1 ul li div .space-description {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    width: 542px;
+    height: 209px;
+    box-sizing: border-box; 
+    justify-content: space-between;
+}
+
+.space-description .description-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.description-text .p {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.space-description
+.description-text .p p {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--scale-13-blue);
+    font-style: initial;  
+}
+
+.space-description .description-text h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: -5px 0 15px 0;
+}
+
+.space-description .description-text p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+#my-reservations_section1 ul li div div .price-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; 
+}
+
+.price-space h3 {
+    font-size: 22px;
+}
+
+.price-space div button {
+    border: none;
+    width: 130px;
+    height: 36px;
+    border-radius: 12px;
+}
+
+.price-space div button {
+    font-size: 13px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+}
+
+.visits {
+    background-color: var(--scale-2-purple);
+    color: #fff;
+    margin-right: 10px;
+}
+
+.cancel {
+    background: var(--scale-2-gray);
+    color: var(--text-1-black);
+}
+
+#my-reservations_section2 h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 80px 0 40px;
+}
+
+#my-reservations_section2 .slider {
+    list-style: none;
+    width: 100%
+}
+
+.arrows {
+    position: absolute;
+    top: 148px;
+    z-index: 599;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.slider>button:first-child {
+    left: -35px;
+}
+
+.arrow-right {
+    right: calc(3.5% - 35px);
+}
+
+.slider .fa {
+    font-size: 30px;
+    color: #333;
+}
+
+.arrows:hover {
+    background: rgba(82, 82, 82, 0.2);
+    transition: .3s;
+}
+
+#my-reservations_section2 .slick-slide {
+    border-radius: 20px 20px 10px 10px;
+    padding-bottom: 16px;
+}
+
+#my-reservations_section2 .slick-dots {
+    list-style: none;
+    bottom: -40px;
+    max-width: 744px;
+}
+
+.slider li>div {
+    width: 84%;
+    max-width: 234px;
+}
+
+.slider li img {
+    width: 100%;
+}
+
+.description {
+    padding: 20px 20px 60px 20px;
+    background-color: var(--scale-1-gray);
+    width: 100%;
+    height: 14rem;
+    box-sizing: border-box;
+}
+
+.description h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.description p {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+
+/*Minhas reservas: Pop para próximas visitas*/
+#container_popUp_calendar,
+#container_popUp_cancel {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+}
+
+.popUp_calendar {
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    background-color: white;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px;
+}
+
+.calendar-week-day {
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 500;
+}
+
+.calendar-week-day div {
+    display: grid;
+    place-items: center;
+    color: var(--bg-second);
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    color: var(--color-txt);
+}
+
+.calendar-days div {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    animation: to-top 1s forwards;
+    /* border-radius: 50%; */
+}
+
+.calendar-days div span {
+    position: absolute;
+}
+
+.calendar-days div:hover span {
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+
+.calendar-days div span:nth-child(1),
+.calendar-days div span:nth-child(3) {
+    width: 2px;
+    height: 0;
+    background-color: var(--color-txt);
+}
+
+.calendar-days div:hover span:nth-child(1),
+.calendar-days div:hover span:nth-child(3) {
+    height: 100%;
+}
+
+.calendar-days div span:nth-child(1) {
+    bottom: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(3) {
+    top: 0;
+    right: 0;
+}
+
+.calendar-days div span:nth-child(2),
+.calendar-days div span:nth-child(4) {
+    width: 0;
+    height: 2px;
+    background-color: var(--color-txt);
+}
+
+.calendar-days div:hover span:nth-child(2),
+.calendar-days div:hover span:nth-child(4) {
+    width: 100%;
+}
+
+.calendar-days div span:nth-child(2) {
+    top: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(4) {
+    bottom: 0;
+    right: 0;
+}
+
+.calendar-days div:hover span:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.calendar-days div:hover span:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.calendar-days div:hover span:nth-child(4) {
+    transition-delay: 0.6s;
+}
+
+.calendar-days div.curr-date, 
+.calendar-days div.curr-date:hover {
+    background-color: var(--blue); 
+    border-radius: 50%;
+}
+
+.calendar-days div.curr-date span {
+    display: none;
+}
+
+.month-picker {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.month-picker:hover {
+    background-color: var(--color-hover);
+}
+
+.year-picker {
+    display: flex;
+    align-items: center;
+}
+
+.year-change {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+
+#year {
+    margin: 0 10px;
+}
+
+.toggle {
+    display: flex;
+}
+
+.toggle span {
+    margin-right: 10px;
+    color: var(--color-txt);
+}
+
+.month-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    display: grid;
+    transform: scale(1.5);
+    visibility: hidden;
+    pointer-events: none;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.month-list.show {
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: visible;
+    transition: all 0.2s ease-in-out;
+}
+
+.month-list>div {
+    display: grid;
+    place-items: center;
+}
+
+.month-list>div>div {
+    padding: 5px 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.month-list>div>div:hover {
+    font-weight: 600;
+}
+
+@keyframes to-top {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/*Minhas reservas: Pop up de cancelamento de reserva*/
+.popUp_cancel {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 16px;
+    box-sizing: border-box;
+    background: white;
+    padding: 20px;
+    width: 950px;
+    padding: 30px 45px 15px 45px;
+    animation: fadeIn ease .27s;
+}
+
+#popUp-cancel_state1 div:first-child {
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+}
+
+#popUp-cancel_state1 label {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.popUp_cancel textarea {
+    border: 1px solid var(--gray-border);
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    resize: none;
+    width: -webkit-fill-available;
+    outline: none;
+    margin-top: 15px;
+    font-family: var(--font-primary);
+    font-size: 16px;
+}
+
+.popUp_go {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 8px;
+}
+
+#popUp-cancel_state1>div p,
+#popUp-cancel_state2>div p,
+#popUp-cancel_state3>div p {
+    font-size: 14.5px;
+    font-weight: bold;
+    color: var(--scale-2-purple);
+}
+
+.go,
+#submit {
+    background-color: var(--scale-2-purple);
+    border: none;
+    width: 134px;
+    height: 30px;
+    color: var(--white);
+    border-radius: 30px;
+}
+
+.go,
+#submit {
+    font-size: 14.5px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+}
+
+#popUp-cancel_state2 div:first-child,
+#popUp-cancel_state3 div:first-child {
+    width: fit-content;
+    position: relative;
+    z-index: 99;
+    margin: -5px 0 0 -20px;
+}
+
+.arrow-left {
+    font-size: 26px;
+    color: var(--scale-2-purple);
+    cursor: pointer;
+}
+
+.popUp_flex {
+    display: flex;
+    top: 0;
+}
+
+.avaliation-img {
+    width: 200px;
+    margin: -20px 50px 0 -10px
+}
+
+.popUp_flex>div {
+    width: 100%;
+}
+
+#popUp-cancel_state2>div label,
+#popUp-cancel_state3>div label {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    width: 15%;
+    list-style: none;
+}
+
+.rating li {
+    width: 50px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.rating img {
+    width: 30px;
+}
+
+#popUp-cancel_state2 div>button::after {
+    margin-top: -30px;
+}
+
+#popUp-cancel_state2,
+#popUp-cancel_state3 {
+    display: none;
+}
+
+
+@media(min-width: 320px) and (max-width: 550px) {
+    #container_menu>a>button {
+        width: 136px;
+        height: 36px;
+        margin: 0;
+        font-size: 13.5px;
+    }
+
+    #my-reservations::before {
+        display: none;
+    }
+
+    #my-account-menu {
+        display: none;
+    }
+
+    #my-reservations>div {
+        padding: 140px 0 80px 0; 
+        width: 96%;
+        display: flex;
+        align-items: center;
+    }
+
+    #my-reservations>div>nav~div {
+        width: 100%;
+    }
+
+    #my-reservations_section1 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #my-reservations_section1 h1 {
+        width: 86%;
+        margin-bottom: 25px;
+    }
+
+    #my-reservations_section1 ul,
+    #my-reservations_section1 ul li {
+        width: 100%; 
+    }
+
+    #my-reservations_section1 ul li .reservations-space {
+        width: 100%; 
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #my-reservations_section1 ul li div .space-img {
+        width: 86%;
+    }
+
+    #my-reservations_section1 ul li div .space-description {
+        padding: 20px 0 0 0;
+        width: 86%;
+        height: 50%;
+    }
+
+    .space-description .description-text .p p {
+        font-size: 11px;
+    }
+
+    .description-text .p { 
+        margin-bottom: 10px;
+    }
+
+    .space-description .description-text h2 {
+        font-size: 18px; 
+        margin-bottom: 15px;
+    }
+
+    .space-description .description-text p {
+        font-size: 13px;  
+    }
+
+    #my-reservations_section1 ul li div div .price-space { 
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    .price-space div button { 
+        font-size: 12px;
+        width: 128px;
+        height: 30px; 
+        margin-bottom: 5px;
+    }
+
+    .price-space h3 {
+        margin-bottom: 15px;
+    }
+    
+    #my-reservations_section2 {
+        width: 100%; 
+    }
+
+    #my-reservations_section2 .slider { 
+        width: 100%;
+    } 
+
+    #container_popUp_calendar,
+    #container_popUp_cancel {
+        width: 100%;
+    }
+
+    .popUp_calendar {
+        margin: 0 8px;
+    }
+
+    .calendar-header {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .calendar-days div {
+        width: 25px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    .calendar-week-day {
+        font-size: 14px;
+    }
+
+    .month-list>div>div {
+        padding: 5px 10px; 
+        font-size: 13px;
+    }
+
+    .popUp_cancel {
+        margin: 0 8px;
+        padding: 30px 30px 15px 30px;
+        width: 95%;
+    }
+
+    #close_popUp_cancel {
+        width: 16px;
+        height: 16px;
+    }
+
+    #popUp-cancel_state1 label {
+        font-size: 17.5px;
+    }
+
+    .popUp_cancel textarea {
+        font-size: 14px;
+        margin-top: 30px;
+    }
+
+    #popUp-cancel_state2 div:first-child, #popUp-cancel_state3 div:first-child { 
+        margin: -5px 0 0 -16px;
+    }
+
+    .arrow-left {
+        font-size: 20px; 
+    }
+
+    #popUp-cancel_state1>div p,
+    #popUp-cancel_state2>div p,
+    #popUp-cancel_state3>div p {
+        font-size: 12.5px;
+    }
+
+    .go,
+    #submit {
+        font-size: 13.5px;
+        width: 120px;
+    }
+
+    .popUp_flex {
+        flex-direction: column;
+    }
+
+    .avaliation-img {
+        display: none;
+    }
+
+    #popUp-cancel_state2>div label,
+    #popUp-cancel_state3>div label {
+        font-size: 20px;
+    }
+
+    #comment1,
+    #comment2 {
+        margin-top: 20px;
+    }
+
+    .rating img {
+        width: 28px;
+    }
+}
+
+@media(min-width: 550px) and (max-width: 841px) {
+    #container_menu>a>button {
+        width: 136px;
+        height: 36px;
+        margin: 0;
+        font-size: 13.5px;
+    }
+
+    #my-reservations::before {
+        display: none;
+    }
+
+    #my-account-menu {
+        display: none;
+    }
+
+    #my-reservations>div {
+        padding: 150px 0 80px 0;
+        width: 96%;
+        display: flex;
+        align-items: center;
+    }
+
+    #my-reservations>div>nav~div {
+        width: 100%;
+    }
+
+    #my-reservations_section1 {
+        width: 100%;
+        display: flex;
+        flex-direction: column; 
+    }
+
+    #my-reservations_section1 ul,
+    #my-reservations_section1 ul li {
+        width: 100%; 
+    }
+
+    #my-reservations_section1 ul li .reservations-space {
+        width: 100%; 
+        align-items: center; 
+    }
+
+    #my-reservations_section1 ul li div .space-img {
+        width: 40%;
+    }
+
+    #my-reservations_section1 ul li div .space-description {
+        padding: 0 0 0 15px;
+        width: 65%; 
+    }
+
+    .description-text .p { 
+        margin-bottom: 10px;
+    }
+
+    .space-description .description-text h2 {
+        font-size: 18px; 
+        margin-bottom: 15px;
+    }
+
+    .space-description .description-text p {
+        font-size: 13px;  
+    }
+
+    #my-reservations_section1 ul li div div .price-space { 
+        align-items: flex-end; 
+        margin-top: 15px;
+    }
+
+    .price-space div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .price-space div button { 
+        font-size: 13px;
+        width: 140px;
+        height: 30px; 
+        margin-bottom: 5px;
+    }
+
+    .visits {
+        margin: 0;
+    }
+
+    #my-reservations_section2 {
+        width: 100%;
+    }
+
+    #my-reservations_section2 .slider { 
+        width: 100%;
+    }
+
+    #container_popUp_calendar,
+    #container_popUp_cancel {
+        width: 100%;
+    }
+
+    .popUp_calendar {
+        padding: 30px;
+    }
+
+    .calendar-header {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .calendar-days div {
+        width: 35px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .calendar-week-day {
+        font-size: 16px;
+    }
+
+    .month-list>div>div {
+        padding: 5px 10px; 
+        font-size: 13px;
+    }
+
+    .popUp_cancel {
+        margin: 0 16px;
+        padding: 30px 30px 15px 30px;
+    }
+
+    #close_popUp_cancel {
+        width: 16px;
+        height: 16px;
+    }
+
+    #popUp-cancel_state1 label {
+        font-size: 18px;
+    }
+
+    .popUp_cancel textarea {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    #popUp-cancel_state2 div:first-child, #popUp-cancel_state3 div:first-child { 
+        margin: -5px 0 0 -16px;
+    }
+
+    .arrow-left {
+        font-size: 20px; 
+    }
+
+    #popUp-cancel_state1>div p,
+    #popUp-cancel_state2>div p,
+    #popUp-cancel_state3>div p {
+        font-size: 12.5px;
+    }
+
+    .go,
+    #submit {
+        font-size: 13.5px;
+        width: 120px;
+    }
+
+    .avaliation-img {
+        width: 165px;
+        margin: -20px 0 0 -18px;
+    }
+
+    #popUp-cancel_state2>div label,
+    #popUp-cancel_state3>div label {
+        font-size: 20px;
+    }
+
+    #comment1,
+    #comment2 {
+        margin-top: 20px;
+    }
+
+    .rating img {
+        width: 28px;
+    }
+}
+
+@media(min-width: 841px) and (max-width: 1160px) {
+    #my-reservations>div {
+        width: 96%;
+    }
+
+    #my-reservations::before {
+        width: 28%;
+    }
+
+    #my-reservations>div>nav~div {
+        width: 68%;
+    }
+
+    #my-reservations_section1 ul li .reservations-space { 
+        width: 100%;
+    }
+
+    #my-reservations_section1 ul li div .space-img {
+        width: 260px; 
+    }
+
+    #my-reservations_section1 ul li div .space-description { 
+        width: 98%; 
+    }
+
+    .description-text .p { 
+        margin-bottom: 15px;
+    }
+
+    .space-description .description-text p {
+        font-size: 14px; 
+    }
+
+    .price-space div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .price-space div button { 
+        height: 30px; 
+    }
+
+    .visits {
+        margin: 0 0 10px 0;
+    }
+    
+    .popUp_cancel {
+        width: 100%;
+        margin: 0 16px;
+    }
+}

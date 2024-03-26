@@ -1,0 +1,49 @@
+<div class="container_menu_open">
+    <div class="menu_open">
+        <div>
+            <div class="picture_edit">
+                <div id="mask_image_profile">
+                <%if(autenticado.profile_picture != null){%>
+                    <img class="image_profile" src="data:image/gif;base64,<%=autenticado.profile_picture%>" alt="Foto de perfil">                                   
+                <%}%>
+
+                <%if(autenticado.profile_picture == null){%>
+                    <img class="image_profile" src="images/default/perfil.png" alt="Foto de perfil">                               
+                <%}%>
+                </div>   
+                <i class="fa-solid fa-pen pictureProfile list"></i>
+            </div>
+            <div id="user_informations">
+                <h3><%=autenticado.name%></h3>
+                <span><%=autenticado.profession%></span>
+            </div>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <li class="list-autenticado">
+                        <i class="bx bx-user icon"></i>
+                        <a href="/meu-perfil">Minha conta</a>
+                    </li>
+                    <li class="list-autenticado">
+                        <i class='bx bx-heart icon'></i>
+                        <a href="/favoritos">Favoritos</a>
+                    </li>
+                    <li class="list-autenticado">
+                        <i class='bx bx-bell icon' ></i>
+                        <a href="/notificacoes">Notificações</a>
+                    </li> 
+                    <div>
+                        <a href="/central-de-ajuda"> <i class="bx bx-info-circle icon"></i>
+                            Central de ajuda</a>
+                    </div>
+                    <li class="list-autenticado">
+                        <i class='bx bx-log-out icon'></i>
+                        <a href="/sair">Sair</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+    </div>
+</div>
