@@ -1,66 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-	
+    <title>Cadastrar um Officed</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/default/default.css">
     <link rel="stylesheet" href="style/register-space/categories/adaptables/subcategories/apartment-subcategory.css">
-    </head>
+</head>
+
 <body>
     <%- include('../../../../../partial/header-register-space.ejs'); %>
-
-
+    
     <div id='box_black'></div>
 
     <main>
-        <fieldset id="adaptables-categories_section3" class="container_margin_default">
-            <div class="default_margin">
-            
-                        <nav>
-                                <ul class="breadcrumb">
-                                  <li><a class="hoverU" href="/tipo-de-ambiente">Tipo de ambiente</a></li>
-                                  <li class="divisor">></li>
-                                  <a class="hoverU" href="/categorias-de-espacos-adaptaveis"><li>Categoria do ambiente</li></a>
-                                  <li class="divisor">></li>
-                                  <a href=""><li aria-current="page">Subcategoria do ambiente</li></a>
-                                </ul>
-                        </nav>
+        <section id="adaptables-categories_section" class="container_margin_default">
+            <div class="default_margin main__default_margin">
 
-                <div class="align-elements center">
+                <nav>
+                    <ul class="breadcrumb">
+                        <li><a class="hoverU" href="/tipo-de-ambiente">Tipo de ambiente</a></li>
+                        <li class="divisor">></li>
+                        <a class="hoverU" href="/categorias-espacos-adaptaveis">
+                            <li>Categoria do ambiente</li>
+                        </a>
+                        <li class="divisor">></li>
+                        <a href="">
+                            <li aria-current="page">Subcategoria do ambiente</li>
+                        </a>
+                    </ul>
+                </nav>
+
+                <div class="middle-div">
                     <h1>Escolha a categoria</h1>
-                    <ul>
-                        <li class="space-box">
-                            <img class="space-photo" src="images/register-space/adaptables/apartment-category.png" alt="">
-                            <div><span>Apartamento comum</span></div>
-                        </li>
-                        
-                        <li class="space-box">
-                            <img class="space-photo" src="images/register-space/adaptables/kitnet.png" alt="">
-                            <div><span>Kitnet</span></div>
+                    <ul class="middle-div__ul">
+                        <li class="ul__space-item">
+                            <img class="ul__space-photo" src="images/register-space/adaptables/common-apartment.png" alt="">
+                            <span>Apartamento Comum</span>
                         </li>
 
-                        <li class="space-box">
-                            <img class="space-photo" src="images/register-space/adaptables/loft.png" alt="">
-                            <div><span>Loft</span></div>
+                        <li class="ul__space-item">
+                            <img class="ul__space-photo" src="images/register-space/adaptables/kitnet.png" alt="">
+                            <span>Kitnet</span>
+                        </li>
+
+                        <li class="ul__space-item">
+                            <img class="ul__space-photo" src="images/register-space/adaptables/loft.png" alt="">
+                            <span>Loft, Studio e similares</span>
                         </li>
                     </ul>
                 </div>
-                <div class="align-elements" id="align-buttons">
-                    <button>Nenhuma das opções</button>
-                        <input type="button" value="Avançar">
+
+                <div class="bottom-div">
+                    <a href="">
+                        <button class="bottom-div__none">Nenhuma das opções</button>
+                    </a>
+
+                    <a id="advance" href="/localizacao">
+                        <button id="bottom-div__advance" disabled>Avançar</button>
+                    </a>
                 </div>
+
+            
             </div>
-        </fieldset>
+        </section>
     </main>
 
-    <script src="script/default/header/header.js"></script>
-    <script src="script/register-space/adaptables-categories/generic-sub.js"></script>
+    <script src="script/register-space/adaptables-categories/apartment-subcategory.js"></script>
+    
 </body>
+
 </html>

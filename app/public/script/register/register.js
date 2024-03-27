@@ -47,7 +47,7 @@ const informationsFieldsetForm = [
               <ul class="breadcrumb">
                   <li><a class="hoverU" href="/tipo-de-ambiente">Tipo de ambiente</a></li>
                   <li class="divisor">></li>
-                  <a class="hoverU" href="/categorias-de-espacos-adaptaveis"><li>Categoria do ambiente</li></a>
+                  <a class="hoverU" href="/categorias-espacos-adaptaveis"><li>Categoria do ambiente</li></a>
                   <li class="divisor">></li>
                   <a href=""><li aria-current="page">Subcategoria do ambiente</li></a>
                 </ul>
@@ -84,7 +84,7 @@ const informationsFieldsetForm = [
                             <ul class="breadcrumb">
                               <li><a class="hoverU" href="/tipo-de-ambiente">Tipo de ambiente</a></li>
                               <li class="divisor">></li>
-                              <a class="hoverU" href="/categorias-de-espacos-adaptaveis"><li>Categoria do ambiente</li></a>
+                              <a class="hoverU" href="/categorias-espacos-adaptaveis"><li>Categoria do ambiente</li></a>
                               <li class="divisor">></li>
                               <a href=""><li aria-current="page">Subcategoria do ambiente</li></a>
                             </ul>

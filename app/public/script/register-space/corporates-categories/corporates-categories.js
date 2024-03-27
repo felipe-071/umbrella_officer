@@ -48,7 +48,7 @@ const selectTypeOF = () => {
     
 
        if(index == 0){
-           button.setAttribute('href','/categorias-de-espacos-adaptaveis')
+           button.setAttribute('href','/categorias-espacos-adaptaveis')
            button.style.color = "var(--scale-2-purple)";
        }
 
