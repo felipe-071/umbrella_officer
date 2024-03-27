@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastrar Officed | Localização</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,19 +12,12 @@
     <link rel="stylesheet" href="style/default/default.css">
     <link rel="stylesheet" href="style/register/default-register.css">
     <link rel="stylesheet" href="style/register-space/localization.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script/register-space/localization.js"></script>
 </head>
 <body>
-    <header id="header" class="container_margin_default">
-        <div class="default_margin">
-            <a href="/"> <img src="images/default/logo.svg" alt="logo"> </a>
 
-            <div class="header-buttons">
-                <a href="/central-de-ajuda"><button>Ajuda</button></a>
-                <a href="/"><button>Sair</button></a>
-            </div>
-        </div>
-    </header>
+    <%- include('../../partial/header-register-space.ejs'); %>
 
     <div id='box_black'></div>
 
@@ -122,9 +115,9 @@
                     </form>
                 </div>
 
-                <div id="btn">
+                <!-- <div id="btn">
                     <input type="button" id="advance" value="Avançar">
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
