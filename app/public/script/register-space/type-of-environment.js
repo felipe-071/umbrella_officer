@@ -110,7 +110,6 @@ const selectTypeOF = () => {
         }
 
         arr[index].classList.add('border-select')
-        button.firstElementChild.style.background = "var(--scale-2-purple)";
 
     }))
 

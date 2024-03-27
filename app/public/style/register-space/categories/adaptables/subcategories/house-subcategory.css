@@ -1,5 +1,5 @@
 @media (min-width: 320px) and (max-width: 480px){
-    main .align-elements{
+    main .middle-div{
         flex-direction: column;
     }
 
@@ -13,29 +13,29 @@
         height: 87px;
     }
 
-    main #adaptables-categories_section2 .align-elements > ul{
+    main #adaptables-categories_section2 .middle-div > ul{
         flex-wrap: wrap;
         flex-direction: column;
     }
 
-    main #adaptables-categories_section2 .align-elements > ul > li{
+    main #adaptables-categories_section2 .middle-div > ul > li{
         flex-direction: row;
         margin: 0;
         width: 100%;
     }
 
-    main #adaptables-categories_section2 .align-elements > ul > li > div{
+    main #adaptables-categories_section2 .middle-div > ul > li > div{
         border-radius: 0 10px 10px 0;
         max-width: none;
         height: 55px;
         width: 100%;
     }
 
-    main #adaptables-categories_section2 .align-elements > ul > li:first-child{
+    main #adaptables-categories_section2 .middle-div > ul > li:first-child{
         margin-bottom: 20px;
     }
 
-    main .align-elements > ul > li:last-child{
+    main .middle-div > ul > li:last-child{
         margin-top: 20px;
     }
 
@@ -65,16 +65,16 @@
         margin-bottom: 20px;
     }
 
-    main #adaptables-categories_section2 .align-elements{
+    main #adaptables-categories_section2 .middle-div{
         flex-direction: column;
     }
 
-    main #adaptables-categories_section2 .align-elements > ul{
+    main #adaptables-categories_section2 .middle-div > ul{
         flex-wrap: wrap;
         flex-direction: column;
     }
 
-    main #adaptables-categories_section2 .align-elements > ul > li{
+    main #adaptables-categories_section2 .middle-div > ul > li{
         margin-top: 20px;
         flex-direction: row;
         width: 100%;
@@ -82,7 +82,7 @@
 
     }
 
-    main #adaptables-categories_section2 .align-elements > ul > li > div{
+    main #adaptables-categories_section2 .middle-div > ul > li > div{
         width: 100%;
         height: 65px;
         border-bottom-left-radius: 0;
@@ -94,7 +94,7 @@
         height: 97px;
     }
 
-    main #adaptables-categories_section2 .align-elements > ul > li:last-child{
+    main #adaptables-categories_section2 .middle-div > ul > li:last-child{
         margin-top: 20px;
     }
 
@@ -141,7 +141,7 @@
         font-size: 35px;
     }
 
-    main #adaptables-categories_section2 .align-elements > ul{
+    main #adaptables-categories_section2 .middle-div > ul{
         flex-wrap: wrap;
     }
 
@@ -228,87 +228,54 @@ a{
    font-size: 12px;
 }
 
-
-#adaptables-categories_section2{
-    height: 100vh;
-}
-
-#adaptables-categories_section2 > div{
-    justify-content: space-around;
+.main__default_margin{
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 105px;
+    justify-content: space-between;
+    height: calc(100vh - (36px * 2 + 97px));
+    padding: 36px 0;
+    margin-top: 97px;
 }
 
-.align-elements{
+.middle-div, .bottom-div{
     display: flex;
     align-items: center;
+    width: 100%;
     justify-content: space-between;
-    width: 100%;
 }
 
-#return-arrow-div{
-    padding-top: 35px;
+h1{
+    font-size: 40px;
+    color: var(--text-1-black);
+    max-width: 280px;
 }
 
-#return-arrow-div a img{
-    width: 55px;
+.middle-div__ul{
+    display: flex;
+    gap: 20px;
 }
 
-
-#adaptables-categories_section2 > div > :first-child > img{
-    width: 50px;
-    height: 50px;
-}
-
-#adaptables-categories_section2 .align-elements > ul > li > div{
+.ul__space-item{
+    display: flex;
+    flex-direction: column;
     border: 1px solid var(--gray-border);
-    padding: 20px 10px 10px 15px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    height: 45px;
-    max-width: 165px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-#adaptables-categories_section2 .align-elements > ul > li:nth-child(2) {
-    margin: 0 0 0 10px;  
-}
-
-#adaptables-categories_section2 .align-elements > ul > li > div img{
-    width: 100%;
-}
-
-#adaptables-categories_section2 .align-elements > ul > li > div span{
-    font-weight: 600;
-
-}
-
-/* .align-elements > ul > li :last-child{
-    margin-right: 0;
-} */
-
-.center > ul{
-    justify-content: center;
-}
-
-.space-photo{
+.ul__space-photo{
     width: 165px;
     height: 172px;
 }
 
-#adaptables-categories_section2 .align-elements > ul > li{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    border: 2px solid transparent;
-    margin: 0 10px;
-    cursor: pointer;
-    border-radius: 10px;
-    width: 165px;
-} 
+.ul__space-item span{
+    padding: 25px 0px 25px 15px;
+    font-weight: 600;
+    color: var(--text-1-black)
+}
 
-
-.advanceButton{
+#bottom-div__advance{
     width: 186px;
     height: 36px;
     border: none;
@@ -318,20 +285,10 @@ a{
     font-weight: 600;
     font-size: 17.5px;
     padding: 0;
+    cursor: default;
 }
 
-#adaptables-categories_section2 h1{
-    font-size: 40px;
-    max-width: 280px;
-    font-weight: bolder;
-    margin-right: 20px;
-}
-
-#align-buttons{
-    padding-top: 65px;
-}
-
-#align-buttons > :first-child{
+.bottom-div__none{
     background-color: transparent;
     border: none;
     font-weight: 800;
@@ -339,8 +296,3 @@ a{
     color: var(--scale-1-blue);
     padding: 0;
 }
-
-
-
-
-

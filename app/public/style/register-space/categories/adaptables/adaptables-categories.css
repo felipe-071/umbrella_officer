@@ -48,9 +48,9 @@
         width: 60%;
     }
 
-    main .advanceButton{
+    /* main .advanceButton{
         width: 100%;
-    }
+    } */
 }
 
 @media(min-width: 481px) and (max-width: 586px){
@@ -101,9 +101,9 @@
         height: 36px;
     }
 
-    main .advanceButton{
+    /* main .advanceButton{
         width: 100%;
-    }
+    } */
 }
 
 @media(min-width: 587px) and (max-width: 840px){
@@ -295,7 +295,7 @@
         content: 'Unidade à parte';
     }
 
-    .advanceButton{
+    #advanceButton{
         width: 186px;
         height: 36px;
         border: none;

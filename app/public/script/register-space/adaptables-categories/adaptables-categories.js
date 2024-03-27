@@ -1,18 +1,23 @@
-var button = document.getElementById("advance");
+var button = document.getElementById("advanceButton"); //Depois: padronizar os IDs do botão
+var link = button.parentNode;
 
 const selectTypeOF = () =>{ //Coloca-se uma função anônima por causa da const
         const optionsOffice = document.querySelectorAll('.space-box');
         optionsOffice.forEach((option, index, arr) => option.addEventListener('click', () =>{
+            
+            button.disabled = false
+            
             if(index == 0){
-                button.setAttribute('href', '/subcategoria-casa')
+                link.setAttribute('href', '/subcategoria-casa')
+                console.log
             }
 
             else if(index == 1){
-                button.setAttribute('href', '/subcategoria-apartamento')
+                link.setAttribute('href', '/subcategoria-apartamento')
             }
 
             else if(index == 2){
-                button.setAttribute('href', '/subcategoria-unidade')
+                link.setAttribute('href', '/subcategoria-unidade')
             }
         
         for(let i = 0; i < arr.length; i++){
@@ -20,7 +25,7 @@ const selectTypeOF = () =>{ //Coloca-se uma função anônima por causa da const
         }
 
         arr[index].classList.add('border-select')
-        button.firstElementChild.style.background = "var(--scale-2-purple)";     
+        button.style.background = "var(--scale-2-purple)";     
     }))
         
 }
