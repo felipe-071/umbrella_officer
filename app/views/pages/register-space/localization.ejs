@@ -18,7 +18,7 @@
 </head>
 <body>
 
-    <%- include('../../partial/header-register-space.ejs'); %>
+    <!-- <%- include('../../partial/header-register-space.ejs'); %> -->
 
     <div id='box_black'></div>
 
@@ -101,7 +101,7 @@
                         </div>
                         <input type="text" name="country" id="country" class="outline-focus" placeholder="País">
 
-                        <h3>Estou anunciando um ambiente</h3>
+                        <!-- <h3>Estou anunciando um ambiente</h3>
 
                         <div id="type-of-environment">
                             <div>
@@ -113,7 +113,7 @@
                                 <input type="radio" name="exclusive" class="exclusive">
                                 <label for="exclusive">Compartilhado/habitado</label>
                             </div>
-                        </div>
+                        </div> -->
 
                         <button id="continue" type="button">Continuar</button>
                         </div>
@@ -123,20 +123,23 @@
                     <div id="second-step">
                         <h2>Adicione pontos de referência</h2>
 
+                        <div>
                         <div class="inputDiv">
-                            <input type="text" name="searchIcon" class="searchIcon" placeholder="Digite a localização">
+                            <input type="text" name="searchIcon" class="searchIcon outline-focus" placeholder="Digite a localização">
                             <img src="images/default/search2.svg" alt="Lupa de pesquisa">
                         </div>
 
                         <div class="inputDiv">
-                            <input type="text" name="searchIcon" class="searchIcon" placeholder="Digite a localização">
+                            <input type="text" name="searchIcon" class="searchIcon outline-focus" placeholder="Digite a localização">
                             <img src="images/default/search2.svg" alt="Lupa de pesquisa">
                         </div>
 
                         <div class="inputDiv">
-                            <input type="text" name="searchIcon" class="searchIcon" placeholder="Digite a localização">
+                            <input type="text" name="searchIcon" class="searchIcon outline-focus" placeholder="Digite a localização">
                             <img src="images/default/search2.svg" alt="Lupa de pesquisa">
                         </div>
+
+                    </div>
 
                         <button id="addMore" type="button">Adicionar mais +</button>
 
@@ -144,6 +147,10 @@
                     </div>
                     </form>
                 </div>
+
+                <a href="/apresentacao">
+                    <button id="bottom-div__advance" disabled>Avançar</button>
+                </a>
 
                 <!-- <div id="btn">
                     <input type="button" id="advance" value="Avançar">
