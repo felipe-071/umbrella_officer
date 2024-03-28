@@ -224,13 +224,14 @@ iframe{
 }
 
 #location-data > div > select{
-    width: calc(50% - 9px); /*Revisar essas medidas*/
+    /* width: calc(50% - 9px); Revisar essas medidas */
     height: 38px;
     padding-left: 15px;
     border: 1px solid var(--gray-border);
     border-radius: 10px;
     font-size: 13px;
     font-family: var(--font-primary);
+    outline: none;
 }
 
 #location-data > h3{

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Officed | Localização</title>
+    <link rel="icon" href="images/default/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -57,11 +58,40 @@
                         <button id="current-location">Ou use sua localização atual</button>
 
                         <div id="location-data">
-                            <input type="text" name="CEP" id="cep" class="outline-focus" placeholder="CEP">
+                            <input type="text" name="CEP" id="cep" class="outline-focus" placeholder="CEP" oninput="formatarCEP(this)">
                             <input type="text" name="street" id="street" class="outline-focus" placeholder="Rua">
 
                             <div class="half-inputs">
-                            <input type="text" name="estado" placeholder="Estado:">
+                                <!-- <label for="estado">Selecione um estado:</label> -->
+                                <select id="estado" name="estado" class="outline-focus" placeholder="Estado: ">
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
                             <input type="text" name="city" id="city" class="outline-focus" placeholder="Cidade">
                         </div>
 
@@ -123,5 +153,6 @@
     </main>
 
     <!-- <script src="script/register-space/localization.js"></script> -->
+    <script src="script/default/regex/cep.js"></script>
 </body>
 </html>

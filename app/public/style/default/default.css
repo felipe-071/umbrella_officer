@@ -662,6 +662,7 @@ body .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-hea
     color: var(--text-2-black);
     font-size: 15px;
     font-weight: 700;
+    width: 160px;
     max-width: 200px;
 }
 
